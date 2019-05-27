@@ -1,0 +1,7 @@
+name: HotbarPets
+version: 1.1
+author: mrCookieSlime
+website: http://mrcookieslime.github.io/
+depend: [CS-CoreLib, Slimefun]
+
+main: me.mrCookieSlime.HotbarPets.HotbarPets
