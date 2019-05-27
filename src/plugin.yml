@@ -1,7 +1,9 @@
 name: HotbarPets
-version: 1.1
+version: ${project.version}
 author: mrCookieSlime
-website: http://mrcookieslime.github.io/
+website: http://TheBusyBiscuit.github.io/
 depend: [CS-CoreLib, Slimefun]
+
+api-version: 1.13
 
 main: me.mrCookieSlime.HotbarPets.HotbarPets
