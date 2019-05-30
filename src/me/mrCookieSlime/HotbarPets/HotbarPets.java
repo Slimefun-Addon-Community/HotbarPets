@@ -11,10 +11,7 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.handlers.ItemHandler;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.handlers.ItemInteractionHandler;
 import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
-import org.bukkit.Bukkit;
-import org.bukkit.FireworkEffect;
-import org.bukkit.Material;
-import org.bukkit.Sound;
+import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -50,14 +47,14 @@ public class HotbarPets extends JavaPlugin implements Listener {
             utils.setupUpdater(95069, this.getFile());
             utils.setupMetrics();
 
-            (new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxNjY4ZWY3Y2I3OWRkOWMyMmNlM2QxZjNmNGNiNmUyNTU5ODkzYjZkZjRhNDY5NTE0ZTY2N2MxNmFhNCJ9fX0="), "§dPig Pet", new String[]{"§2Farm Animal (Peaceful)", "§7Favourite Food: Carrots", "", "§rBonus Saturation when eating", "§rAllows you to eat poisonous Food"}), "HOTBAR_PET_PIG", new ItemStack(Material.CARROT),
-                    new ItemStack[]{new ItemStack(Material.REDSTONE), new ItemStack(Material.CARROT), new ItemStack(Material.REDSTONE), new ItemStack(Material.PORKCHOP), new ItemStack(Material.DIAMOND), new ItemStack(Material.PORKCHOP), new ItemStack(Material.REDSTONE), SlimefunItems.GOLD_16K, new ItemStack(Material.REDSTONE)})).register();
+            new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxNjY4ZWY3Y2I3OWRkOWMyMmNlM2QxZjNmNGNiNmUyNTU5ODkzYjZkZjRhNDY5NTE0ZTY2N2MxNmFhNCJ9fX0="), "§dPig Pet", new String[]{"§2Farm Animal (Peaceful)", "§7Favourite Food: Carrots", "", "§rBonus Saturation when eating", "§rAllows you to eat poisonous Food"}), "HOTBAR_PET_PIG", new ItemStack(Material.CARROT),
+                    new ItemStack[]{new ItemStack(Material.REDSTONE), new ItemStack(Material.CARROT), new ItemStack(Material.REDSTONE), new ItemStack(Material.PORKCHOP), new ItemStack(Material.DIAMOND), new ItemStack(Material.PORKCHOP), new ItemStack(Material.REDSTONE), SlimefunItems.GOLD_16K, new ItemStack(Material.REDSTONE)}).register();
 
-            (new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTYzODQ2OWE1OTljZWVmNzIwNzUzNzYwMzI0OGE5YWIxMWZmNTkxZmQzNzhiZWE0NzM1YjM0NmE3ZmFlODkzIn19fQ=="), "§rChicken Pet", new String[]{"§2Farm Animal (Peaceful)", "§7Favourite Food: Seeds", "", "§rGives you Eggs over time..."}), "HOTBAR_PET_CHICKEN", new ItemStack(Material.WHEAT_SEEDS),
-                    new ItemStack[]{new ItemStack(Material.REDSTONE), new ItemStack(Material.FEATHER), new ItemStack(Material.REDSTONE), new ItemStack(Material.COOKED_CHICKEN), new ItemStack(Material.DIAMOND), new ItemStack(Material.COOKED_CHICKEN), new ItemStack(Material.REDSTONE), SlimefunItems.GOLD_16K, new ItemStack(Material.REDSTONE)})).register();
+            new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTYzODQ2OWE1OTljZWVmNzIwNzUzNzYwMzI0OGE5YWIxMWZmNTkxZmQzNzhiZWE0NzM1YjM0NmE3ZmFlODkzIn19fQ=="), "§rChicken Pet", new String[]{"§2Farm Animal (Peaceful)", "§7Favourite Food: Seeds", "", "§rGives you Eggs over time..."}), "HOTBAR_PET_CHICKEN", new ItemStack(Material.WHEAT_SEEDS),
+                    new ItemStack[]{new ItemStack(Material.REDSTONE), new ItemStack(Material.FEATHER), new ItemStack(Material.REDSTONE), new ItemStack(Material.COOKED_CHICKEN), new ItemStack(Material.DIAMOND), new ItemStack(Material.COOKED_CHICKEN), new ItemStack(Material.REDSTONE), SlimefunItems.GOLD_16K, new ItemStack(Material.REDSTONE)}).register();
 
-            (new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDBiYzYxYjk3NTdhN2I4M2UwM2NkMjUwN2EyMTU3OTEzYzJjZjAxNmU3YzA5NmE0ZDZjZjFmZTFiOGRiIn19fQ=="), "§dMooshroom Pet", new String[]{"§2Farm Animal (Peaceful)", "§7Favourite Food: Red Mushrooms", "", "§rGives you Beetroot Soup over time..."}), "HOTBAR_PET_MOOSHROOM", new ItemStack(Material.RED_MUSHROOM),
-                    new ItemStack[]{(new ItemStack(Material.LAPIS_LAZULI)), new ItemStack(Material.COOKED_BEEF), (new ItemStack(Material.LAPIS_LAZULI)), new ItemStack(Material.RED_MUSHROOM), new ItemStack(Material.DIAMOND), new ItemStack(Material.BROWN_MUSHROOM), (new ItemStack(Material.LAPIS_LAZULI)), SlimefunItems.GOLD_16K, (new ItemStack(Material.LAPIS_LAZULI))})).register();
+            new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDBiYzYxYjk3NTdhN2I4M2UwM2NkMjUwN2EyMTU3OTEzYzJjZjAxNmU3YzA5NmE0ZDZjZjFmZTFiOGRiIn19fQ=="), "§dMooshroom Pet", new String[]{"§2Farm Animal (Peaceful)", "§7Favourite Food: Red Mushrooms", "", "§rGives you Beetroot Soup over time..."}), "HOTBAR_PET_MOOSHROOM", new ItemStack(Material.RED_MUSHROOM),
+                    new ItemStack[]{(new ItemStack(Material.LAPIS_LAZULI)), new ItemStack(Material.COOKED_BEEF), (new ItemStack(Material.LAPIS_LAZULI)), new ItemStack(Material.RED_MUSHROOM), new ItemStack(Material.DIAMOND), new ItemStack(Material.BROWN_MUSHROOM), (new ItemStack(Material.LAPIS_LAZULI)), SlimefunItems.GOLD_16K, (new ItemStack(Material.LAPIS_LAZULI))}).register();
 
             final HotbarPet cow = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19"), "§6Cow Pet", new String[]{"§2Farm Animal (Peaceful)", "§7Favourite Food: Wheat", "", "§rRight-Click: §7Removes negative Potion Effects"}), "HOTBAR_PET_COW", new ItemStack(Material.WHEAT),
                     new ItemStack[]{new ItemStack(Material.COAL), new ItemStack(Material.WHEAT), new ItemStack(Material.COAL), new ItemStack(Material.COOKED_BEEF), new ItemStack(Material.DIAMOND), new ItemStack(Material.COOKED_BEEF), new ItemStack(Material.COAL), SlimefunItems.GOLD_16K, new ItemStack(Material.COAL)});
@@ -66,7 +63,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                     if (SlimefunManager.isItemSimiliar(item, cow.getItem(), true)) {
                         if (!p.getInventory().containsAtLeast(cow.getFavouriteFood(), 1)) {
 
-                            p.sendMessage("§9Your §6Cow Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &6Cow Pet &9would have helped you if you did not neglect it by not feeding it :("));
 
                         } else {
 
@@ -97,7 +94,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                     if (SlimefunManager.isItemSimiliar(item, squid.getItem(), true)) {
                         if (!p.getInventory().containsAtLeast(squid.getFavouriteFood(), 1)) {
 
-                            p.sendMessage("§9Your §bSquid Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &bSquid Pet &9would have helped you if you did not neglect it by not feeding it :("));
 
                         } else {
 
@@ -120,7 +117,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                     if (SlimefunManager.isItemSimiliar(item, spider.getItem(), true)) {
                         if (!p.getInventory().containsAtLeast(spider.getFavouriteFood(), 1)) {
 
-                            p.sendMessage("§9Your §8Spider Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &8Spider Pet &9would have helped you if you did not neglect it by not feeding it :("));
 
                         } else {
 
@@ -144,7 +141,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                     if (SlimefunManager.isItemSimiliar(item, golem.getItem(), true)) {
                         if (!p.getInventory().containsAtLeast(golem.getFavouriteFood(), 1)) {
 
-                            p.sendMessage("§9Your §7Iron Golem Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &7Iron Golem Pet &9would have helped you if you did not neglect it by not feeding it :("));
 
                         } else {
 
@@ -161,15 +158,15 @@ public class HotbarPets extends JavaPlugin implements Listener {
                 }
             }});
 
-            final HotbarPet ghast = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI2YTcyMTM4ZDY5ZmJiZDJmZWEzZmEyNTFjYWJkODcxNTJlNGYxYzk3ZTVmOTg2YmY2ODU1NzFkYjNjYzAifX19"), "§rGhast Pet", new String[]{"§cMob (Hostile)", "§7Favourite Food: Iron Nugget", "", "§rRight-Click: §7Launches Fireballs"}), "HOTBAR_PET_GHAST", new ItemStack(Material.IRON_NUGGET),
-                    new ItemStack[]{new ItemStack(Material.GHAST_TEAR), new ItemStack(Material.DIAMOND), new ItemStack(Material.GHAST_TEAR), new ItemStack(Material.QUARTZ_BLOCK), new ItemStack(Material.SKELETON_SKULL), new ItemStack(Material.QUARTZ_BLOCK), SlimefunItems.GOLD_24K, new ItemStack(Material.IRON_NUGGET), SlimefunItems.GOLD_24K});
+            final HotbarPet ghast = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI2YTcyMTM4ZDY5ZmJiZDJmZWEzZmEyNTFjYWJkODcxNTJlNGYxYzk3ZTVmOTg2YmY2ODU1NzFkYjNjYzAifX19"), "§rGhast Pet", new String[]{"§cMob (Hostile)", "§7Favourite Food: Fire Charge", "", "§rRight-Click: §7Launches Fireballs"}), "HOTBAR_PET_GHAST", new ItemStack(Material.FIRE_CHARGE),
+                    new ItemStack[]{new ItemStack(Material.GHAST_TEAR), new ItemStack(Material.DIAMOND), new ItemStack(Material.GHAST_TEAR), new ItemStack(Material.QUARTZ_BLOCK), new ItemStack(Material.BLAZE_POWDER), new ItemStack(Material.QUARTZ_BLOCK), SlimefunItems.GOLD_24K, new ItemStack(Material.TNT), SlimefunItems.GOLD_24K});
             ghast.register(new ItemHandler[]{new ItemInteractionHandler() {
                 @Override
                 public boolean onRightClick(ItemUseEvent e, Player p, ItemStack item) {
                     if (SlimefunManager.isItemSimiliar(item, ghast.getItem(), true)) {
                         if (!p.getInventory().containsAtLeast(ghast.getFavouriteFood(), 1)) {
 
-                            p.sendMessage("§7Your §rGhast Pet §7would have helped you if you did not neglect it by not giving it food!");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&7Your &rGhast Pet &7would have helped you if you did not neglect it by not giving it food!"));
 
                         } else {
 
@@ -195,7 +192,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                     if (SlimefunManager.isItemSimiliar(item, enderman.getItem(), true)) {
                         if (!p.getInventory().containsAtLeast(enderman.getFavouriteFood(), 1)) {
 
-                            p.sendMessage("§9Your §8Enderman Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &8Enderman Pet &9would have helped you if you did not neglect it by not feeding it :("));
 
                         } else {
 
@@ -219,7 +216,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                     if (SlimefunManager.isItemSimiliar(item, creeper.getItem(), true)) {
                         if (!p.getInventory().containsAtLeast(creeper.getFavouriteFood(), 1)) {
 
-                            p.sendMessage("§9Your §2Creeper Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &2Creeper Pet &9would have helped you if you did not neglect it by not feeding it :("));
 
                         } else {
 
@@ -237,17 +234,17 @@ public class HotbarPets extends JavaPlugin implements Listener {
                 }
             }});
 
-            (new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmY5OWI1ODBkNDVhNzg0ZTdhOTY0ZTdkM2IxZjk3Y2VjZTc0OTExMTczYmQyMWMxZDdjNTZhY2RjMzg1ZWQ1In19fQ=="), "§3Fish Pet", new String[]{"§aAnimal (Peaceful)", "§7Favourite Food: Seeds", "", "§rGives you Fish over time..."}), "HOTBAR_PET_FISH", new ItemStack(Material.WHEAT_SEEDS),
-                    new ItemStack[]{new ItemStack(Material.IRON_INGOT), new ItemStack(Material.COD), new ItemStack(Material.IRON_INGOT), (new MaterialData(Material.COD, (byte)1)).toItemStack(1), new ItemStack(Material.DIAMOND), (new MaterialData(Material.COD, (byte)2)).toItemStack(1), new ItemStack(Material.WATER_BUCKET), SlimefunItems.GOLD_18K, new ItemStack(Material.WATER_BUCKET)})).register();
+            new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmY5OWI1ODBkNDVhNzg0ZTdhOTY0ZTdkM2IxZjk3Y2VjZTc0OTExMTczYmQyMWMxZDdjNTZhY2RjMzg1ZWQ1In19fQ=="), "§3Fish Pet", new String[]{"§aAnimal (Peaceful)", "§7Favourite Food: Seeds", "", "§rGives you Fish over time..."}), "HOTBAR_PET_FISH", new ItemStack(Material.WHEAT_SEEDS),
+                    new ItemStack[]{new ItemStack(Material.IRON_INGOT), new ItemStack(Material.COD), new ItemStack(Material.IRON_INGOT), (new MaterialData(Material.COD, (byte)1)).toItemStack(1), new ItemStack(Material.DIAMOND), (new MaterialData(Material.COD, (byte)2)).toItemStack(1), new ItemStack(Material.WATER_BUCKET), SlimefunItems.GOLD_18K, new ItemStack(Material.WATER_BUCKET)}).register();
 
-            (new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzg5NTdkNTAyM2M5MzdjNGM0MWFhMjQxMmQ0MzQxMGJkYTIzY2Y3OWE5ZjZhYjM2Yjc2ZmVmMmQ3YzQyOSJ9fX0="), "§4Magma Cube Pet", new String[]{"§cMob (Hostile)", "§7Favourite Food: Nether Quartz", "", "§rImmune to Lava", "§rQuite hungry"}), "HOTBAR_PET_MAGMA_CUBE", new ItemStack(Material.QUARTZ),
-                    new ItemStack[]{new ItemStack(Material.REDSTONE), new ItemStack(Material.MAGMA_CREAM), new ItemStack(Material.REDSTONE), new ItemStack(Material.BLAZE_POWDER), new ItemStack(Material.EMERALD), new ItemStack(Material.BLAZE_POWDER), new ItemStack(Material.NETHERRACK), SlimefunItems.GOLD_20K, new ItemStack(Material.NETHERRACK)})).register();
+            new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzg5NTdkNTAyM2M5MzdjNGM0MWFhMjQxMmQ0MzQxMGJkYTIzY2Y3OWE5ZjZhYjM2Yjc2ZmVmMmQ3YzQyOSJ9fX0="), "§4Magma Cube Pet", new String[]{"§cMob (Hostile)", "§7Favourite Food: Nether Quartz", "", "§rImmune to Lava", "§rQuite hungry"}), "HOTBAR_PET_MAGMA_CUBE", new ItemStack(Material.QUARTZ),
+                    new ItemStack[]{new ItemStack(Material.REDSTONE), new ItemStack(Material.MAGMA_CREAM), new ItemStack(Material.REDSTONE), new ItemStack(Material.BLAZE_POWDER), new ItemStack(Material.EMERALD), new ItemStack(Material.BLAZE_POWDER), new ItemStack(Material.NETHERRACK), SlimefunItems.GOLD_20K, new ItemStack(Material.NETHERRACK)}).register();
 
-            (new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2RmNzRlMzIzZWQ0MTQzNjk2NWY1YzU3ZGRmMjgxNWQ1MzMyZmU5OTllNjhmYmI5ZDZjZjVjOGJkNDEzOWYifX19"), "§8Wither Pet", new String[]{"§4Boss Mob (Hostile)", "§7Favourite Food: Soul Sand", "", "§rImmune to Wither Effect"}), "HOTBAR_PET_WITHER", new ItemStack(Material.SOUL_SAND),
-                    new ItemStack[]{new ItemStack(Material.COAL), (new MaterialData(Material.WITHER_SKELETON_SKULL, (byte)1)).toItemStack(1), new ItemStack(Material.COAL), new ItemStack(Material.SOUL_SAND), new ItemStack(Material.NETHER_STAR), new ItemStack(Material.SOUL_SAND), new ItemStack(Material.SOUL_SAND), SlimefunItems.GOLD_24K, new ItemStack(Material.SOUL_SAND)})).register();
+            new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2RmNzRlMzIzZWQ0MTQzNjk2NWY1YzU3ZGRmMjgxNWQ1MzMyZmU5OTllNjhmYmI5ZDZjZjVjOGJkNDEzOWYifX19"), "§8Wither Pet", new String[]{"§4Boss Mob (Hostile)", "§7Favourite Food: Soul Sand", "", "§rImmune to Wither Effect"}), "HOTBAR_PET_WITHER", new ItemStack(Material.SOUL_SAND),
+                    new ItemStack[]{new ItemStack(Material.COAL), (new MaterialData(Material.WITHER_SKELETON_SKULL, (byte)1)).toItemStack(1), new ItemStack(Material.COAL), new ItemStack(Material.SOUL_SAND), new ItemStack(Material.NETHER_STAR), new ItemStack(Material.SOUL_SAND), new ItemStack(Material.SOUL_SAND), SlimefunItems.GOLD_24K, new ItemStack(Material.SOUL_SAND)}).register();
 
-            (new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjI1MDViZTc3OTZiN2Q3OGE3MTdjM2U2NWVhNDJiZjIxMTQ0OWZkYjZkOTNmMmI0MDZhODhhYjcxYjcwIn19fQ=="), "§6Blaze Pet", new String[]{"§cMob (Hostile)", "§7Favourite Food: Nether Quartz", "", "§rImmune to Fire"}), "HOTBAR_PET_BLAZE", new ItemStack(Material.QUARTZ),
-                    new ItemStack[]{new ItemStack(Material.GLOWSTONE_DUST), new ItemStack(Material.BLAZE_ROD), new ItemStack(Material.GLOWSTONE_DUST), new ItemStack(Material.BLAZE_POWDER), new ItemStack(Material.EMERALD), new ItemStack(Material.BLAZE_POWDER), SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K})).register();
+            new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjI1MDViZTc3OTZiN2Q3OGE3MTdjM2U2NWVhNDJiZjIxMTQ0OWZkYjZkOTNmMmI0MDZhODhhYjcxYjcwIn19fQ=="), "§6Blaze Pet", new String[]{"§cMob (Hostile)", "§7Favourite Food: Nether Quartz", "", "§rImmune to Fire"}), "HOTBAR_PET_BLAZE", new ItemStack(Material.QUARTZ),
+                    new ItemStack[]{new ItemStack(Material.GLOWSTONE_DUST), new ItemStack(Material.BLAZE_ROD), new ItemStack(Material.GLOWSTONE_DUST), new ItemStack(Material.BLAZE_POWDER), new ItemStack(Material.EMERALD), new ItemStack(Material.BLAZE_POWDER), SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K}).register();
 
             final HotbarPet bed = new HotbarPet(new CustomItem(new MaterialData(Material.RED_BED), "§rBed Pet", new String[]{"§aUtility (Peaceful)", "§7Favourite Food: Wool", "", "§rRight-Click: §7Sleep"}), "HOTBAR_PET_BED", new ItemStack(Material.WHITE_WOOL),
                     new ItemStack[]{new ItemStack(Material.IRON_INGOT), new ItemStack(Material.RED_BED), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.WHITE_WOOL), new ItemStack(Material.DIAMOND), new ItemStack(Material.WHITE_WOOL), new ItemStack(Material.OAK_PLANKS), SlimefunItems.GOLD_14K, new ItemStack(Material.OAK_PLANKS)});
@@ -256,7 +253,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                     if (SlimefunManager.isItemSimiliar(item, bed.getItem(), true)) {
                         if (!p.getInventory().containsAtLeast(bed.getFavouriteFood(), 1)) {
 
-                            p.sendMessage("§9Your §rBed Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "\"&9Your &rBed Pet &9would have helped you if you did not neglect it by not feeding it :(\""));
 
                         } else {
 
@@ -280,7 +277,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                     if (SlimefunManager.isItemSimiliar(item, enderchest.getItem(), true)) {
                         if (!p.getInventory().containsAtLeast(enderchest.getFavouriteFood(), 1)) {
 
-                            p.sendMessage("§9Your §5Ender Chest Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "\"&9Your &5Ender Chest Pet &9would have helped you if you did not neglect it by not feeding it :(\""));
 
                         } else {
 
@@ -304,7 +301,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                     if (SlimefunManager.isItemSimiliar(item, Workbench.getItem(), true)) {
                         if (!p.getInventory().containsAtLeast(Workbench.getFavouriteFood(), 1)) {
 
-                            p.sendMessage("§9Your §6Workbench Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "\"&9Your &6Workbench Pet &9would have helped you if you did not neglect it by not feeding it :(\""));
 
                         } else {
 
@@ -321,8 +318,8 @@ public class HotbarPets extends JavaPlugin implements Listener {
                 }
             }});
 
-            (new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZhZDIwZmMyZDU3OWJlMjUwZDNkYjY1OWM4MzJkYTJiNDc4YTczYTY5OGI3ZWExMGQxOGM5MTYyZTRkOWI1In19fQ=="), "§aSlime Pet", new String[]{"§eMob (Passive)", "§7Favourite Food: Glowstone Dust", "", "§rImmune to Fall Damage"}), "HOTBAR_PET_SLIME", new ItemStack(Material.GLOWSTONE_DUST),
-                    new ItemStack[]{new ItemStack(Material.SLIME_BALL), new ItemStack(Material.DIAMOND), new ItemStack(Material.SLIME_BALL), new ItemStack(Material.SLIME_BALL), new ItemStack(Material.EMERALD), new ItemStack(Material.SLIME_BALL), SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K})).register();
+            new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZhZDIwZmMyZDU3OWJlMjUwZDNkYjY1OWM4MzJkYTJiNDc4YTczYTY5OGI3ZWExMGQxOGM5MTYyZTRkOWI1In19fQ=="), "§aSlime Pet", new String[]{"§eMob (Passive)", "§7Favourite Food: Glowstone Dust", "", "§rImmune to Fall Damage"}), "HOTBAR_PET_SLIME", new ItemStack(Material.GLOWSTONE_DUST),
+                    new ItemStack[]{new ItemStack(Material.SLIME_BALL), new ItemStack(Material.DIAMOND), new ItemStack(Material.SLIME_BALL), new ItemStack(Material.SLIME_BALL), new ItemStack(Material.EMERALD), new ItemStack(Material.SLIME_BALL), SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K}).register();
 
             this.loadSpecialGuests();
 
@@ -343,7 +340,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                             if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
                                 if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
 
-                                    p.sendMessage("§9Your §rChicken Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &rChicken Pet &9would have helped you if you did not neglect it by not feeding it :("));
 
                                 } else {
 
@@ -358,7 +355,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                             if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
                                 if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
 
-                                    p.sendMessage("§9Your §dMooshroom Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &dMooshroom Pet &9would have helped you if you did not neglect it by not feeding it :("));
 
                                 } else {
 
@@ -373,7 +370,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                             if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
                                 if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
 
-                                    p.sendMessage("§9Your §3Fish Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &3Fish Pet &9would have helped you if you did not neglect it by not feeding it :("));
 
                                 } else {
 
@@ -403,7 +400,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                 if (SlimefunManager.isItemSimiliar(item, purplicious_cow.getItem(), true)) {
                     if (!p.getInventory().containsAtLeast(purplicious_cow.getFavouriteFood(), 1)) {
 
-                        p.sendMessage("§9Your §5Purplicious Cow Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &5Purplicious Cow Pet &9would have helped you if you did not neglect it by not feeding it :("));
 
                     } else {
 
@@ -428,7 +425,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                 if (SlimefunManager.isItemSimiliar(item, cookie_slime.getItem(), true)) {
                     if (!p.getInventory().containsAtLeast(cookie_slime.getFavouriteFood(), 1)) {
 
-                        p.sendMessage("§9Your §amrCookieSlime Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &amrCookieSlime Pet &9would have helped you if you did not neglect it by not feeding it :("));
 
                     } else {
 
@@ -445,23 +442,23 @@ public class HotbarPets extends JavaPlugin implements Listener {
             }
         }});
 
-        final HotbarPet patriot_pet = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzhhNTY0NmM4NDczZTFiZjQ1NTEzYmU0ZTZlODY1NjA1MDY3MWI2NTEzM2MwMDQ4ZDQ4NGUxYmYwYjQ2Mjk1ZiJ9fX0="), "§5Patriot Pet", new String[]{"§9Special", "§7Favourite Food: Basic Conduit Board", "", "§rGives Resistance, Regeneration, Strength, ","§rand high Saturation"}), "HOTBAR_PET_PATRIOT", SlimefunItems.BASIC_CIRCUIT_BOARD,
-                new ItemStack[]{new ItemStack(Material.ACTIVATOR_RAIL), new ItemStack(Material.REDSTONE), new ItemStack(Material.ACTIVATOR_RAIL), new ItemStack(Material.EMERALD), SlimefunItems.CARBONADO, new ItemStack(Material.EMERALD), SlimefunItems.GOLD_24K, SlimefunItems.GOLD_24K, SlimefunItems.GOLD_24K});
+        final HotbarPet patriot_pet = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzhhNTY0NmM4NDczZTFiZjQ1NTEzYmU0ZTZlODY1NjA1MDY3MWI2NTEzM2MwMDQ4ZDQ4NGUxYmYwYjQ2Mjk1ZiJ9fX0="), "§5Patriot Pet", new String[]{"§9Special", "§7Favourite Food: Nether Wart", "", "§rGives Resistance, Regeneration, Strength, ","§rand Saturation"}), "HOTBAR_PET_PATRIOT", new ItemStack(Material.NETHER_WART),
+                new ItemStack[]{new ItemStack(Material.REDSTONE), SlimefunItems.MAGIC_LUMP_1, new ItemStack(Material.REDSTONE), SlimefunItems.MAGIC_LUMP_1, SlimefunItems.RAW_CARBONADO, SlimefunItems.MAGIC_LUMP_1, SlimefunItems.GOLD_4K, new ItemStack(Material.REDSTONE), SlimefunItems.GOLD_4K});
         patriot_pet.register(new ItemHandler[]{new ItemInteractionHandler() {
             @Override
             public boolean onRightClick(ItemUseEvent e, Player p, ItemStack item) {
                 if (SlimefunManager.isItemSimiliar(item, patriot_pet.getItem(), true)) {
                     if (!p.getInventory().containsAtLeast(patriot_pet.getFavouriteFood(), 1)) {
 
-                        p.sendMessage("§7Your §5Patriot Pet §7would have helped you if you didn't neglect it by not giving it food!");
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&7Your &5Patriot Pet &7would have helped you if you didn't neglect it by not giving it food!"));
 
                     } else {
 
                         p.getInventory().removeItem(new ItemStack[]{patriot_pet.getFavouriteFood()});
-                        p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 500, 3));
-                        p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 500, 5));
-                        p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 500, 4));
-                        p.setFoodLevel(70);
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 1200, 0));
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1200, 1));
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 1200, 0));
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 1200, 1));
 
 
                     }
@@ -473,11 +470,11 @@ public class HotbarPets extends JavaPlugin implements Listener {
             }
         }});
 
-        (new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzk2NmYwZWJkNzdmMWJjZDY1NmZhMmRjM2VmMDMwM2UyNmE2YTNkZTQ5OGMzOTk5ZDM5ZmRjYWNjNWY1YWQifX19"), "§bWalshrus Pet", new String[]{"§9Special", "§7Favourite Food: Raw Cod", "", "§rCannot drown"}), "HOTBAR_PET_WALSHRUS", new ItemStack(Material.COD),
-                new ItemStack[]{new ItemStack(Material.COD), new ItemStack(Material.DIAMOND), new ItemStack(Material.COD), new ItemStack(Material.DIAMOND), new ItemStack(Material.EMERALD), new ItemStack(Material.DIAMOND), SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K})).register();
+        new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzk2NmYwZWJkNzdmMWJjZDY1NmZhMmRjM2VmMDMwM2UyNmE2YTNkZTQ5OGMzOTk5ZDM5ZmRjYWNjNWY1YWQifX19"), "§bWalshrus Pet", new String[]{"§9Special", "§7Favourite Food: Raw Cod", "", "§rCannot drown"}), "HOTBAR_PET_WALSHRUS", new ItemStack(Material.COD),
+                new ItemStack[]{new ItemStack(Material.COD), new ItemStack(Material.DIAMOND), new ItemStack(Material.COD), new ItemStack(Material.DIAMOND), new ItemStack(Material.EMERALD), new ItemStack(Material.DIAMOND), SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K}).register();
 
-        (new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTg0NzRmN2E2YzEzOWYxY2NkNzM1YTQ2NzdjMDQ1M2M0YmVmZWRmYzg5ZmVkYTQ5ZWE4ODZlYjE4ZGRmNmNkZiJ9fX0="), "§4Eyamaz Pet", new String[]{"§9Special", "§7Favourite Food: Souls", "", "§rBeware! Eyamaz makes a Soul Pie", "§rout of the Souls of everything you kill"}), "HOTBAR_PET_EYAMAZ", new ItemStack(Material.SOUL_SAND),
-                new ItemStack[]{new ItemStack(Material.SOUL_SAND), new ItemStack(Material.DIAMOND), new ItemStack(Material.SOUL_SAND), new ItemStack(Material.DIAMOND), new ItemStack(Material.EMERALD), new ItemStack(Material.DIAMOND), SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K})).register();
+        new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTg0NzRmN2E2YzEzOWYxY2NkNzM1YTQ2NzdjMDQ1M2M0YmVmZWRmYzg5ZmVkYTQ5ZWE4ODZlYjE4ZGRmNmNkZiJ9fX0="), "§4Eyamaz Pet", new String[]{"§9Special", "§7Favourite Food: Souls", "", "§rBeware! Eyamaz makes a Soul Pie", "§rout of the Souls of everything you kill"}), "HOTBAR_PET_EYAMAZ", new ItemStack(Material.SOUL_SAND),
+                new ItemStack[]{new ItemStack(Material.SOUL_SAND), new ItemStack(Material.DIAMOND), new ItemStack(Material.SOUL_SAND), new ItemStack(Material.DIAMOND), new ItemStack(Material.EMERALD), new ItemStack(Material.DIAMOND), SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K}).register();
 
     }
 
@@ -520,7 +517,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
             if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
                 if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
 
-                    p.sendMessage("§9Your §5Pig Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &5Pig Pet &9would have helped you if you did not neglect it by not feeding it :("));
                     return;
 
                 }
@@ -581,7 +578,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                         if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
                             if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
 
-                                p.sendMessage("§9Your §4Magma Cube Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                                p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &4Magma Cube Pet &9would have helped you if you did not neglect it by not feeding it :("));
                                 return;
 
                             }
@@ -604,7 +601,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                             if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
                                 if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
 
-                                    p.sendMessage("§9Your §aSlime Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &aSlime Pet &9would have helped you if you did not neglect it by not feeding it :("));
                                     return;
 
                                 }
@@ -619,7 +616,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                             if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
                                 if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
 
-                                    p.sendMessage("§9Your §amrCookieSlime Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &amrCookieSlime Pet &9would have helped you if you did not neglect it by not feeding it :("));
                                     return;
 
                                 }
@@ -636,7 +633,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                             if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
                                 if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
 
-                                    p.sendMessage("§9Your §8Wither Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &8Wither Pet &9would have helped you if you did not neglect it by not feeding it :("));
                                     return;
 
                                 }
@@ -654,7 +651,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                             if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
                                 if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
 
-                                    p.sendMessage("§9Your §bWalshrus Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                                    p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &bWalshrus Pet &9would have helped you if you did not neglect it by not feeding it :("));
                                     return;
 
                                 }
@@ -670,7 +667,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                         if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
                             if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
 
-                                p.sendMessage("§9Your §6Blaze Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                                p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &6Blaze Pet &9would have helped you if you did not neglect it by not feeding it :("));
                                 return;
 
                             }
@@ -688,7 +685,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                     if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
                         if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
 
-                            p.sendMessage("§9Your §2Creeper Pet §9would have helped you if you did not neglect it by not feeding it :(");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&',"&9Your &2Creeper Pet &9would have helped you if you did not neglect it by not feeding it :("));
                             return;
 
                         }
