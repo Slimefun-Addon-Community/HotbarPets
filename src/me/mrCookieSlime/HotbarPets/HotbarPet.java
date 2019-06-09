@@ -8,14 +8,15 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import org.bukkit.inventory.ItemStack;
 
 public class HotbarPet extends SlimefunItem {
+	
     private static Category category;
     ItemStack food;
 
     static {
         try {
             category = new Category(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxNjY4ZWY3Y2I3OWRkOWMyMmNlM2QxZjNmNGNiNmUyNTU5ODkzYjZkZjRhNDY5NTE0ZTY2N2MxNmFhNCJ9fX0="), "§dHotbar Pets", new String[]{"", "&a> Click to open"}));
-        } catch (Exception var1) {
-            var1.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }
