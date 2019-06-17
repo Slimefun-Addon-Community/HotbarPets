@@ -205,6 +205,56 @@ public class HotbarPets extends JavaPlugin implements Listener {
                 }
             });
 
+            final HotbarPet shulker = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFkMzUzNGQyMWZlODQ5OTI2MmRlODdhZmZiZWFjNGQyNWZmZGUzNWM4YmRjYTA2OWU2MWUxNzg3ZmYyZiJ9fX0=="), "&dShulker Pet", new String[]{"&cMob (Hostile)", "&7Favourite Food: Chorus Fruit", "", "&rRight-Click: &7Gives Levitation and Slow falling"}), "HOTBAR_PET_SHULKER", new ItemStack(Material.CHORUS_FRUIT), new ItemStack[] {
+                    new ItemStack(Material.NETHER_WART), new ItemStack(Material.SHULKER_SHELL), new ItemStack(Material.NETHER_WART),
+                    new ItemStack(Material.QUARTZ), new ItemStack(Material.GLOWSTONE_DUST), new ItemStack(Material.QUARTZ),
+                    new ItemStack(Material.FEATHER), new ItemStack(Material.SHULKER_SHELL), new ItemStack(Material.FEATHER)
+            });
+
+            shulker.register(new ItemInteractionHandler() {
+                @Override
+                public boolean onRightClick(ItemUseEvent e, Player p, ItemStack item) {
+                    if (SlimefunManager.isItemSimiliar(item, shulker.getItem(), true)) {
+                        if (!p.getInventory().containsAtLeast(shulker.getFavouriteFood(), 1)) {
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7Your &dShulker Pet &7would have helped you if you did not neglect it by not giving it food!"));
+                        } else {
+                            p.getInventory().removeItem(shulker.getFavouriteFood());
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 60, 0));
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 250, 0));
+                        }
+                        return true;
+
+                    }
+                    else {
+                        return false;
+                    }
+                }
+            });
+
+            final HotbarPet phantom = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDBiOTE4OWMzNzEzZjBkYWNhYzliMmJiNjA2NTA5MGM1MmIwYzkwZjEwODIwOGUwYTg2YmU1ODg1ZTk5NTc5YSJ9fX0="), "&7Phantom Pet", new String[]{"&cMob (Hostile)", "&7Favourite Food: Beetroot", "", "&rRight-Click: &7Gives Slow Falling"}), "HOTBAR_PET_PHANTOM", new ItemStack(Material.BEETROOT), new ItemStack[]{
+                    new ItemStack(Material.PHANTOM_MEMBRANE), new ItemStack(Material.RABBIT_FOOT), new ItemStack(Material.PHANTOM_MEMBRANE),
+                    new ItemStack(Material.DIAMOND), SlimefunItems.GOLD_6K, new ItemStack(Material.DIAMOND),
+                    new ItemStack(Material.PHANTOM_MEMBRANE), new ItemStack(Material.RABBIT_FOOT), new ItemStack(Material.PHANTOM_MEMBRANE)
+            });
+
+            phantom.register(new ItemInteractionHandler() {
+                @Override
+                public boolean onRightClick(ItemUseEvent e, Player p, ItemStack item) {
+                    if (SlimefunManager.isItemSimiliar(item, phantom.getItem(), true)) {
+                        if (!p.getInventory().containsAtLeast(phantom.getFavouriteFood(), 1)) {
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7Your &8Phantom Pet &7would have helped you if you did not neglect it by not giving it food!"));
+                        } else {
+                            p.getInventory().removeItem(phantom.getFavouriteFood());
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 250, 0));
+                        }
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                }
+            });
+
             final HotbarPet enderman = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2E1OWJiMGE3YTMyOTY1YjNkOTBkOGVhZmE4OTlkMTgzNWY0MjQ1MDllYWRkNGU2YjcwOWFkYTUwYjljZiJ9fX0="), "&8Enderman Pet", new String[]{"&cMob (Hostile)", "&7Favourite Food: End Stone", "", "&rRight-Click: &7Shoots an Ender Pearl"}), "HOTBAR_PET_ENDER_MAN", new ItemStack(Material.END_STONE), new ItemStack[] {
             	new ItemStack(Material.OBSIDIAN), new ItemStack(Material.ENDER_PEARL), new ItemStack(Material.OBSIDIAN), 
             	new ItemStack(Material.ENDER_EYE), new ItemStack(Material.EMERALD), new ItemStack(Material.ENDER_EYE), 
