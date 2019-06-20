@@ -1,21 +1,6 @@
 package me.mrCookieSlime.HotbarPets;
 
 import org.bukkit.*;
-import org.bukkit.entity.*;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
-import org.bukkit.event.entity.EntityDeathEvent;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryType.SlotType;
-import org.bukkit.event.player.PlayerItemConsumeEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 import me.mrCookieSlime.CSCoreLibPlugin.CSCoreLib;
 import me.mrCookieSlime.CSCoreLibPlugin.PluginUtils;
@@ -213,7 +198,9 @@ public class HotbarPets extends JavaPlugin implements Listener {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7Your &dShulker Pet &7would have helped you if you did not neglect it by not giving it food!"));
                         } else {
                             p.getInventory().removeItem(shulker.getFavouriteFood());
+
                             p.launchProjectile(TippedArrow.class).addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION, 10 ,0), true);
+
                             p.getWorld().playSound(p.getLocation(), Sound.ENTITY_SHULKER_AMBIENT, 1.0F, 2.0F);
                         }
                         return true;
