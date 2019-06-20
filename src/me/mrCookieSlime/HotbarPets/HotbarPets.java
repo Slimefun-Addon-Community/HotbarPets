@@ -4,11 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.entity.EnderPearl;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Fireball;
-import org.bukkit.entity.Player;
-import org.bukkit.entity.TNTPrimed;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -219,8 +215,8 @@ public class HotbarPets extends JavaPlugin implements Listener {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7Your &dShulker Pet &7would have helped you if you did not neglect it by not giving it food!"));
                         } else {
                             p.getInventory().removeItem(shulker.getFavouriteFood());
-                            p.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 60, 0));
-                            p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 250, 0));
+                            p.launchProjectile(ShulkerBullet.class);
+                            p.getWorld().playSound(p.getLocation(), Sound.ENTITY_SHULKER_AMBIENT, 1.0F, 2.0F);
                         }
                         return true;
 
@@ -246,6 +242,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                         } else {
                             p.getInventory().removeItem(phantom.getFavouriteFood());
                             p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 250, 0));
+                            p.getWorld().playSound(p.getLocation(), Sound.ENTITY_PHANTOM_AMBIENT, 1.0F, 2.0F);
                         }
                         return true;
                     }
@@ -388,7 +385,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                 }
             });
 
-            final HotbarPet workbench = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGFkODgxZDY4NTQ3MTYxYWE3YjI5MjVlMzgzNzc4NzU2YmM2N2E3NWI0NDRhNTg2ZTUxNTk1M2VmODNhOSJ9fX0="), "&6Workbench Pet", new String[]{"&aUtility (Peaceful)", "&7Favourite Food: Wooden Planks", "", "&rRight-Click: &7Open"}), "HOTBAR_PET_Workbench", new ItemStack(Material.OAK_PLANKS), new ItemStack[] {
+            final HotbarPet workbench = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGFkODgxZDY4NTQ3MTYxYWE3YjI5MjVlMzgzNzc4NzU2YmM2N2E3NWI0NDRhNTg2ZTUxNTk1M2VmODNhOSJ9fX0="), "&6Workbench Pet", new String[]{"&aUtility (Peaceful)", "&7Favourite Food: Wooden Planks", "", "&rRight-Click: &7Open"}), "HOTBAR_PET_WORKBENCH", new ItemStack(Material.OAK_PLANKS), new ItemStack[] {
             	new ItemStack(Material.OAK_PLANKS), new ItemStack(Material.CRAFTING_TABLE), new ItemStack(Material.OAK_PLANKS), 
             	new ItemStack(Material.OAK_PLANKS), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.OAK_PLANKS), 
             	new ItemStack(Material.OAK_PLANKS), SlimefunItems.GOLD_16K, new ItemStack(Material.OAK_PLANKS)
