@@ -12,6 +12,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.EntityDeathEvent;
+import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
@@ -31,6 +32,14 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.handlers.ItemInteractionHa
 import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
 
 public class HotbarPets extends JavaPlugin implements Listener {
+
+    @EventHandler
+    public void onTippedArrowHit(ProjectileHitEvent e) {
+        if(e.getEntity() instanceof TippedArrow) {
+            TippedArrow tippedArrow = (TippedArrow) e.getEntity();
+            tippedArrow.remove();
+        }
+    }
 
     @Override
     public void onEnable() {
