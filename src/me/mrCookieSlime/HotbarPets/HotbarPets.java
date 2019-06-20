@@ -197,7 +197,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                 }
             });
 
-            final HotbarPet shulker = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFkMzUzNGQyMWZlODQ5OTI2MmRlODdhZmZiZWFjNGQyNWZmZGUzNWM4YmRjYTA2OWU2MWUxNzg3ZmYyZiJ9fX0=="), "&dShulker Pet", new String[]{"&cMob (Hostile)", "&7Favourite Food: Chorus Fruit", "", "&rRight-Click: &7Shoots tipped arrows"}), "HOTBAR_PET_SHULKER", new ItemStack(Material.CHORUS_FRUIT), new ItemStack[] {
+            final HotbarPet shulker = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFkMzUzNGQyMWZlODQ5OTI2MmRlODdhZmZiZWFjNGQyNWZmZGUzNWM4YmRjYTA2OWU2MWUxNzg3ZmYyZiJ9fX0=="), "&dShulker Pet", new String[]{"&cMob (Hostile)", "&7Favourite Food: Chorus Fruit", "", "&rRight-Click: &7Shoots arrows tipped with levitation"}), "HOTBAR_PET_SHULKER", new ItemStack(Material.CHORUS_FRUIT), new ItemStack[] {
                     new ItemStack(Material.NETHER_WART), new ItemStack(Material.SHULKER_SHELL), new ItemStack(Material.NETHER_WART),
                     new ItemStack(Material.QUARTZ), new ItemStack(Material.GLOWSTONE_DUST), new ItemStack(Material.QUARTZ),
                     new ItemStack(Material.FEATHER), new ItemStack(Material.SHULKER_SHELL), new ItemStack(Material.FEATHER)
