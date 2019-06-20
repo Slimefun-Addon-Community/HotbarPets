@@ -205,7 +205,6 @@ public class HotbarPets extends JavaPlugin implements Listener {
 
             shulker.register(new ItemInteractionHandler() {
                 @Override
-                @Deprecated
                 public boolean onRightClick(ItemUseEvent e, Player p, ItemStack item) {
                     if (SlimefunManager.isItemSimiliar(item, shulker.getItem(), true)) {
                         if (!p.getInventory().containsAtLeast(shulker.getFavouriteFood(), 1)) {
