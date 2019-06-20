@@ -201,7 +201,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                 }
             });
 
-            final HotbarPet shulker = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFkMzUzNGQyMWZlODQ5OTI2MmRlODdhZmZiZWFjNGQyNWZmZGUzNWM4YmRjYTA2OWU2MWUxNzg3ZmYyZiJ9fX0=="), "&dShulker Pet", new String[]{"&cMob (Hostile)", "&7Favourite Food: Chorus Fruit", "", "&rRight-Click: &7Gives Levitation and Slow falling"}), "HOTBAR_PET_SHULKER", new ItemStack(Material.CHORUS_FRUIT), new ItemStack[] {
+            final HotbarPet shulker = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFkMzUzNGQyMWZlODQ5OTI2MmRlODdhZmZiZWFjNGQyNWZmZGUzNWM4YmRjYTA2OWU2MWUxNzg3ZmYyZiJ9fX0=="), "&dShulker Pet", new String[]{"&cMob (Hostile)", "&7Favourite Food: Chorus Fruit", "", "&rRight-Click: &7Shoots shulker bullets"}), "HOTBAR_PET_SHULKER", new ItemStack(Material.CHORUS_FRUIT), new ItemStack[] {
                     new ItemStack(Material.NETHER_WART), new ItemStack(Material.SHULKER_SHELL), new ItemStack(Material.NETHER_WART),
                     new ItemStack(Material.QUARTZ), new ItemStack(Material.GLOWSTONE_DUST), new ItemStack(Material.QUARTZ),
                     new ItemStack(Material.FEATHER), new ItemStack(Material.SHULKER_SHELL), new ItemStack(Material.FEATHER)
@@ -215,7 +215,8 @@ public class HotbarPets extends JavaPlugin implements Listener {
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7Your &dShulker Pet &7would have helped you if you did not neglect it by not giving it food!"));
                         } else {
                             p.getInventory().removeItem(shulker.getFavouriteFood());
-                            p.launchProjectile(ShulkerBullet.class);
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 5, 0));
+                            p.launchProjectile(Arrow.class);
                             p.getWorld().playSound(p.getLocation(), Sound.ENTITY_SHULKER_AMBIENT, 1.0F, 2.0F);
                         }
                         return true;
