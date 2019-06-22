@@ -177,7 +177,6 @@ public class HotbarPets extends JavaPlugin implements Listener {
                         }
                         return true;
                     }
-<<<<<<< HEAD
                     else {
                         return false;
                     }
@@ -206,8 +205,6 @@ public class HotbarPets extends JavaPlugin implements Listener {
                         }
                         return true;
                     }
-=======
->>>>>>> 330b38e6fdbd29376c95f5f9815af13b91c30f8d
                     else {
                         return false;
                     }
