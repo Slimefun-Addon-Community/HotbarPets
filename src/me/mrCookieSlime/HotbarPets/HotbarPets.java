@@ -184,9 +184,9 @@ public class HotbarPets extends JavaPlugin implements Listener {
             });
 
             final HotbarPet dragon = new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRmNjE0MjJlZDc5OGRmNzM1YWQ3Y2Q5M2VlYmM4NTE1OGQ4MDQwN2MzN2YxZGE1OThiZDE3ODM2ZGYzNjYifX19"), "&5Ender Dragon Pet", new String[]{"&8Boss (Hostile)", "&7Favourite Food: Ghast Tear", "", "&rRight-Click: &7Shoots Dragon Fireball & Gives Resistance"}), "HOTBAR_PET_DRAGON", new ItemStack(Material.GHAST_TEAR), new ItemStack[] {
-                    new ItemStack(Material.PRISMARINE_CRYSTALS), new ItemStack(Material.FEATHER), new ItemStack(Material.PRISMARINE_CRYSTALS),
-                    SlimefunItems.ENDER_LUMP_3, SlimefunItems.CARBON, SlimefunItems.ENDER_LUMP_3,
-                    new ItemStack(Material.PRISMARINE_CRYSTALS), new ItemStack(Material.FEATHER), new ItemStack(Material.PRISMARINE_CRYSTALS)
+                    new ItemStack(Material.PRISMARINE_CRYSTALS), new ItemStack(Material.DRAGON_BREATH), new ItemStack(Material.PRISMARINE_CRYSTALS),
+                    SlimefunItems.ENDER_LUMP_3, new ItemStack(Material.DRAGON_HEAD), SlimefunItems.ENDER_LUMP_3,
+                    new ItemStack(Material.PRISMARINE_CRYSTALS), new ItemStack(Material.DRAGON_BREATH), new ItemStack(Material.PRISMARINE_CRYSTALS)
             });
 
             dragon.register(new ItemInteractionHandler() {
@@ -586,6 +586,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
                         p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 600, 1));
                         p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 600, 0));
                         p.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 300, 1));
+                        p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ZOMBIE_CONVERTED_TO_DROWNED, 1.0F, 2.0F);
                     }
                     return true;
 
