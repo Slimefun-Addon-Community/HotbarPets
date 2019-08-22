@@ -9,7 +9,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class HotbarPet extends SlimefunItem {
 
-	private static Category category;
+	public static Category category;
 
 	static {
 		try {

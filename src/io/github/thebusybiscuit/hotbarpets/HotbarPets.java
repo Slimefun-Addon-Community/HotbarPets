@@ -22,7 +22,6 @@ public class HotbarPets extends JavaPlugin implements Listener {
 	@Override
 	public void onEnable() {
 		PluginUtils utils = new PluginUtils(this);
-		utils.setupUpdater(95069, this.getFile());
 		utils.setupConfig();
 		Config cfg = utils.getConfig();
 
@@ -34,15 +33,17 @@ public class HotbarPets extends JavaPlugin implements Listener {
 
 		if (!getDescription().getVersion().startsWith("DEV - ")) {
 			// We are using an official build, use the BukkitDev Updater
-			updater = new BukkitUpdater(this, getFile(), 53485);
+			updater = new BukkitUpdater(this, getFile(), 95069);
 		}
 		else {
 			// If we are using a development build, we want to switch to our custom 
-			updater = new GitHubBuildsUpdater(this, getFile(), "TheBusyBiscuit/Slimefun4/master");
+			updater = new GitHubBuildsUpdater(this, getFile(), "TheBusyBiscuit/HotbarPets/master");
 		}
-
+		
+		// Only run the Updater if it has not been disabled
 		if (cfg.getBoolean("options.auto-update")) updater.start();
-
+		
+		// Add all the Pets via their Group class
 		try {
 			new FarmAnimals(this);
 			new Animals(this);
@@ -54,8 +55,14 @@ public class HotbarPets extends JavaPlugin implements Listener {
 		} catch (Exception x) {
 			x.printStackTrace();
 		}
-
+		
+		// Registering the Listener and Runnable
 		new HotbarPetsListener(this);
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new HotbarPetsRunnable(), 0L, 2000L);
+	}
+	
+	@Override
+	public void onDisable() {
+		HotbarPet.category = null;
 	}
 }
