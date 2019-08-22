@@ -14,8 +14,8 @@ public class EnderChestPet extends SimpleBasePet {
 
 	@Override
 	public void onUseItem(Player p) {
-        p.openInventory(p.getEnderChest());
-        p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0F, 2.0F);
+		p.openInventory(p.getEnderChest());
+		p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0F, 2.0F);
 	}
-	
+
 }

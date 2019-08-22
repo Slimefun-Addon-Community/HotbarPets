@@ -18,45 +18,45 @@ import me.mrCookieSlime.CSCoreLibPlugin.PluginUtils;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 
 public class HotbarPets extends JavaPlugin implements Listener {
-	
-    @Override
-    public void onEnable() {
-    	PluginUtils utils = new PluginUtils(this);
-        utils.setupUpdater(95069, this.getFile());
-        utils.setupConfig();
-        Config cfg = utils.getConfig();
-        
-        // Setting up bStats
-    	new Metrics(this);
-     			
-    	// Setting up the Auto-Updater
-    	Updater updater;
-     			
-    	if (!getDescription().getVersion().startsWith("DEV - ")) {
-				// We are using an official build, use the BukkitDev Updater
-				updater = new BukkitUpdater(this, getFile(), 53485);
-			}
-			else {
-				// If we are using a development build, we want to switch to our custom 
-				updater = new GitHubBuildsUpdater(this, getFile(), "TheBusyBiscuit/Slimefun4/master");
-			}
-			
-			if (cfg.getBoolean("options.auto-update")) updater.start();
-        
-        new HotbarPetsListener(this);
 
-        try {
-        	new FarmAnimals(this);
-            new Animals(this);
-            new PassiveMobs(this);
-            new HostileMobs(this);
-            new BossMobs(this);
-            new UtilityPets(this);
-            new SpecialPets(this);
-        } catch (Exception x) {
-        	x.printStackTrace();
-        }
+	@Override
+	public void onEnable() {
+		PluginUtils utils = new PluginUtils(this);
+		utils.setupUpdater(95069, this.getFile());
+		utils.setupConfig();
+		Config cfg = utils.getConfig();
 
-        getServer().getScheduler().scheduleSyncRepeatingTask(this, new HotbarPetsRunnable(), 0L, 2000L);
-    }
+		// Setting up bStats
+		new Metrics(this);
+
+		// Setting up the Auto-Updater
+		Updater updater;
+
+		if (!getDescription().getVersion().startsWith("DEV - ")) {
+			// We are using an official build, use the BukkitDev Updater
+			updater = new BukkitUpdater(this, getFile(), 53485);
+		}
+		else {
+			// If we are using a development build, we want to switch to our custom 
+			updater = new GitHubBuildsUpdater(this, getFile(), "TheBusyBiscuit/Slimefun4/master");
+		}
+
+		if (cfg.getBoolean("options.auto-update")) updater.start();
+
+		new HotbarPetsListener(this);
+
+		try {
+			new FarmAnimals(this);
+			new Animals(this);
+			new PassiveMobs(this);
+			new HostileMobs(this);
+			new BossMobs(this);
+			new UtilityPets(this);
+			new SpecialPets(this);
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+
+		getServer().getScheduler().scheduleSyncRepeatingTask(this, new HotbarPetsRunnable(), 0L, 2000L);
+	}
 }
