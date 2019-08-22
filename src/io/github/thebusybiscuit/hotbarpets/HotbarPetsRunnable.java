@@ -15,7 +15,9 @@ public class HotbarPetsRunnable implements Runnable {
 	private HotbarPet chicken, mooshroom, fish;
 
 	public HotbarPetsRunnable() {
-		chicken = (HotbarPet) SlimefunItem.getByID("");
+		chicken = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_CHICKEN");
+		mooshroom = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_MOOSHROOM");
+		fish = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_FISH");
 	}
 
 	@Override

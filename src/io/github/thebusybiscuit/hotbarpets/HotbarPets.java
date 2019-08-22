@@ -43,8 +43,6 @@ public class HotbarPets extends JavaPlugin implements Listener {
 
 		if (cfg.getBoolean("options.auto-update")) updater.start();
 
-		new HotbarPetsListener(this);
-
 		try {
 			new FarmAnimals(this);
 			new Animals(this);
@@ -57,6 +55,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
 			x.printStackTrace();
 		}
 
+		new HotbarPetsListener(this);
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new HotbarPetsRunnable(), 0L, 2000L);
 	}
 }
