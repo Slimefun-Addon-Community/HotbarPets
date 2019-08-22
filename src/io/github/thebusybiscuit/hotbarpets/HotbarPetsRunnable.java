@@ -12,7 +12,9 @@ import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
 
 public class HotbarPetsRunnable implements Runnable {
 
-	private HotbarPet chicken, mooshroom, fish;
+	private HotbarPet chicken; 
+	private HotbarPet mooshroom; 
+	private HotbarPet fish;
 
 	public HotbarPetsRunnable() {
 		chicken = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_CHICKEN");
@@ -26,7 +28,7 @@ public class HotbarPetsRunnable implements Runnable {
 			for (int i = 0; i < 9; ++i) {
 				ItemStack item = p.getInventory().getItem(i);
 
-				if (item == null || item.getType() == null || item.getType().equals(Material.AIR)) continue;
+				if (item == null || item.getType() == null || item.getType() == Material.AIR) continue;
 
 				if (chicken != null && SlimefunManager.isItemSimiliar(item, chicken.getItem(), true)) {
 					if (!p.getInventory().containsAtLeast(chicken.getFavouriteFood(), 1)) {

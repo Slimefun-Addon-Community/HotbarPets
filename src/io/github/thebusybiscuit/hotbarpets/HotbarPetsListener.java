@@ -26,12 +26,18 @@ import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
 public class HotbarPetsListener implements Listener {
 
 	private HotbarPets plugin;
-	
-	private HotbarPet creeper, magmacube, slime, mrCookieSlime, wither, walshrus, blaze;
+
+	private HotbarPet creeper; 
+	private HotbarPet magmacube; 
+	private HotbarPet slime; 
+	private HotbarPet mrCookieSlime; 
+	private HotbarPet wither; 
+	private HotbarPet walshrus; 
+	private HotbarPet blaze;
 
 	public HotbarPetsListener(HotbarPets plugin) {
 		this.plugin = plugin;
-		
+
 		creeper = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_CREEPER");
 		magmacube = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_MAGMA_CUBE");
 		slime = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_SLIME");
@@ -52,9 +58,7 @@ public class HotbarPetsListener implements Listener {
 
 	@EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
 	public void onPlace(BlockPlaceEvent e) {
-		SlimefunItem item = SlimefunItem.getByItem(e.getItemInHand());
-
-		if (item != null && item instanceof HotbarPet) {
+		if (SlimefunItem.getByItem(e.getItemInHand()) instanceof HotbarPet) {
 			e.setCancelled(true);
 		}
 	}
@@ -62,8 +66,7 @@ public class HotbarPetsListener implements Listener {
 	@EventHandler
 	public void onEquip(InventoryClickEvent e) {
 		if (e.getSlotType() == SlotType.ARMOR) {
-			SlimefunItem item = SlimefunItem.getByItem(e.getCursor());
-			if (item != null && item instanceof HotbarPet) {
+			if (SlimefunItem.getByItem(e.getCursor()) instanceof HotbarPet) {
 				e.setCancelled(true);
 			}
 		}
@@ -77,7 +80,7 @@ public class HotbarPetsListener implements Listener {
 			ItemStack item = p.getInventory().getItem(i);
 			final HotbarPet pet = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_PIG");
 			if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
-				
+
 				if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &5Pig Pet &9would have helped you if you did not neglect it by not feeding it :("));
 					return;
@@ -103,7 +106,7 @@ public class HotbarPetsListener implements Listener {
 				ItemStack item = p.getInventory().getItem(i);
 
 				HotbarPet pet = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_EYAMAZ");
-				
+
 				if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
 					e.getEntity().getLocation().getWorld().dropItemNaturally(e.getEntity().getLocation(), new CustomItem(new ItemStack(Material.PUMPKIN_PIE), "&bSoul Pie"));
 				}
@@ -119,112 +122,112 @@ public class HotbarPetsListener implements Listener {
 
 			for (int i = 0; i < 9; ++i) {
 				ItemStack item = p.getInventory().getItem(i);
-				
+
 				switch (e.getCause()) {
-					case ENTITY_EXPLOSION:
-					case BLOCK_EXPLOSION:
-					{
-						if (creeper != null && SlimefunManager.isItemSimiliar(item, creeper.getItem(), true)) {
-							if (!p.getInventory().containsAtLeast(creeper.getFavouriteFood(), 1)) {
-								p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &2Creeper Pet &9would have helped you if you did not neglect it by not feeding it :("));
-								return;
-							}
-
-							p.getInventory().removeItem(creeper.getFavouriteFood());
-							e.setCancelled(true);
-							p.getWorld().playSound(p.getLocation(), Sound.ENTITY_CREEPER_PRIMED, 1.0F, 2.0F);
+				case ENTITY_EXPLOSION:
+				case BLOCK_EXPLOSION:
+				{
+					if (creeper != null && SlimefunManager.isItemSimiliar(item, creeper.getItem(), true)) {
+						if (!p.getInventory().containsAtLeast(creeper.getFavouriteFood(), 1)) {
+							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &2Creeper Pet &9would have helped you if you did not neglect it by not feeding it :("));
+							return;
 						}
-						break;
+
+						p.getInventory().removeItem(creeper.getFavouriteFood());
+						e.setCancelled(true);
+						p.getWorld().playSound(p.getLocation(), Sound.ENTITY_CREEPER_PRIMED, 1.0F, 2.0F);
 					}
-					case LAVA:
-					{
-						if (magmacube != null && SlimefunManager.isItemSimiliar(item, magmacube.getItem(), true)) {
-							if (!p.getInventory().containsAtLeast(magmacube.getFavouriteFood(), 1)) {
-								p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &4Magma Cube Pet &9would have helped you if you did not neglect it by not feeding it :("));
-								return;
-							}
-
-							if (CSCoreLib.randomizer().nextInt(100) < 30) {
-								p.getInventory().removeItem(magmacube.getFavouriteFood());
-							}
-
-							e.setCancelled(true);
-							p.getWorld().playSound(p.getLocation(), Sound.ENTITY_MAGMA_CUBE_JUMP, 1.0F, 2.0F);
+					break;
+				}
+				case LAVA:
+				{
+					if (magmacube != null && SlimefunManager.isItemSimiliar(item, magmacube.getItem(), true)) {
+						if (!p.getInventory().containsAtLeast(magmacube.getFavouriteFood(), 1)) {
+							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &4Magma Cube Pet &9would have helped you if you did not neglect it by not feeding it :("));
+							return;
 						}
-						break;
+
+						if (CSCoreLib.randomizer().nextInt(100) < 30) {
+							p.getInventory().removeItem(magmacube.getFavouriteFood());
+						}
+
+						e.setCancelled(true);
+						p.getWorld().playSound(p.getLocation(), Sound.ENTITY_MAGMA_CUBE_JUMP, 1.0F, 2.0F);
 					}
-					case FALL:
-					{
-						if (slime != null && SlimefunManager.isItemSimiliar(item, slime.getItem(), true)) {
-							if (!p.getInventory().containsAtLeast(slime.getFavouriteFood(), 1)) {
-								p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &aSlime Pet &9would have helped you if you did not neglect it by not feeding it :("));
-								return;
-							}
-
-							p.getInventory().removeItem(slime.getFavouriteFood());
-							e.setCancelled(true);
-							p.getWorld().playSound(p.getLocation(), Sound.BLOCK_SLIME_BLOCK_STEP, 1.0F, 2.0F);
+					break;
+				}
+				case FALL:
+				{
+					if (slime != null && SlimefunManager.isItemSimiliar(item, slime.getItem(), true)) {
+						if (!p.getInventory().containsAtLeast(slime.getFavouriteFood(), 1)) {
+							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &aSlime Pet &9would have helped you if you did not neglect it by not feeding it :("));
+							return;
 						}
-						
-						if (mrCookieSlime != null && SlimefunManager.isItemSimiliar(item, mrCookieSlime.getItem(), true)) {
-							if (!p.getInventory().containsAtLeast(mrCookieSlime.getFavouriteFood(), 1)) {
-								p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &amrCookieSlime Pet &9would have helped you if you did not neglect it by not feeding it :("));
-								return;
-							}
 
-							p.getInventory().removeItem(mrCookieSlime.getFavouriteFood());
-							e.setCancelled(true);
-							p.getWorld().playSound(p.getLocation(), Sound.BLOCK_SLIME_BLOCK_STEP, 1.0F, 2.0F);
-						}
-						break;
+						p.getInventory().removeItem(slime.getFavouriteFood());
+						e.setCancelled(true);
+						p.getWorld().playSound(p.getLocation(), Sound.BLOCK_SLIME_BLOCK_STEP, 1.0F, 2.0F);
 					}
-					case WITHER:
-					{
-						if (wither != null && SlimefunManager.isItemSimiliar(item, wither.getItem(), true)) {
-							if (!p.getInventory().containsAtLeast(wither.getFavouriteFood(), 1)) {
-								p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &8Wither Pet &9would have helped you if you did not neglect it by not feeding it :("));
-								return;
-							}
 
-							p.getInventory().removeItem(wither.getFavouriteFood());
-							e.setCancelled(true);
-							p.removePotionEffect(PotionEffectType.WITHER);
-							p.getWorld().playSound(p.getLocation(), Sound.ENTITY_WITHER_AMBIENT, 1.0F, 2.0F);
+					if (mrCookieSlime != null && SlimefunManager.isItemSimiliar(item, mrCookieSlime.getItem(), true)) {
+						if (!p.getInventory().containsAtLeast(mrCookieSlime.getFavouriteFood(), 1)) {
+							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &amrCookieSlime Pet &9would have helped you if you did not neglect it by not feeding it :("));
+							return;
 						}
-						break;
-					}
-					case DROWNING:
-					{
-						if (walshrus != null && SlimefunManager.isItemSimiliar(item, walshrus.getItem(), true)) {
-							if (!p.getInventory().containsAtLeast(walshrus.getFavouriteFood(), 1)) {
-								p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &bWalshrus Pet &9would have helped you if you did not neglect it by not feeding it :("));
-								return;
-							}
 
-							p.getInventory().removeItem(walshrus.getFavouriteFood());
-							e.setCancelled(true);
-						}
-						break;
+						p.getInventory().removeItem(mrCookieSlime.getFavouriteFood());
+						e.setCancelled(true);
+						p.getWorld().playSound(p.getLocation(), Sound.BLOCK_SLIME_BLOCK_STEP, 1.0F, 2.0F);
 					}
-					case FIRE:
-					case FIRE_TICK:
-					{
-						if (blaze != null && SlimefunManager.isItemSimiliar(item, blaze.getItem(), true)) {
-							if (!p.getInventory().containsAtLeast(blaze.getFavouriteFood(), 1)) {
-								p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &6Blaze Pet &9would have helped you if you did not neglect it by not feeding it :("));
-								return;
-							}
+					break;
+				}
+				case WITHER:
+				{
+					if (wither != null && SlimefunManager.isItemSimiliar(item, wither.getItem(), true)) {
+						if (!p.getInventory().containsAtLeast(wither.getFavouriteFood(), 1)) {
+							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &8Wither Pet &9would have helped you if you did not neglect it by not feeding it :("));
+							return;
+						}
 
-							p.getInventory().removeItem(blaze.getFavouriteFood());
-							e.setCancelled(true);
-							p.setFireTicks(0);
-							p.getWorld().playSound(p.getLocation(), Sound.ENTITY_BLAZE_AMBIENT, 1.0F, 2.0F);
-						}
-						
-						break;
+						p.getInventory().removeItem(wither.getFavouriteFood());
+						e.setCancelled(true);
+						p.removePotionEffect(PotionEffectType.WITHER);
+						p.getWorld().playSound(p.getLocation(), Sound.ENTITY_WITHER_AMBIENT, 1.0F, 2.0F);
 					}
-					default:
-						break;
+					break;
+				}
+				case DROWNING:
+				{
+					if (walshrus != null && SlimefunManager.isItemSimiliar(item, walshrus.getItem(), true)) {
+						if (!p.getInventory().containsAtLeast(walshrus.getFavouriteFood(), 1)) {
+							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &bWalshrus Pet &9would have helped you if you did not neglect it by not feeding it :("));
+							return;
+						}
+
+						p.getInventory().removeItem(walshrus.getFavouriteFood());
+						e.setCancelled(true);
+					}
+					break;
+				}
+				case FIRE:
+				case FIRE_TICK:
+				{
+					if (blaze != null && SlimefunManager.isItemSimiliar(item, blaze.getItem(), true)) {
+						if (!p.getInventory().containsAtLeast(blaze.getFavouriteFood(), 1)) {
+							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &6Blaze Pet &9would have helped you if you did not neglect it by not feeding it :("));
+							return;
+						}
+
+						p.getInventory().removeItem(blaze.getFavouriteFood());
+						e.setCancelled(true);
+						p.setFireTicks(0);
+						p.getWorld().playSound(p.getLocation(), Sound.ENTITY_BLAZE_AMBIENT, 1.0F, 2.0F);
+					}
+
+					break;
+				}
+				default:
+					break;
 				}
 			}
 		}
