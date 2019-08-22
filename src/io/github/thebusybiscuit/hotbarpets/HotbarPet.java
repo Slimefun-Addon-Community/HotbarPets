@@ -20,7 +20,7 @@ public class HotbarPet extends SlimefunItem {
 
 	}
 
-	ItemStack food;
+	private ItemStack food;
 
 	public HotbarPet(ItemStack item, String name, ItemStack food, ItemStack[] recipe) {
 		super(category, item, name, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
