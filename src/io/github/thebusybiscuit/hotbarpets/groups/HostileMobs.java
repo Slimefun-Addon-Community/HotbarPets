@@ -76,6 +76,12 @@ public final class HostileMobs implements PetGroup {
 				new ItemStack(Material.BLAZE_POWDER), new ItemStack(Material.EMERALD), new ItemStack(Material.BLAZE_POWDER),
 				SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K
 		}).register();
+
+		new HotbarPet(new CustomItem(Material.ZOMBIE_HEAD, "&2Zombie Pet", getName(), "", "&rAllows you to eat Rotten Flesh", "&rwithout getting Hunger"), "HOTBAR_PET_ZOMBIE", new ItemStack(Material.ROTTEN_FLESH), new ItemStack[] {
+				new ItemStack(Material.DIAMOND), new ItemStack(Material.ZOMBIE_HEAD), new ItemStack(Material.DIAMOND),
+				new ItemStack(Material.MOSSY_COBBLESTONE), new ItemStack(Material.EMERALD), new ItemStack(Material.MOSSY_COBBLESTONE),
+				new ItemStack(Material.ROTTEN_FLESH), SlimefunItems.NECROTIC_SKULL, new ItemStack(Material.ROTTEN_FLESH)
+		}).register();
 	}
 
 

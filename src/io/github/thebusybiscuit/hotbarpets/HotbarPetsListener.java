@@ -34,6 +34,9 @@ public class HotbarPetsListener implements Listener {
 	private HotbarPet wither; 
 	private HotbarPet walshrus; 
 	private HotbarPet blaze;
+	private HotbarPet pig;
+	private HotbarPet zombie;
+	private HotbarPet eyamaz;
 
 	public HotbarPetsListener(HotbarPets plugin) {
 		this.plugin = plugin;
@@ -45,6 +48,9 @@ public class HotbarPetsListener implements Listener {
 		wither = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_WITHER");
 		walshrus = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_WALSHRUS");
 		blaze = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_BLAZE");
+		pig = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_PIG");
+		zombie = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_ZOMBIE");
+		eyamaz = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_EYAMAZ");
 
 		plugin.getServer().getPluginManager().registerEvents(this, plugin);
 	}
@@ -65,10 +71,8 @@ public class HotbarPetsListener implements Listener {
 
 	@EventHandler
 	public void onEquip(InventoryClickEvent e) {
-		if (e.getSlotType() == SlotType.ARMOR) {
-			if (SlimefunItem.getByItem(e.getCursor()) instanceof HotbarPet) {
-				e.setCancelled(true);
-			}
+		if (e.getSlotType() == SlotType.ARMOR && SlimefunItem.getByItem(e.getCursor()) instanceof HotbarPet) {
+			e.setCancelled(true);
 		}
 	}
 
@@ -78,19 +82,24 @@ public class HotbarPetsListener implements Listener {
 
 		for (int i = 0; i < 9; ++i) {
 			ItemStack item = p.getInventory().getItem(i);
-			final HotbarPet pet = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_PIG");
-			if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
+			
+			if (pig != null && SlimefunManager.isItemSimiliar(item, pig.getItem(), true)) {
 
-				if (!p.getInventory().containsAtLeast(pet.getFavouriteFood(), 1)) {
+				if (!p.getInventory().containsAtLeast(pig.getFavouriteFood(), 1)) {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &5Pig Pet &9would have helped you if you did not neglect it by not feeding it :("));
 					return;
 				}
 
 				plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, () -> {
-					p.getInventory().removeItem(pet.getFavouriteFood());
+					p.getInventory().removeItem(pig.getFavouriteFood());
 					p.setSaturation(p.getSaturation() + 8.0F);
 					p.removePotionEffect(PotionEffectType.POISON);
 					p.getWorld().playSound(p.getLocation(), Sound.ENTITY_PIG_AMBIENT, 1.0F, 2.0F);
+				}, 2L);
+			}
+			else if (zombie != null && SlimefunManager.isItemSimiliar(e.getItem(), new ItemStack(Material.ROTTEN_FLESH), true) && SlimefunManager.isItemSimiliar(item, zombie.getItem(), true)) {
+				plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, () -> {
+					p.removePotionEffect(PotionEffectType.HUNGER);
 				}, 2L);
 			}
 		}
@@ -105,9 +114,7 @@ public class HotbarPetsListener implements Listener {
 			for (int i = 0; i < 9; ++i) {
 				ItemStack item = p.getInventory().getItem(i);
 
-				HotbarPet pet = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_EYAMAZ");
-
-				if (pet != null && SlimefunManager.isItemSimiliar(item, pet.getItem(), true)) {
+				if (eyamaz != null && SlimefunManager.isItemSimiliar(item, eyamaz.getItem(), true)) {
 					e.getEntity().getLocation().getWorld().dropItemNaturally(e.getEntity().getLocation(), new CustomItem(new ItemStack(Material.PUMPKIN_PIE), "&bSoul Pie"));
 				}
 			}
