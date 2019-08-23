@@ -6,4 +6,4 @@ depend: [CS-CoreLib, Slimefun]
 
 api-version: 1.13
 
-main: me.mrCookieSlime.HotbarPets.HotbarPets
+main: io.github.thebusybiscuit.hotbarpets.HotbarPets
