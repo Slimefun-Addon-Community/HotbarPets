@@ -25,6 +25,8 @@ public final class FarmAnimals implements PetGroup {
 
 	@Override
 	public void load(HotbarPets plugin) throws Exception {
+		final ItemStack cow = new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19"), "&6Cow Pet", getName(), "&7Favourite Food: Wheat", "", "&rRight-Click: &7Removes negative Potion Effects");
+		
 		new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxNjY4ZWY3Y2I3OWRkOWMyMmNlM2QxZjNmNGNiNmUyNTU5ODkzYjZkZjRhNDY5NTE0ZTY2N2MxNmFhNCJ9fX0="), "&dPig Pet", getName(), "&7Favourite Food: Carrots", "", "&rBonus Saturation when eating", "&rAllows you to eat poisonous Food"), "HOTBAR_PET_PIG", new ItemStack(Material.CARROT), new ItemStack[]{
 				new ItemStack(Material.REDSTONE), new ItemStack(Material.CARROT), new ItemStack(Material.REDSTONE),
 				new ItemStack(Material.PORKCHOP), new ItemStack(Material.DIAMOND), new ItemStack(Material.PORKCHOP),
@@ -43,7 +45,7 @@ public final class FarmAnimals implements PetGroup {
 				new ItemStack(Material.LAPIS_LAZULI), SlimefunItems.GOLD_16K, new ItemStack(Material.LAPIS_LAZULI)
 		}).register();
 
-		new CowPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19"), "&6Cow Pet", getName(), "&7Favourite Food: Wheat", "", "&rRight-Click: &7Removes negative Potion Effects"), "HOTBAR_PET_COW", new ItemStack(Material.WHEAT), new ItemStack[]{
+		new CowPet(cow, "HOTBAR_PET_COW", new ItemStack(Material.WHEAT), new ItemStack[]{
 				new ItemStack(Material.COAL), new ItemStack(Material.WHEAT), new ItemStack(Material.COAL),
 				new ItemStack(Material.COOKED_BEEF), new ItemStack(Material.DIAMOND), new ItemStack(Material.COOKED_BEEF),
 				new ItemStack(Material.COAL), SlimefunItems.GOLD_16K, new ItemStack(Material.COAL)
@@ -53,6 +55,12 @@ public final class FarmAnimals implements PetGroup {
 				new ItemStack(Material.COAL), new ItemStack(Material.COD), new ItemStack(Material.COAL),
 				new ItemStack(Material.WATER_BUCKET), new ItemStack(Material.DIAMOND), new ItemStack(Material.WATER_BUCKET),
 				new ItemStack(Material.COD), SlimefunItems.GOLD_16K, new ItemStack(Material.COD)
+		}).register();
+
+		new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGQxMDMzNThkOGYxYmRhZWYxMjE0YmZhNzdjNGRhNjQxNDMzMTg2YmQ0YmM0NGQ4NTdjMTY4MTE0NzZmZSJ9fX0="), "&6Golden Cow Pet", getName(), "&7Favourite Food: Golden Carrots", "", "&rGives you Golden Ingots over time...", "&r(That means you have a net gain of 1 golden nugget)"), "HOTBAR_PET_GOLDEN_COW", new ItemStack(Material.GOLDEN_CARROT), new ItemStack[]{
+				new ItemStack(Material.GOLDEN_CARROT), new ItemStack(Material.GOLD_NUGGET), new ItemStack(Material.GOLDEN_CARROT),
+				new ItemStack(Material.GOLD_NUGGET), cow, new ItemStack(Material.GOLD_NUGGET),
+				new ItemStack(Material.GOLDEN_CARROT), new ItemStack(Material.GOLD_NUGGET), new ItemStack(Material.GOLDEN_CARROT)
 		}).register();
 	}
 
