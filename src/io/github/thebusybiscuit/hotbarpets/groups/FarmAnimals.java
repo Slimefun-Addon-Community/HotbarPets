@@ -7,6 +7,7 @@ import io.github.thebusybiscuit.hotbarpets.HotbarPet;
 import io.github.thebusybiscuit.hotbarpets.HotbarPets;
 import io.github.thebusybiscuit.hotbarpets.PetGroup;
 import io.github.thebusybiscuit.hotbarpets.pets.CowPet;
+import io.github.thebusybiscuit.hotbarpets.pets.RabbitPet;
 import io.github.thebusybiscuit.hotbarpets.pets.SquidPet;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.Item.CustomItem;
 import me.mrCookieSlime.CSCoreLibPlugin.general.World.CustomSkull;
@@ -55,6 +56,12 @@ public final class FarmAnimals implements PetGroup {
 				new ItemStack(Material.COAL), new ItemStack(Material.COD), new ItemStack(Material.COAL),
 				new ItemStack(Material.WATER_BUCKET), new ItemStack(Material.DIAMOND), new ItemStack(Material.WATER_BUCKET),
 				new ItemStack(Material.COD), SlimefunItems.GOLD_16K, new ItemStack(Material.COD)
+		}).register();
+
+		new RabbitPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmYxNTU5MTk0YTE3NTkzNWI4YjRmZWE2NjE0YmVjNjBiZjgxY2Y1MjRhZjZmNTY0MzMzYzU1NWU2NTdiYyJ9fX0="), "&eRabbit Pet", getName(), "&7Favourite Food: Carrots", "", "&rRight-Click: &7Gives you 30 seconds of Luck"), "HOTBAR_PET_RABBIT", new ItemStack(Material.CARROT), new ItemStack[]{
+				new ItemStack(Material.GOLDEN_CARROT), new ItemStack(Material.RABBIT_HIDE), new ItemStack(Material.GOLDEN_CARROT),
+				new ItemStack(Material.RABBIT_HIDE), new ItemStack(Material.DIAMOND), new ItemStack(Material.RABBIT_HIDE),
+				new ItemStack(Material.GOLDEN_CARROT), new ItemStack(Material.RABBIT_FOOT), new ItemStack(Material.GOLDEN_CARROT)
 		}).register();
 
 		new HotbarPet(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGQxMDMzNThkOGYxYmRhZWYxMjE0YmZhNzdjNGRhNjQxNDMzMTg2YmQ0YmM0NGQ4NTdjMTY4MTE0NzZmZSJ9fX0="), "&6Golden Cow Pet", getName(), "&7Favourite Food: Golden Carrots", "", "&rGives you Golden Ingots over time...", "&r(That means you have a net gain of 1 golden nugget)"), "HOTBAR_PET_GOLDEN_COW", new ItemStack(Material.GOLDEN_CARROT), new ItemStack[]{
