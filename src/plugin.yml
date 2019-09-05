@@ -1,6 +1,6 @@
 name: HotbarPets
 version: ${project.version}
-author: mrCookieSlime
+author: TheBusyBiscuit
 website: http://TheBusyBiscuit.github.io/
 depend: [CS-CoreLib, Slimefun]
 

@@ -5,10 +5,12 @@ import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
@@ -18,6 +20,8 @@ import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffectType;
 
+import io.github.thebusybiscuit.cscorelib2.protection.ProtectionManager;
+import io.github.thebusybiscuit.cscorelib2.protection.ProtectionModule.Action;
 import me.mrCookieSlime.CSCoreLibPlugin.CSCoreLib;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.Item.CustomItem;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -26,6 +30,7 @@ import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
 public class HotbarPetsListener implements Listener {
 
 	private HotbarPets plugin;
+	private ProtectionManager protection;
 
 	private HotbarPet creeper; 
 	private HotbarPet magmacube; 
@@ -40,6 +45,7 @@ public class HotbarPetsListener implements Listener {
 
 	public HotbarPetsListener(HotbarPets plugin) {
 		this.plugin = plugin;
+		this.protection = new ProtectionManager(plugin.getServer());
 
 		creeper = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_CREEPER");
 		magmacube = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_MAGMA_CUBE");
@@ -120,6 +126,20 @@ public class HotbarPetsListener implements Listener {
 			}
 		}
 
+	}
+	
+	@EventHandler
+	public void onTNT(EntityDamageByEntityEvent e) {
+		if (e.getEntity() instanceof Player && e.getDamager() instanceof TNTPrimed) {
+			if (e.getDamager().hasMetadata("hotbarpets_player")) {
+				Player attacker = (Player) e.getDamager().getMetadata("hotbarpets_player").get(0);
+			
+				if (!protection.hasPermission(attacker, e.getEntity().getLocation(), Action.PVP)) {
+					e.setCancelled(true);
+					attacker.sendMessage(ChatColor.DARK_RED + "You cannot harm Players in here!");
+				}
+			}
+		}
 	}
 
 	@EventHandler

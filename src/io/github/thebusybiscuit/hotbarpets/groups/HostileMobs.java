@@ -59,7 +59,7 @@ public final class HostileMobs implements PetGroup {
 				new ItemStack(Material.ENDER_PEARL), SlimefunItems.GOLD_16K, new ItemStack(Material.ENDER_PEARL)
 		}).register();
 
-		new CreeperPet(new CustomItem(Material.CREEPER_HEAD, "&2Creeper Pet", getName(), "&7Favourite Food: Gunpowder", "", "&rImmune to Explosions", "&rRight-Click: &7Explode"), "HOTBAR_PET_CREEPER", new ItemStack(Material.GUNPOWDER), new ItemStack[]{
+		new CreeperPet(plugin, new CustomItem(Material.CREEPER_HEAD, "&2Creeper Pet", getName(), "&7Favourite Food: Gunpowder", "", "&rImmune to Explosions", "&rRight-Click: &7Explode"), "HOTBAR_PET_CREEPER", new ItemStack(Material.GUNPOWDER), new ItemStack[]{
 				new ItemStack(Material.DIAMOND), new ItemStack(Material.CREEPER_HEAD), new ItemStack(Material.DIAMOND),
 				new ItemStack(Material.GUNPOWDER), new ItemStack(Material.EMERALD), new ItemStack(Material.GUNPOWDER),
 				new ItemStack(Material.DIAMOND), SlimefunItems.GOLD_20K, new ItemStack(Material.DIAMOND)

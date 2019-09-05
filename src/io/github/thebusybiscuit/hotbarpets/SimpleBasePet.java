@@ -15,8 +15,7 @@ public abstract class SimpleBasePet extends HotbarPet {
 	}
 
 	public abstract void onUseItem(Player p);
-
-
+	
 	@Override
 	public void register() {
 		this.register(new ItemInteractionHandler() {
