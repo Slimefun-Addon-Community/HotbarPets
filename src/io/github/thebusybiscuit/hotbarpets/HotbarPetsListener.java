@@ -20,8 +20,8 @@ import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffectType;
 
+import io.github.thebusybiscuit.cscorelib2.protection.ProtectableAction;
 import io.github.thebusybiscuit.cscorelib2.protection.ProtectionManager;
-import io.github.thebusybiscuit.cscorelib2.protection.ProtectionModule.Action;
 import me.mrCookieSlime.CSCoreLibPlugin.CSCoreLib;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.Item.CustomItem;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -134,7 +134,7 @@ public class HotbarPetsListener implements Listener {
 			if (e.getDamager().hasMetadata("hotbarpets_player")) {
 				Player attacker = (Player) e.getDamager().getMetadata("hotbarpets_player").get(0);
 			
-				if (!protection.hasPermission(attacker, e.getEntity().getLocation(), Action.PVP)) {
+				if (!protection.hasPermission(attacker, e.getEntity().getLocation(), ProtectableAction.PVP)) {
 					e.setCancelled(true);
 					attacker.sendMessage(ChatColor.DARK_RED + "You cannot harm Players in here!");
 				}
