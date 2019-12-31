@@ -1,9 +1,0 @@
-name: HotbarPets
-version: ${project.version}
-author: TheBusyBiscuit
-website: http://TheBusyBiscuit.github.io/
-depend: [CS-CoreLib, Slimefun]
-
-api-version: 1.13
-
-main: io.github.thebusybiscuit.hotbarpets.HotbarPets
