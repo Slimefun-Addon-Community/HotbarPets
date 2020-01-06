@@ -12,9 +12,9 @@ import io.github.thebusybiscuit.hotbarpets.pets.SquidPet;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
-public final class Animals implements PetGroup {
+public final class PeacefulAnimals implements PetGroup {
 
-	public Animals(HotbarPets plugin) {
+	public PeacefulAnimals(HotbarPets plugin) {
 		load(plugin);
 	}
 
@@ -48,6 +48,12 @@ public final class Animals implements PetGroup {
 				new ItemStack(Material.SALMON), new ItemStack(Material.EMERALD), new ItemStack(Material.SALMON),
 				new ItemStack(Material.LAPIS_LAZULI), new ItemStack(Material.COD), new ItemStack(Material.LAPIS_LAZULI)
 		}).register();
+
+		new PandaPet(plugin.getCategory(), new SlimefunItemStack(
+				"HOTBAR_PET_PANDA",
+				"414ff627a6a6f35e1d717ebcb191e4c7f9097542db599e7108ae2c7dd3513e51",
+				"&8Panda &fPet",
+				getName(),"&7Favorite Food: Babmoo", "", "&rGives you the ability to climb bamboo"))
 	}
 
 
