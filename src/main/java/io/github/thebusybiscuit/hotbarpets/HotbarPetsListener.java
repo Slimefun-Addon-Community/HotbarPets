@@ -32,16 +32,17 @@ public class HotbarPetsListener implements Listener {
 
 	private final HotbarPets plugin;
 
-	private final HotbarPet creeper; 
-	private final HotbarPet magmacube; 
-	private final HotbarPet slime; 
-	private final HotbarPet mrCookieSlime; 
-	private final HotbarPet wither; 
-	private final HotbarPet walshrus; 
+	private final HotbarPet creeper;
+	private final HotbarPet magmacube;
+	private final HotbarPet slime;
+	private final HotbarPet mrCookieSlime;
+	private final HotbarPet wither;
+	private final HotbarPet walshrus;
 	private final HotbarPet blaze;
 	private final HotbarPet pig;
 	private final HotbarPet zombie;
 	private final HotbarPet eyamaz;
+	private final HotbarPet panda;
 
 	public HotbarPetsListener(HotbarPets plugin) {
 		this.plugin = plugin;
@@ -56,6 +57,7 @@ public class HotbarPetsListener implements Listener {
 		pig = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_PIG");
 		zombie = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_ZOMBIE");
 		eyamaz = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_EYAMAZ");
+		panda = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_PANDA");
 
 		plugin.getServer().getPluginManager().registerEvents(this, plugin);
 	}
@@ -87,7 +89,7 @@ public class HotbarPetsListener implements Listener {
 
 		for (int i = 0; i < 9; ++i) {
 			ItemStack item = p.getInventory().getItem(i);
-			
+
 			if (pig != null && SlimefunManager.isItemSimilar(item, pig.getItem(), true)) {
 
 				if (!p.getInventory().containsAtLeast(pig.getFavouriteFood(), 1)) {
@@ -126,13 +128,13 @@ public class HotbarPetsListener implements Listener {
 		}
 
 	}
-	
+
 	@EventHandler
 	public void onTNT(EntityDamageByEntityEvent e) {
 		if (e.getEntity() instanceof Player && e.getDamager() instanceof TNTPrimed) {
 			if (e.getDamager().hasMetadata("hotbarpets_player")) {
 				Player attacker = (Player) e.getDamager().getMetadata("hotbarpets_player").get(0);
-			
+
 				if (!SlimefunPlugin.getProtectionManager().hasPermission(attacker, e.getEntity().getLocation(), ProtectableAction.PVP)) {
 					e.setCancelled(true);
 					attacker.sendMessage(ChatColor.DARK_RED + "You cannot harm Players in here!");
@@ -153,12 +155,9 @@ public class HotbarPetsListener implements Listener {
 				case ENTITY_EXPLOSION:
 				case BLOCK_EXPLOSION:
 					if (creeper != null && SlimefunManager.isItemSimilar(item, creeper.getItem(), true)) {
-						if (!p.getInventory().containsAtLeast(creeper.getFavouriteFood(), 1)) {
-							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &2Creeper Pet &9would have helped you if you did not neglect it by not feeding it :("));
+						if (!creeper.tryToConsumeFood(p))
 							return;
-						}
 
-						p.getInventory().removeItem(creeper.getFavouriteFood());
 						e.setCancelled(true);
 						p.getWorld().playSound(p.getLocation(), Sound.ENTITY_CREEPER_PRIMED, 1.0F, 2.0F);
 					}
@@ -180,35 +179,26 @@ public class HotbarPetsListener implements Listener {
 					break;
 				case FALL:
 					if (slime != null && SlimefunManager.isItemSimilar(item, slime.getItem(), true)) {
-						if (!p.getInventory().containsAtLeast(slime.getFavouriteFood(), 1)) {
-							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &aSlime Pet &9would have helped you if you did not neglect it by not feeding it :("));
+						if (!slime.tryToConsumeFood(p))
 							return;
-						}
 
-						p.getInventory().removeItem(slime.getFavouriteFood());
 						e.setCancelled(true);
 						p.getWorld().playSound(p.getLocation(), Sound.BLOCK_SLIME_BLOCK_STEP, 1.0F, 2.0F);
 					}
 
 					if (mrCookieSlime != null && SlimefunManager.isItemSimilar(item, mrCookieSlime.getItem(), true)) {
-						if (!p.getInventory().containsAtLeast(mrCookieSlime.getFavouriteFood(), 1)) {
-							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &amrCookieSlime Pet &9would have helped you if you did not neglect it by not feeding it :("));
+						if (!mrCookieSlime.tryToConsumeFood(p))
 							return;
-						}
 
-						p.getInventory().removeItem(mrCookieSlime.getFavouriteFood());
 						e.setCancelled(true);
 						p.getWorld().playSound(p.getLocation(), Sound.BLOCK_SLIME_BLOCK_STEP, 1.0F, 2.0F);
 					}
 					break;
 				case WITHER:
 					if (wither != null && SlimefunManager.isItemSimilar(item, wither.getItem(), true)) {
-						if (!p.getInventory().containsAtLeast(wither.getFavouriteFood(), 1)) {
-							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &8Wither Pet &9would have helped you if you did not neglect it by not feeding it :("));
+						if (!wither.tryToConsumeFood(p))
 							return;
-						}
 
-						p.getInventory().removeItem(wither.getFavouriteFood());
 						e.setCancelled(true);
 						p.removePotionEffect(PotionEffectType.WITHER);
 						p.getWorld().playSound(p.getLocation(), Sound.ENTITY_WITHER_AMBIENT, 1.0F, 2.0F);
@@ -216,24 +206,18 @@ public class HotbarPetsListener implements Listener {
 					break;
 				case DROWNING:
 					if (walshrus != null && SlimefunManager.isItemSimilar(item, walshrus.getItem(), true)) {
-						if (!p.getInventory().containsAtLeast(walshrus.getFavouriteFood(), 1)) {
-							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &bWalshrus Pet &9would have helped you if you did not neglect it by not feeding it :("));
+						if (!walshrus.tryToConsumeFood(p))
 							return;
-						}
 
-						p.getInventory().removeItem(walshrus.getFavouriteFood());
 						e.setCancelled(true);
 					}
 					break;
 				case FIRE:
 				case FIRE_TICK:
 					if (blaze != null && SlimefunManager.isItemSimilar(item, blaze.getItem(), true)) {
-						if (!p.getInventory().containsAtLeast(blaze.getFavouriteFood(), 1)) {
-							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &6Blaze Pet &9would have helped you if you did not neglect it by not feeding it :("));
+						if (!blaze.tryToConsumeFood(p))
 							return;
-						}
 
-						p.getInventory().removeItem(blaze.getFavouriteFood());
 						e.setCancelled(true);
 						p.setFireTicks(0);
 						p.getWorld().playSound(p.getLocation(), Sound.ENTITY_BLAZE_AMBIENT, 1.0F, 2.0F);
@@ -247,4 +231,25 @@ public class HotbarPetsListener implements Listener {
 		}
 	}
 
+	@EventHandler
+	public void onPhantomSpawn(EntityTargetLivingEntityEvent e) {
+		if (e.getEntityType() == EntityType.PHANTOM && ((Phantom) e.getEntity()).getTarget() instanceof Player
+				&& hasHotBarPet((Player) ((Phantom) e.getEntity()).getTarget(), panda)
+		) {
+			Player p = (Player) ((Phantom) e.getEntity()).getTarget();
+			if (!panda.tryToConsumeFood(p))
+				return;
+
+			e.getEntity().remove();
+			e.setCancelled(true);
+		}
+	}
+
+	private boolean hasHotBarPet(Player player, HotbarPet pet) {
+		for (int i = 0; i < 9; i++) {
+			if (SlimefunManager.isItemSimilar(player.getInventory().getItem(i), pet.getItem(), true))
+				return true;
+		}
+		return false;
+	}
 }
