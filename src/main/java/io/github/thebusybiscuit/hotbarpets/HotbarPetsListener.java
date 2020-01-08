@@ -22,6 +22,7 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffectType;
 
@@ -236,11 +237,9 @@ public class HotbarPetsListener implements Listener {
 
 	@EventHandler
 	public void onPhantomSpawn(EntityTargetLivingEntityEvent e) {
-		if (e.getEntityType() == EntityType.PHANTOM && ((Phantom) e.getEntity()).getTarget() instanceof Player
-				&& hasHotBarPet((Player) ((Phantom) e.getEntity()).getTarget(), panda)
-		) {
+		if (e.getEntityType() == EntityType.PHANTOM && ((Phantom) e.getEntity()).getTarget() instanceof Player) {
 			Player p = (Player) ((Phantom) e.getEntity()).getTarget();
-			if (!panda.tryToConsumeFood(p))
+			if (!hasHotBarPet((Player) ((Phantom) e.getEntity()).getTarget(), panda) || !panda.tryToConsumeFood(p))
 				return;
 
 			e.getEntity().remove();
@@ -248,9 +247,14 @@ public class HotbarPetsListener implements Listener {
 		}
 	}
 
+	@EventHandler
+	public void onQuit(PlayerQuitEvent e) {
+		HotbarPet.getMessageDelay().remove(e.getPlayer().getUniqueId());
+	}
+
 	private boolean hasHotBarPet(Player player, HotbarPet pet) {
 		for (int i = 0; i < 9; i++) {
-			if (SlimefunManager.isItemSimilar(player.getInventory().getItem(i), pet.getItem(), true))
+			if (pet.isItem(player.getInventory().getItem(i)))
 				return true;
 		}
 		return false;

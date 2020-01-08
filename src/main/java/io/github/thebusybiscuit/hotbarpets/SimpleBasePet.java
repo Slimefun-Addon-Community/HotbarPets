@@ -19,8 +19,8 @@ public abstract class SimpleBasePet extends HotbarPet {
 	@Override
 	public void register() {
 		this.register((ItemInteractionHandler) (e, p, item) -> {
-			if (SlimefunManager.isItemSimilar(item, getItem(), true)) {
-				if (this.tryToConsumeFood(p))
+			if (isItem(item)) {
+				if (tryToConsumeFood(p))
 					onUseItem(p);
 				return true;
 			}

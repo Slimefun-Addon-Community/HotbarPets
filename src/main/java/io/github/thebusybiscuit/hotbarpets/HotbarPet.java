@@ -51,4 +51,8 @@ public class HotbarPet extends SlimefunItem {
 		player.getInventory().removeItem(getFavouriteFood());
 		return true;
 	}
+
+	public static Map<UUID, Long> getMessageDelay() {
+		return messageDelay;
+	}
 }

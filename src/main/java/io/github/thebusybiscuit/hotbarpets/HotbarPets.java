@@ -1,5 +1,6 @@
 package io.github.thebusybiscuit.hotbarpets;
 
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -51,7 +52,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
 		new HotbarPetsListener(this);
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new HotbarPetsRunnable(), 0L, 2000L);
 	}
-	
+
 	public Category getCategory() {
 		return category;
 	}
