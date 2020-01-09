@@ -239,7 +239,7 @@ public class HotbarPetsListener implements Listener {
 	public void onPhantomSpawn(EntityTargetLivingEntityEvent e) {
 		if (e.getEntityType() == EntityType.PHANTOM && ((Phantom) e.getEntity()).getTarget() instanceof Player) {
 			Player p = (Player) ((Phantom) e.getEntity()).getTarget();
-			if (!hasHotBarPet((Player) ((Phantom) e.getEntity()).getTarget(), panda) || !panda.tryToConsumeFood(p))
+			if (!hasHotBarPet(p, panda) || !panda.tryToConsumeFood(p))
 				return;
 
 			e.getEntity().remove();

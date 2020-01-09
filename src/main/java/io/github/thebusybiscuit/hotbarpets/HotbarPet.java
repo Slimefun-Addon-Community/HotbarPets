@@ -15,7 +15,7 @@ import java.util.UUID;
 
 public class HotbarPet extends SlimefunItem {
 
-	private static final long MESSAGE_DELAY = 10_000;
+	private static final long MESSAGE_DELAY = 2_000;
 
 	private static final Map<UUID, Long> messageDelay = new HashMap<>();
 
