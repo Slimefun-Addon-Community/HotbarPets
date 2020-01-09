@@ -10,7 +10,7 @@ But only if you also carry their favourite food with you.
 [Read more...](https://github.com/TheBusyBiscuit/Slimefun4/wiki/HotbarPets)
 
 ## Download HotbarPets
-You can download HotbarPets right here: [Development Builds](https://thebusybiscuit.github.io/builds/TheBusyBiscuit/Slimefun4/master/)
+You can download HotbarPets right here: [Development Builds](https://thebusybiscuit.github.io/builds/TheBusyBiscuit/HotbarPets/master/)
 
 <p align="center">
   <a href="https://thebusybiscuit.github.io/builds/TheBusyBiscuit/HotbarPets/master/">
