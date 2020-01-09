@@ -1,17 +1,17 @@
 package io.github.thebusybiscuit.hotbarpets;
 
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import io.github.thebusybiscuit.hotbarpets.groups.PeacefulAnimals;
 import io.github.thebusybiscuit.hotbarpets.groups.BossMobs;
 import io.github.thebusybiscuit.hotbarpets.groups.FarmAnimals;
 import io.github.thebusybiscuit.hotbarpets.groups.HostileMobs;
 import io.github.thebusybiscuit.hotbarpets.groups.PassiveMobs;
+import io.github.thebusybiscuit.hotbarpets.groups.PeacefulAnimals;
 import io.github.thebusybiscuit.hotbarpets.groups.SpecialPets;
 import io.github.thebusybiscuit.hotbarpets.groups.UtilityPets;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.Item.CustomItem;
+import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.bstats.bukkit.Metrics;
 import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
@@ -47,6 +47,9 @@ public class HotbarPets extends JavaPlugin implements Listener {
 		new BossMobs(this);
 		new UtilityPets(this);
 		new SpecialPets(this);
+		
+		SlimefunPlugin.getLocal().setDefaultMessage("hotbarpets.neglected-pet", "&9Your %pet% &9would have helped you if you did not neglect it by not feeding it :(");
+		SlimefunPlugin.getLocal().save();
 		
 		// Registering the Listener and Runnable
 		new HotbarPetsListener(this);

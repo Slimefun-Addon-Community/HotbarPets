@@ -1,22 +1,21 @@
 package io.github.thebusybiscuit.hotbarpets;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import me.mrCookieSlime.Slimefun.cscorelib2.chat.ChatColors;
+import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
 public class HotbarPet extends SlimefunItem {
 
 	private static final long MESSAGE_DELAY = 2_000;
-
 	private static final Map<UUID, Long> messageDelay = new HashMap<>();
 
 	private final ItemStack food;
@@ -41,8 +40,7 @@ public class HotbarPet extends SlimefunItem {
 	public boolean tryToConsumeFood(Player player) {
 		if (!player.getInventory().containsAtLeast(getFavouriteFood(), 1)) {
 			if (messageDelay.getOrDefault(player.getUniqueId(), 0L) <= System.currentTimeMillis()) {
-				player.sendMessage(ChatColors.color("&9Your " + getItemName()
-						+ " &9would have helped you if you did not neglect it by not feeding it :("));
+				SlimefunPlugin.getLocal().sendMessage(player, "hotbarpets.neglected-pet", true, msg -> msg.replace("%pet%", getItemName()));
 				messageDelay.put(player.getUniqueId(), System.currentTimeMillis() + MESSAGE_DELAY);
 			}
 			return false;

@@ -109,9 +109,9 @@ public class HotbarPetsListener implements Listener {
 				}, 2L);
 			}
 			else if (zombie != null && SlimefunManager.isItemSimilar(e.getItem(), new ItemStack(Material.ROTTEN_FLESH), true) && SlimefunManager.isItemSimilar(item, zombie.getItem(), true)) {
-				plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, () -> {
-					p.removePotionEffect(PotionEffectType.HUNGER);
-				}, 2L);
+				plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, () ->
+					p.removePotionEffect(PotionEffectType.HUNGER)
+				, 2L);
 			}
 		}
 
