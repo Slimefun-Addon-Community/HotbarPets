@@ -12,9 +12,9 @@ import io.github.thebusybiscuit.hotbarpets.pets.SquidPet;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
-public final class Animals implements PetGroup {
+public final class PeacefulAnimals implements PetGroup {
 
-	public Animals(HotbarPets plugin) {
+	public PeacefulAnimals(HotbarPets plugin) {
 		load(plugin);
 	}
 
@@ -48,8 +48,11 @@ public final class Animals implements PetGroup {
 				new ItemStack(Material.SALMON), new ItemStack(Material.EMERALD), new ItemStack(Material.SALMON),
 				new ItemStack(Material.LAPIS_LAZULI), new ItemStack(Material.COD), new ItemStack(Material.LAPIS_LAZULI)
 		}).register();
+
+		new HotbarPet(plugin.getCategory(), new SlimefunItemStack("HOTBAR_PET_PANDA", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDE0ZmY2MjdhNmE2ZjM1ZTFkNzE3ZWJjYjE5MWU0YzdmOTA5NzU0MmRiNTk5ZTcxMDhhZTJjN2RkMzUxM2U1MSJ9fX0=", "&8Panda &fPet", getName(),"&7Favorite Food: Bamboo", "", "&rThis sleepy Panda protects you from Insomnia", "Phantoms will no longer chase you at night"), new ItemStack(Material.BAMBOO), new ItemStack[] {
+				new ItemStack(Material.BAMBOO), new ItemStack(Material.DIAMOND), new ItemStack(Material.BAMBOO),
+				new ItemStack(Material.DIAMOND), new ItemStack(Material.EMERALD), new ItemStack(Material.DIAMOND),
+				new ItemStack(Material.ACACIA_LEAVES), new ItemStack(Material.BAMBOO), new ItemStack(Material.ACACIA_LEAVES)
+		}).register();
 	}
-
-
-
 }

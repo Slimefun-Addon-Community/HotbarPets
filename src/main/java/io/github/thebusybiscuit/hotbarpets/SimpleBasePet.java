@@ -1,10 +1,8 @@
 package io.github.thebusybiscuit.hotbarpets;
 
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import me.mrCookieSlime.CSCoreLibPlugin.events.ItemUseEvent;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.handlers.ItemInteractionHandler;
 import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
@@ -20,23 +18,14 @@ public abstract class SimpleBasePet extends HotbarPet {
 	
 	@Override
 	public void register() {
-		this.register(new ItemInteractionHandler() {
-
-			@Override
-			public boolean onRightClick(ItemUseEvent e, Player p, ItemStack item) {
-				if (SlimefunManager.isItemSimilar(item, getItem(), true)) {
-					if (!p.getInventory().containsAtLeast(getFavouriteFood(), 1)) {
-						p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &r" + getItem().getItemMeta().getDisplayName() + " &9would have helped you if you did not neglect it by not feeding it :("));
-					} 
-					else {
-						p.getInventory().removeItem(getFavouriteFood());
-						onUseItem(p);
-					}
-					return true;
-				} 
-				else {
-					return false;
-				}
+		this.register((ItemInteractionHandler) (e, p, item) -> {
+			if (isItem(item)) {
+				if (tryToConsumeFood(p))
+					onUseItem(p);
+				return true;
+			}
+			else {
+				return false;
 			}
 		});
 	}

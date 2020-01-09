@@ -1,9 +1,10 @@
 package io.github.thebusybiscuit.hotbarpets;
 
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import io.github.thebusybiscuit.hotbarpets.groups.Animals;
+import io.github.thebusybiscuit.hotbarpets.groups.PeacefulAnimals;
 import io.github.thebusybiscuit.hotbarpets.groups.BossMobs;
 import io.github.thebusybiscuit.hotbarpets.groups.FarmAnimals;
 import io.github.thebusybiscuit.hotbarpets.groups.HostileMobs;
@@ -40,7 +41,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
 		
 		// Add all the Pets via their Group class
 		new FarmAnimals(this);
-		new Animals(this);
+		new PeacefulAnimals(this);
 		new PassiveMobs(this);
 		new HostileMobs(this);
 		new BossMobs(this);
@@ -51,7 +52,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
 		new HotbarPetsListener(this);
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new HotbarPetsRunnable(), 0L, 2000L);
 	}
-	
+
 	public Category getCategory() {
 		return category;
 	}
