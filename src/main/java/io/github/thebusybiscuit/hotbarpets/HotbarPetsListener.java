@@ -35,6 +35,7 @@ import me.mrCookieSlime.Slimefun.cscorelib2.protection.ProtectableAction;
 public class HotbarPetsListener implements Listener {
 
 	private final HotbarPets plugin;
+	private final String metadataKey = "hotbarpets_player";
 
 	private final HotbarPet creeper;
 	private final HotbarPet magmacube;
@@ -135,14 +136,12 @@ public class HotbarPetsListener implements Listener {
 
 	@EventHandler
 	public void onTNT(EntityDamageByEntityEvent e) {
-		if (e.getEntity() instanceof Player && e.getDamager() instanceof TNTPrimed) {
-			if (e.getDamager().hasMetadata("hotbarpets_player")) {
-				Player attacker = (Player) e.getDamager().getMetadata("hotbarpets_player").get(0);
+		if (e.getEntity() instanceof Player && e.getDamager() instanceof TNTPrimed && e.getDamager().hasMetadata(metadataKey)) {
+			Player attacker = (Player) e.getDamager().getMetadata(metadataKey).get(0).value();
 
-				if (!SlimefunPlugin.getProtectionManager().hasPermission(attacker, e.getEntity().getLocation(), ProtectableAction.PVP)) {
-					e.setCancelled(true);
-					attacker.sendMessage(ChatColor.DARK_RED + "You cannot harm Players in here!");
-				}
+			if (!SlimefunPlugin.getProtectionManager().hasPermission(attacker, e.getEntity().getLocation(), ProtectableAction.PVP)) {
+				e.setCancelled(true);
+				attacker.sendMessage(ChatColor.DARK_RED + "You cannot harm Players in here!");
 			}
 		}
 	}
@@ -239,6 +238,7 @@ public class HotbarPetsListener implements Listener {
 	public void onPhantomSpawn(EntityTargetLivingEntityEvent e) {
 		if (e.getEntityType() == EntityType.PHANTOM && ((Phantom) e.getEntity()).getTarget() instanceof Player) {
 			Player p = (Player) ((Phantom) e.getEntity()).getTarget();
+			
 			if (!hasHotBarPet(p, panda) || !panda.tryToConsumeFood(p))
 				return;
 
@@ -254,9 +254,9 @@ public class HotbarPetsListener implements Listener {
 
 	private boolean hasHotBarPet(Player player, HotbarPet pet) {
 		for (int i = 0; i < 9; i++) {
-			if (pet.isItem(player.getInventory().getItem(i)))
-				return true;
+			if (pet.isItem(player.getInventory().getItem(i))) return true;
 		}
+		
 		return false;
 	}
 }
