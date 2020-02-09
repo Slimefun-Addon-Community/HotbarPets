@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.Objects.handlers.ItemInteractionHandler;
+import me.mrCookieSlime.Slimefun.Objects.handlers.ItemUseHandler;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public abstract class SimpleBasePet extends HotbarPet {
@@ -20,14 +20,11 @@ public abstract class SimpleBasePet extends HotbarPet {
 		this.register(onClick());
 	}
 	
-	private ItemInteractionHandler onClick() {
-		return (e, p, item) -> {
-			if (isItem(item)) {
-				if (tryToConsumeFood(p)) onUseItem(p);
-				return true;
+	private ItemUseHandler onClick() {
+		return e -> {
+			if (tryToConsumeFood(e.getPlayer())) {
+				onUseItem(e.getPlayer());
 			}
-			
-			return false;
 		};
 	}
 

@@ -1,5 +1,6 @@
 package io.github.thebusybiscuit.hotbarpets;
 
+import org.bukkit.NamespacedKey;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,7 +29,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
 		Config cfg = new Config(this);
 
 		// Setting up bStats
-		new Metrics(this);
+		new Metrics(this, 4859);
 
 		if (getDescription().getVersion().startsWith("DEV - ")) {
 			Updater updater = new GitHubBuildsUpdater(this, getFile(), "TheBusyBiscuit/HotbarPets/master");
@@ -37,7 +38,7 @@ public class HotbarPets extends JavaPlugin implements Listener {
 			if (cfg.getBoolean("options.auto-update")) updater.start();
 		}
 		
-		category = new Category(new CustomItem(SkullItem.fromBase64("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxNjY4ZWY3Y2I3OWRkOWMyMmNlM2QxZjNmNGNiNmUyNTU5ODkzYjZkZjRhNDY5NTE0ZTY2N2MxNmFhNCJ9fX0="), "&dHotbar Pets", "", "&a> Click to open"));
+		category = new Category(new NamespacedKey(this, "pets"), new CustomItem(SkullItem.fromBase64("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxNjY4ZWY3Y2I3OWRkOWMyMmNlM2QxZjNmNGNiNmUyNTU5ODkzYjZkZjRhNDY5NTE0ZTY2N2MxNmFhNCJ9fX0="), "&dHotbar Pets", "", "&a> Click to open"));
 		
 		// Add all the Pets via their Group class
 		new FarmAnimals(this);
