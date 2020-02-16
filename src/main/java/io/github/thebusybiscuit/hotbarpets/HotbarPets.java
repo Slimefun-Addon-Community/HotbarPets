@@ -11,6 +11,7 @@ import io.github.thebusybiscuit.hotbarpets.groups.PassiveMobs;
 import io.github.thebusybiscuit.hotbarpets.groups.PeacefulAnimals;
 import io.github.thebusybiscuit.hotbarpets.groups.SpecialPets;
 import io.github.thebusybiscuit.hotbarpets.groups.UtilityPets;
+import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.Item.CustomItem;
 import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Objects.Category;
@@ -20,7 +21,7 @@ import me.mrCookieSlime.Slimefun.cscorelib2.skull.SkullItem;
 import me.mrCookieSlime.Slimefun.cscorelib2.updater.GitHubBuildsUpdater;
 import me.mrCookieSlime.Slimefun.cscorelib2.updater.Updater;
 
-public class HotbarPets extends JavaPlugin implements Listener {
+public class HotbarPets extends JavaPlugin implements Listener, SlimefunAddon {
 	
 	private Category category;
 
@@ -59,5 +60,15 @@ public class HotbarPets extends JavaPlugin implements Listener {
 
 	public Category getCategory() {
 		return category;
+	}
+
+	@Override
+	public String getBugTrackerURL() {
+		return "https://github.com/TheBusyBiscuit/HotbarPets/issues";
+	}
+
+	@Override
+	public JavaPlugin getJavaPlugin() {
+		return this;
 	}
 }

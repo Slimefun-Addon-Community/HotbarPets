@@ -27,13 +27,13 @@ public final class PassiveMobs implements PetGroup {
 				new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.PUMPKIN), new ItemStack(Material.IRON_BLOCK),
 				new ItemStack(Material.IRON_INGOT), new ItemStack(Material.EMERALD), new ItemStack(Material.IRON_INGOT),
 				new ItemStack(Material.IRON_INGOT), SlimefunItems.GOLD_16K, new ItemStack(Material.IRON_INGOT)
-		}).register();
+		}).register(plugin);
 
 		new HotbarPet(plugin.getCategory(), new SlimefunItemStack("HOTBAR_PET_SLIME", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZhZDIwZmMyZDU3OWJlMjUwZDNkYjY1OWM4MzJkYTJiNDc4YTczYTY5OGI3ZWExMGQxOGM5MTYyZTRkOWI1In19fQ==", "&aSlime Pet", getName(), "&7Favourite Food: Glowstone Dust", "", "&rImmune to Fall Damage"), new ItemStack(Material.GLOWSTONE_DUST), new ItemStack[]{
 				new ItemStack(Material.SLIME_BALL), new ItemStack(Material.DIAMOND), new ItemStack(Material.SLIME_BALL),
 				new ItemStack(Material.SLIME_BALL), new ItemStack(Material.EMERALD), new ItemStack(Material.SLIME_BALL),
 				SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K
-		}).register();
+		}).register(plugin);
 	}
 
 
