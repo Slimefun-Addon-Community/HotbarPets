@@ -9,24 +9,24 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public abstract class SimpleBasePet extends HotbarPet {
 
-	public SimpleBasePet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(category, item, food, recipe);
-	}
+    public SimpleBasePet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(category, item, food, recipe);
+    }
 
-	public abstract void onUseItem(Player p);
-	
-	@Override
-	public void preRegister() {
-		super.preRegister();
-		addItemHandler(onClick());
-	}
-	
-	private ItemUseHandler onClick() {
-		return e -> {
-			if (tryToConsumeFood(e.getPlayer())) {
-				onUseItem(e.getPlayer());
-			}
-		};
-	}
+    public abstract void onUseItem(Player p);
+
+    @Override
+    public void preRegister() {
+        super.preRegister();
+        addItemHandler(onClick());
+    }
+
+    private ItemUseHandler onClick() {
+        return e -> {
+            if (tryToConsumeFood(e.getPlayer())) {
+                onUseItem(e.getPlayer());
+            }
+        };
+    }
 
 }
