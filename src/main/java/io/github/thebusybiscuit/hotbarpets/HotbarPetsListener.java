@@ -70,6 +70,7 @@ public class HotbarPetsListener implements Listener {
     @EventHandler
     public void onTippedArrowHit(ProjectileHitEvent e) {
         if (e.getEntity() instanceof Arrow && e.getEntity().hasMetadata("hotbarpets_projectile")) {
+            e.getEntity().removeMetadata("hotbarpets_projectile", plugin);
             e.getEntity().remove();
         }
     }
@@ -137,6 +138,7 @@ public class HotbarPetsListener implements Listener {
         if (e.getEntity() instanceof Player && e.getDamager() instanceof TNTPrimed && e.getDamager().hasMetadata(METADATA_KEY)) {
             Player attacker = (Player) e.getDamager().getMetadata(METADATA_KEY).get(0).value();
 
+            e.getDamager().removeMetadata("hotbarpets_player", plugin);
             if (!SlimefunPlugin.getProtectionManager().hasPermission(attacker, e.getEntity().getLocation(), ProtectableAction.PVP)) {
                 e.setCancelled(true);
                 attacker.sendMessage(ChatColor.DARK_RED + "You cannot harm Players in here!");
