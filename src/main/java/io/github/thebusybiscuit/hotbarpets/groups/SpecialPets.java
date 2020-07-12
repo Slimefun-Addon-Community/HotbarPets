@@ -9,7 +9,7 @@ import io.github.thebusybiscuit.hotbarpets.PetGroup;
 import io.github.thebusybiscuit.hotbarpets.pets.special.CookieSlimePet;
 import io.github.thebusybiscuit.hotbarpets.pets.special.PatriotPet;
 import io.github.thebusybiscuit.hotbarpets.pets.special.PurpliciousCowPet;
-import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public final class SpecialPets implements PetGroup {

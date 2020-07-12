@@ -7,7 +7,7 @@ import io.github.thebusybiscuit.hotbarpets.HotbarPet;
 import io.github.thebusybiscuit.hotbarpets.HotbarPets;
 import io.github.thebusybiscuit.hotbarpets.PetGroup;
 import io.github.thebusybiscuit.hotbarpets.pets.IronGolemPet;
-import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public final class PassiveMobs implements PetGroup {

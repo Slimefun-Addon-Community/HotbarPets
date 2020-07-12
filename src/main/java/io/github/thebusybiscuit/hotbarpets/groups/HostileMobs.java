@@ -12,7 +12,7 @@ import io.github.thebusybiscuit.hotbarpets.pets.GhastPet;
 import io.github.thebusybiscuit.hotbarpets.pets.PhantomPet;
 import io.github.thebusybiscuit.hotbarpets.pets.ShulkerPet;
 import io.github.thebusybiscuit.hotbarpets.pets.SpiderPet;
-import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public final class HostileMobs implements PetGroup {

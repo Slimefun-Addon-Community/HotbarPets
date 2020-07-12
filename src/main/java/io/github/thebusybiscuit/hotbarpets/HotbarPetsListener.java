@@ -26,8 +26,8 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffectType;
 
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import me.mrCookieSlime.Slimefun.cscorelib2.protection.ProtectableAction;
@@ -158,7 +158,7 @@ public class HotbarPetsListener implements Listener {
                 case ENTITY_EXPLOSION:
                 case BLOCK_EXPLOSION:
                     if (creeper != null && SlimefunUtils.isItemSimilar(item, creeper.getItem(), true)) {
-                        if (!creeper.tryToConsumeFood(p)) return;
+                        if (!creeper.checkAndConsumeFood(p)) return;
 
                         e.setCancelled(true);
                         p.getWorld().playSound(p.getLocation(), Sound.ENTITY_CREEPER_PRIMED, 1.0F, 2.0F);
@@ -181,14 +181,14 @@ public class HotbarPetsListener implements Listener {
                     break;
                 case FALL:
                     if (slime != null && SlimefunUtils.isItemSimilar(item, slime.getItem(), true)) {
-                        if (!slime.tryToConsumeFood(p)) return;
+                        if (!slime.checkAndConsumeFood(p)) return;
 
                         e.setCancelled(true);
                         p.getWorld().playSound(p.getLocation(), Sound.BLOCK_SLIME_BLOCK_STEP, 1.0F, 2.0F);
                     }
 
                     if (mrCookieSlime != null && SlimefunUtils.isItemSimilar(item, mrCookieSlime.getItem(), true)) {
-                        if (!mrCookieSlime.tryToConsumeFood(p)) return;
+                        if (!mrCookieSlime.checkAndConsumeFood(p)) return;
 
                         e.setCancelled(true);
                         p.getWorld().playSound(p.getLocation(), Sound.BLOCK_SLIME_BLOCK_STEP, 1.0F, 2.0F);
@@ -196,7 +196,7 @@ public class HotbarPetsListener implements Listener {
                     break;
                 case WITHER:
                     if (wither != null && SlimefunUtils.isItemSimilar(item, wither.getItem(), true)) {
-                        if (!wither.tryToConsumeFood(p)) return;
+                        if (!wither.checkAndConsumeFood(p)) return;
 
                         e.setCancelled(true);
                         p.removePotionEffect(PotionEffectType.WITHER);
@@ -205,7 +205,7 @@ public class HotbarPetsListener implements Listener {
                     break;
                 case DROWNING:
                     if (walshrus != null && SlimefunUtils.isItemSimilar(item, walshrus.getItem(), true)) {
-                        if (!walshrus.tryToConsumeFood(p)) return;
+                        if (!walshrus.checkAndConsumeFood(p)) return;
 
                         e.setCancelled(true);
                     }
@@ -213,7 +213,7 @@ public class HotbarPetsListener implements Listener {
                 case FIRE:
                 case FIRE_TICK:
                     if (blaze != null && SlimefunUtils.isItemSimilar(item, blaze.getItem(), true)) {
-                        if (!blaze.tryToConsumeFood(p)) return;
+                        if (!blaze.checkAndConsumeFood(p)) return;
 
                         e.setCancelled(true);
                         p.setFireTicks(0);
@@ -233,7 +233,7 @@ public class HotbarPetsListener implements Listener {
         if (e.getEntityType() == EntityType.PHANTOM && ((Phantom) e.getEntity()).getTarget() instanceof Player) {
             Player p = (Player) ((Phantom) e.getEntity()).getTarget();
 
-            if (!hasHotBarPet(p, panda) || !panda.tryToConsumeFood(p)) return;
+            if (!hasHotBarPet(p, panda) || !panda.checkAndConsumeFood(p)) return;
 
             e.getEntity().remove();
             e.setCancelled(true);

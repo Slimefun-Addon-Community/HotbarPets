@@ -7,7 +7,7 @@ import java.util.UUID;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import me.mrCookieSlime.Slimefun.SlimefunPlugin;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -36,12 +36,13 @@ public class HotbarPet extends SlimefunItem {
      *
      * @param player
      *            The {@link Player} who owns this pet
+     * 
      * @return If the food consumption was successful
      */
-    public boolean tryToConsumeFood(Player player) {
+    public boolean checkAndConsumeFood(Player player) {
         if (!player.getInventory().containsAtLeast(getFavouriteFood(), 1)) {
             if (messageDelay.getOrDefault(player.getUniqueId(), 0L) <= System.currentTimeMillis()) {
-                SlimefunPlugin.getLocal().sendMessage(player, "hotbarpets.neglected-pet", true, msg -> msg.replace("%pet%", getItemName()));
+                SlimefunPlugin.getLocalization().sendMessage(player, "hotbarpets.neglected-pet", true, msg -> msg.replace("%pet%", getItemName()));
                 messageDelay.put(player.getUniqueId(), System.currentTimeMillis() + MESSAGE_DELAY);
             }
             return false;

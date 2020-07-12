@@ -9,7 +9,7 @@ import io.github.thebusybiscuit.hotbarpets.PetGroup;
 import io.github.thebusybiscuit.hotbarpets.pets.DolphinPet;
 import io.github.thebusybiscuit.hotbarpets.pets.RabbitPet;
 import io.github.thebusybiscuit.hotbarpets.pets.SquidPet;
-import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public final class PeacefulAnimals implements PetGroup {

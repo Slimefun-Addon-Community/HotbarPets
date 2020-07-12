@@ -32,24 +32,24 @@ public class HotbarPetsRunnable implements Runnable {
                 if (item == null || item.getType() == null || item.getType() == Material.AIR) continue;
 
                 if (isPet(item, chicken)) {
-                    if (chicken.tryToConsumeFood(p)) {
+                    if (chicken.checkAndConsumeFood(p)) {
                         p.getInventory().addItem(new ItemStack(Material.EGG));
                         p.getWorld().playSound(p.getLocation(), Sound.ENTITY_CHICKEN_EGG, 1.0F, 2.0F);
                     }
                 }
                 else if (isPet(item, mooshroom)) {
-                    if (mooshroom.tryToConsumeFood(p)) {
+                    if (mooshroom.checkAndConsumeFood(p)) {
                         p.getInventory().addItem(new ItemStack(Material.MUSHROOM_STEM));
                         p.getWorld().playSound(p.getLocation(), Sound.ENTITY_COW_AMBIENT, 1.0F, 2.0F);
                     }
                 }
                 else if (isPet(item, fish)) {
-                    if (fish.tryToConsumeFood(p)) {
+                    if (fish.checkAndConsumeFood(p)) {
                         p.getInventory().addItem(new ItemStack(Material.COOKED_COD));
                         p.getWorld().playSound(p.getLocation(), Sound.BLOCK_WATER_AMBIENT, 1.0F, 2.0F);
                     }
                 }
-                else if (isPet(item, goldenCow) && goldenCow.tryToConsumeFood(p)) {
+                else if (isPet(item, goldenCow) && goldenCow.checkAndConsumeFood(p)) {
                     p.getInventory().addItem(new ItemStack(Material.GOLD_INGOT));
                     p.getWorld().playSound(p.getLocation(), Sound.ENTITY_COW_AMBIENT, 0.8F, 2.0F);
                 }

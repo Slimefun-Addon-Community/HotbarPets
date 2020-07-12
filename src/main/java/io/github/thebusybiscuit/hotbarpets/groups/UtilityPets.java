@@ -8,7 +8,7 @@ import io.github.thebusybiscuit.hotbarpets.PetGroup;
 import io.github.thebusybiscuit.hotbarpets.pets.BedPet;
 import io.github.thebusybiscuit.hotbarpets.pets.EnderChestPet;
 import io.github.thebusybiscuit.hotbarpets.pets.WorkbenchPet;
-import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public final class UtilityPets implements PetGroup {

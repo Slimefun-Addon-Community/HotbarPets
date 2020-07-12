@@ -12,8 +12,8 @@ import io.github.thebusybiscuit.hotbarpets.groups.PeacefulAnimals;
 import io.github.thebusybiscuit.hotbarpets.groups.SpecialPets;
 import io.github.thebusybiscuit.hotbarpets.groups.UtilityPets;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.Item.CustomItem;
-import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.bstats.bukkit.Metrics;
 import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
@@ -50,8 +50,8 @@ public class HotbarPets extends JavaPlugin implements Listener, SlimefunAddon {
         new UtilityPets(this);
         new SpecialPets(this);
 
-        SlimefunPlugin.getLocal().setDefaultMessage("hotbarpets.neglected-pet", "&9Your %pet% &9would have helped you if you did not neglect it by not feeding it :(");
-        SlimefunPlugin.getLocal().save();
+        SlimefunPlugin.getLocalization().setDefaultMessage("hotbarpets.neglected-pet", "&9Your %pet% &9would have helped you if you did not neglect it by not feeding it :(");
+        SlimefunPlugin.getLocalization().save();
 
         // Registering the Listener and Runnable
         new HotbarPetsListener(this);
