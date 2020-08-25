@@ -1,6 +1,7 @@
 name: HotbarPets
 version: ${project.version}
 author: TheBusyBiscuit
+description: 此插件為繁體翻譯版, 原作者"TheBusyBiscuit".
 depend: [Slimefun]
 
 api-version: 1.14

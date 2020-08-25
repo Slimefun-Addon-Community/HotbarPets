@@ -39,7 +39,7 @@ public class HotbarPets extends JavaPlugin implements Listener, SlimefunAddon {
             if (cfg.getBoolean("options.auto-update")) updater.start();
         }
 
-        category = new Category(new NamespacedKey(this, "pets"), new CustomItem(SkullItem.fromBase64("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxNjY4ZWY3Y2I3OWRkOWMyMmNlM2QxZjNmNGNiNmUyNTU5ODkzYjZkZjRhNDY5NTE0ZTY2N2MxNmFhNCJ9fX0="), "&dHotbar Pets", "", "&a> Click to open"));
+        category = new Category(new NamespacedKey(this, "pets"), new CustomItem(SkullItem.fromBase64("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxNjY4ZWY3Y2I3OWRkOWMyMmNlM2QxZjNmNGNiNmUyNTU5ODkzYjZkZjRhNDY5NTE0ZTY2N2MxNmFhNCJ9fX0="), "&d背包寵物", "", "&a> 點擊開啟"));
 
         // Add all the Pets via their Group class
         new FarmAnimals(this);
@@ -50,7 +50,7 @@ public class HotbarPets extends JavaPlugin implements Listener, SlimefunAddon {
         new UtilityPets(this);
         new SpecialPets(this);
 
-        SlimefunPlugin.getLocalization().setDefaultMessage("hotbarpets.neglected-pet", "&9Your %pet% &9would have helped you if you did not neglect it by not feeding it :(");
+        SlimefunPlugin.getLocalization().setDefaultMessage("hotbarpets.neglected-pet", "&9你的 %pet% &9會幫助你如果您不忽視它和不餵食 :(");
         SlimefunPlugin.getLocalization().save();
 
         // Registering the Listener and Runnable
