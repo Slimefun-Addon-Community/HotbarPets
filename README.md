@@ -9,11 +9,11 @@
 [官方原碼連結](https://github.com/TheBusyBiscuit/HotbarPets)
 
 ## 下載背包寵物
-下載繁體翻譯版: [點此](https://github.com/xMikux/HotbarPets/releases)<br>
-你也可以在這裡下載官方的開發版: [開發版構建](https://thebusybiscuit.github.io/builds/TheBusyBiscuit/HotbarPets/master/)
+繁體翻譯版: [構建頁面](https://xmikux.github.io/builds/xMikux/HotbarPets/master)<br>
+官方開發版: [開發版構建頁面](https://thebusybiscuit.github.io/builds/TheBusyBiscuit/HotbarPets/master/)
 <p align="center">
-  <a href="https://thebusybiscuit.github.io/builds/TheBusyBiscuit/HotbarPets/master/">
-    <img src="https://thebusybiscuit.github.io/builds/TheBusyBiscuit/HotbarPets/master/badge.svg" alt="Build Server"/>
+  <a href="https://xmikux.github.io/builds/xMikux/HotbarPets/master/">
+    <img src="https://xmikux.github.io/builds/xMikux/HotbarPets/master/badge.svg" alt="構建伺服器"/>
   </a>
 </p>
 
