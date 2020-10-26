@@ -6,7 +6,8 @@
 如果你將背包寵物放在身上,它們可以免遭受到某類型的傷害,給你提供免費物品或藥水效果.<br>
 但前提是你也要攜帶它們最愛的食物.
 
-[官方原碼連結](https://github.com/TheBusyBiscuit/HotbarPets)
+此為**非官方**版本, 請勿在該作者的問題追蹤內回報!
+[原作者連結](https://github.com/TheBusyBiscuit/HotbarPets)
 
 ## 下載背包寵物
 繁體翻譯版: [構建頁面](https://xmikux.github.io/builds/xMikux/HotbarPets/master)<br>

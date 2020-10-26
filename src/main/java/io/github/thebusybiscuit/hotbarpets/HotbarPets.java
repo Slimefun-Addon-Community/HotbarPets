@@ -15,7 +15,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.Item.CustomItem;
 import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.bstats.bukkit.Metrics;
+//import me.mrCookieSlime.Slimefun.bstats.bukkit.Metrics;
 import me.mrCookieSlime.Slimefun.cscorelib2.skull.SkullItem;
 
 public class HotbarPets extends JavaPlugin implements Listener, SlimefunAddon {
@@ -26,7 +26,7 @@ public class HotbarPets extends JavaPlugin implements Listener, SlimefunAddon {
     public void onEnable() {
 
         // Setting up bStats
-        new Metrics(this, 4859);
+        //new Metrics(this, 4859);
 
         category = new Category(new NamespacedKey(this, "pets"), new CustomItem(SkullItem.fromBase64("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxNjY4ZWY3Y2I3OWRkOWMyMmNlM2QxZjNmNGNiNmUyNTU5ODkzYjZkZjRhNDY5NTE0ZTY2N2MxNmFhNCJ9fX0="), "&d背包寵物", "", "&a> 點擊開啟"));
 
