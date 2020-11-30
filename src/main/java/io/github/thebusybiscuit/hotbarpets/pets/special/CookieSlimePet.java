@@ -12,14 +12,14 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class CookieSlimePet extends SimpleBasePet {
 
-	public CookieSlimePet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(category, item, food, recipe);
-	}
+    public CookieSlimePet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(category, item, food, recipe);
+    }
 
-	@Override
-	public void onUseItem(Player p) {
-		p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 160, 2));
+    @Override
+    public void onUseItem(Player p) {
+        p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 160, 2));
         p.getWorld().playSound(p.getLocation(), Sound.BLOCK_SLIME_BLOCK_STEP, 1.0F, 2.0F);
-	}
-	
+    }
+
 }

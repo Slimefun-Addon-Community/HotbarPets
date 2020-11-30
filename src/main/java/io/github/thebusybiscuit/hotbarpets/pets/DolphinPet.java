@@ -11,13 +11,13 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class DolphinPet extends SimpleBasePet {
 
-	public DolphinPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(category, item, food, recipe);
-	}
-	
-	@Override
-	public void onUseItem(Player p) {
+    public DolphinPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(category, item, food, recipe);
+    }
+
+    @Override
+    public void onUseItem(Player p) {
         p.addPotionEffect(new PotionEffect(PotionEffectType.DOLPHINS_GRACE, 900, 1));
-	}
+    }
 
 }

@@ -12,14 +12,14 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class PurpliciousCowPet extends SimpleBasePet {
 
-	public PurpliciousCowPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(category, item, food, recipe);
-	}
+    public PurpliciousCowPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(category, item, food, recipe);
+    }
 
-	@Override
-	public void onUseItem(Player p) {
-		p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 160, 2));
+    @Override
+    public void onUseItem(Player p) {
+        p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 160, 2));
         p.getWorld().playSound(p.getLocation(), Sound.ENTITY_COW_AMBIENT, 1.0F, 2.0F);
-	}
-	
+    }
+
 }

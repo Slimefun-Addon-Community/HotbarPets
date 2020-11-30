@@ -14,17 +14,18 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public final class PeacefulAnimals implements PetGroup {
 
-	public PeacefulAnimals(HotbarPets plugin) {
-		load(plugin);
-	}
+    public PeacefulAnimals(HotbarPets plugin) {
+        load(plugin);
+    }
 
-	@Override
-	public String getName() {
-		return "&aAnimal (Peaceful)";
-	}
+    @Override
+    public String getName() {
+        return "&aAnimal (Peaceful)";
+    }
 
-	@Override
-	public void load(HotbarPets plugin) {
+    @Override
+    public void load(HotbarPets plugin) {
+        // @formatter:off
 		new HotbarPet(plugin.getCategory(), new SlimefunItemStack("HOTBAR_PET_FISH" ,"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmY5OWI1ODBkNDVhNzg0ZTdhOTY0ZTdkM2IxZjk3Y2VjZTc0OTExMTczYmQyMWMxZDdjNTZhY2RjMzg1ZWQ1In19fQ==", "&3Fish Pet", getName(), "&7Favourite Food: Seeds", "", "&fGives you Fish over time..."), new ItemStack(Material.WHEAT_SEEDS), new ItemStack[] {
 				new ItemStack(Material.IRON_INGOT), new ItemStack(Material.COD), new ItemStack(Material.IRON_INGOT),
 				new ItemStack(Material.COD), new ItemStack(Material.DIAMOND), new ItemStack(Material.COD),
@@ -54,5 +55,6 @@ public final class PeacefulAnimals implements PetGroup {
 				new ItemStack(Material.DIAMOND), new ItemStack(Material.EMERALD), new ItemStack(Material.DIAMOND),
 				new ItemStack(Material.ACACIA_LEAVES), new ItemStack(Material.BAMBOO), new ItemStack(Material.ACACIA_LEAVES)
 		}).register(plugin);
-	}
+        // @formatter:on
+    }
 }

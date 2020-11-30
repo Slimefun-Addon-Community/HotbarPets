@@ -10,14 +10,14 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class EnderChestPet extends SimpleBasePet {
 
-	public EnderChestPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(category, item, food, recipe);
-	}
+    public EnderChestPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(category, item, food, recipe);
+    }
 
-	@Override
-	public void onUseItem(Player p) {
-		p.openInventory(p.getEnderChest());
-		p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0F, 2.0F);
-	}
+    @Override
+    public void onUseItem(Player p) {
+        p.openInventory(p.getEnderChest());
+        p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0F, 2.0F);
+    }
 
 }

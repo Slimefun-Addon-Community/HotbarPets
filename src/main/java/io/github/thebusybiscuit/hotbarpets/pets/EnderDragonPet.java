@@ -13,15 +13,15 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class EnderDragonPet extends SimpleBasePet {
 
-	public EnderDragonPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(category, item, food, recipe);
-	}
-	
-	@Override
-	public void onUseItem(Player p) {
-		p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 500, 0));
+    public EnderDragonPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(category, item, food, recipe);
+    }
+
+    @Override
+    public void onUseItem(Player p) {
+        p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 500, 0));
         p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ENDER_DRAGON_AMBIENT, 1.0F, 2.0F);
         p.launchProjectile(DragonFireball.class);
-	}
+    }
 
 }

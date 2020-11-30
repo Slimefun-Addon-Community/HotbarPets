@@ -12,17 +12,18 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public final class FarmAnimals implements PetGroup {
 
-	public FarmAnimals(HotbarPets plugin) {
-		load(plugin);
-	}
+    public FarmAnimals(HotbarPets plugin) {
+        load(plugin);
+    }
 
-	@Override
-	public String getName() {
-		return "&2Farm Animal (Peaceful)";
-	}
+    @Override
+    public String getName() {
+        return "&2Farm Animal (Peaceful)";
+    }
 
-	@Override
-	public void load(HotbarPets plugin) {
+    @Override
+    public void load(HotbarPets plugin) {
+        // @formatter:off
 		SlimefunItemStack cow = new SlimefunItemStack("HOTBAR_PET_COW", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19", "&6Cow Pet", getName(), "&7Favourite Food: Wheat", "", "&fRight-Click: &7Removes negative Potion Effects");
 		
 		new HotbarPet(plugin.getCategory(), new SlimefunItemStack("HOTBAR_PET_PIG", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIxNjY4ZWY3Y2I3OWRkOWMyMmNlM2QxZjNmNGNiNmUyNTU5ODkzYjZkZjRhNDY5NTE0ZTY2N2MxNmFhNCJ9fX0=", "&dPig Pet", getName(), "&7Favourite Food: Carrots", "", "&fBonus Saturation when eating", "&fAllows you to eat poisonous Food"), new ItemStack(Material.CARROT), new ItemStack[]{
@@ -54,8 +55,7 @@ public final class FarmAnimals implements PetGroup {
 				new ItemStack(Material.GOLD_NUGGET), cow, new ItemStack(Material.GOLD_NUGGET),
 				new ItemStack(Material.GOLDEN_CARROT), new ItemStack(Material.GOLD_NUGGET), new ItemStack(Material.GOLDEN_CARROT)
 		}).register(plugin);
-	}
-
-
+        // @formatter:on
+    }
 
 }

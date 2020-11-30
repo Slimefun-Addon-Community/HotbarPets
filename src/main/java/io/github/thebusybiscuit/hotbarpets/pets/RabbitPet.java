@@ -11,13 +11,13 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class RabbitPet extends SimpleBasePet {
 
-	public RabbitPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(category, item, food, recipe);
-	}
-	
-	@Override
-	public void onUseItem(Player p) {
+    public RabbitPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(category, item, food, recipe);
+    }
+
+    @Override
+    public void onUseItem(Player p) {
         p.addPotionEffect(new PotionEffect(PotionEffectType.LUCK, 600, 1));
-	}
+    }
 
 }

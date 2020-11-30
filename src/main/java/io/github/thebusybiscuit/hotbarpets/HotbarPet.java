@@ -15,7 +15,7 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class HotbarPet extends SlimefunItem {
 
-    private static final long MESSAGE_DELAY = 2_000;
+    private static final long MESSAGE_DELAY = 2000;
     private static final Map<UUID, Long> messageDelay = new HashMap<>();
 
     private final ItemStack food;
@@ -45,6 +45,7 @@ public class HotbarPet extends SlimefunItem {
                 SlimefunPlugin.getLocalization().sendMessage(player, "hotbarpets.neglected-pet", true, msg -> msg.replace("%pet%", getItemName()));
                 messageDelay.put(player.getUniqueId(), System.currentTimeMillis() + MESSAGE_DELAY);
             }
+
             return false;
         }
 
