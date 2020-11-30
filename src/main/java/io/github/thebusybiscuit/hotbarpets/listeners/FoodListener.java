@@ -1,0 +1,58 @@
+package io.github.thebusybiscuit.hotbarpets.listeners;
+
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.Sound;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffectType;
+
+import io.github.thebusybiscuit.hotbarpets.HotbarPet;
+import io.github.thebusybiscuit.hotbarpets.HotbarPets;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+
+public class FoodListener implements Listener {
+
+    private final HotbarPets plugin;
+    private final HotbarPet pig;
+    private final HotbarPet zombie;
+
+    public FoodListener(HotbarPets plugin) {
+        this.plugin = plugin;
+
+        pig = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_PIG");
+        zombie = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_ZOMBIE");
+    }
+
+    @EventHandler
+    public void onEat(PlayerItemConsumeEvent e) {
+        Player p = e.getPlayer();
+
+        for (int i = 0; i < 9; ++i) {
+            ItemStack item = p.getInventory().getItem(i);
+
+            if (pig != null && SlimefunUtils.isItemSimilar(item, pig.getItem(), true)) {
+
+                if (!p.getInventory().containsAtLeast(pig.getFavouriteFood(), 1)) {
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Your &5Pig Pet &9would have helped you if you did not neglect it by not feeding it :("));
+                    return;
+                }
+
+                plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, () -> {
+                    p.getInventory().removeItem(pig.getFavouriteFood());
+                    p.setSaturation(p.getSaturation() + 8.0F);
+                    p.removePotionEffect(PotionEffectType.POISON);
+                    p.getWorld().playSound(p.getLocation(), Sound.ENTITY_PIG_AMBIENT, 1.0F, 2.0F);
+                }, 2L);
+            } else if (zombie != null && SlimefunUtils.isItemSimilar(e.getItem(), new ItemStack(Material.ROTTEN_FLESH), true) && SlimefunUtils.isItemSimilar(item, zombie.getItem(), true)) {
+                plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, () -> p.removePotionEffect(PotionEffectType.HUNGER), 2L);
+            }
+        }
+
+    }
+
+}

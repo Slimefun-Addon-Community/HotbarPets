@@ -12,6 +12,13 @@ import io.github.thebusybiscuit.hotbarpets.groups.PassiveMobs;
 import io.github.thebusybiscuit.hotbarpets.groups.PeacefulAnimals;
 import io.github.thebusybiscuit.hotbarpets.groups.SpecialPets;
 import io.github.thebusybiscuit.hotbarpets.groups.UtilityPets;
+import io.github.thebusybiscuit.hotbarpets.listeners.DamageListener;
+import io.github.thebusybiscuit.hotbarpets.listeners.FoodListener;
+import io.github.thebusybiscuit.hotbarpets.listeners.GeneralListener;
+import io.github.thebusybiscuit.hotbarpets.listeners.PhantomListener;
+import io.github.thebusybiscuit.hotbarpets.listeners.ProjectileListener;
+import io.github.thebusybiscuit.hotbarpets.listeners.SoulPieListener;
+import io.github.thebusybiscuit.hotbarpets.listeners.TNTListener;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.Item.CustomItem;
@@ -55,8 +62,16 @@ public class HotbarPets extends JavaPlugin implements Listener, SlimefunAddon {
         SlimefunPlugin.getLocalization().setDefaultMessage("hotbarpets.neglected-pet", "&9Your %pet% &9would have helped you if you did not neglect it by not feeding it :(");
         SlimefunPlugin.getLocalization().save();
 
-        // Registering the Listener and Runnable
-        new HotbarPetsListener(this);
+        // Registering the Listeners
+        new DamageListener(this);
+        new FoodListener(this);
+        new GeneralListener(this);
+        new PhantomListener(this);
+        new ProjectileListener(this);
+        new SoulPieListener(this);
+        new TNTListener(this);
+
+        // Registering our task
         getServer().getScheduler().scheduleSyncRepeatingTask(this, new HotbarPetsRunnable(), 0L, 2000L);
     }
 
