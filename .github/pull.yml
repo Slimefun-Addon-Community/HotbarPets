@@ -3,3 +3,5 @@ rules:
   - base: master
     upstream: TheBusyBiscuit:master
     mergeMethod: merge
+    conflictReviewers:
+      - xMikux

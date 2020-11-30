@@ -17,17 +17,18 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public final class HostileMobs implements PetGroup {
 
-	public HostileMobs(HotbarPets plugin) {
-		load(plugin);
-	}
+    public HostileMobs(HotbarPets plugin) {
+        load(plugin);
+    }
 
-	@Override
-	public String getName() {
-		return "&c怪物 (敵對)";
-	}
+    @Override
+    public String getName() {
+        return "&c怪物 (敵對)";
+    }
 
-	@Override
-	public void load(HotbarPets plugin) {
+    @Override
+    public void load(HotbarPets plugin) {
+        // @formatter:off
 		new SpiderPet(plugin.getCategory(), new SlimefunItemStack("HOTBAR_PET_SPIDER", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjdhNGMyNTZmMGRmNjE0MjMxZjhkNTUzNDRjOWRlMzkzODkzNjFhNzQwYzExZmFjYzBkMjk5ZjY3NmRkOWEifX19", "&8蜘蛛寵物", getName(), "&7喜愛的食物: 腐肉", "", "&f右鍵點擊: &7給予你跳躍提升"), new ItemStack(Material.ROTTEN_FLESH), new ItemStack[]{
 				new ItemStack(Material.COAL), new ItemStack(Material.STRING), new ItemStack(Material.COAL),
 				new ItemStack(Material.SPIDER_EYE), new ItemStack(Material.EMERALD), new ItemStack(Material.SPIDER_EYE),
@@ -81,8 +82,7 @@ public final class HostileMobs implements PetGroup {
 				new ItemStack(Material.MOSSY_COBBLESTONE), new ItemStack(Material.EMERALD), new ItemStack(Material.MOSSY_COBBLESTONE),
 				new ItemStack(Material.ROTTEN_FLESH), SlimefunItems.NECROTIC_SKULL, new ItemStack(Material.ROTTEN_FLESH)
 		}).register(plugin);
-	}
-
-
+        // @formatter:on
+    }
 
 }

@@ -12,22 +12,22 @@ import io.github.thebusybiscuit.hotbarpets.SimpleBasePet;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class CreeperPet extends SimpleBasePet {
-	
-	private final HotbarPets plugin;
 
-	public CreeperPet(HotbarPets plugin, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(plugin.getCategory(), item, food, recipe);
-		
-		this.plugin = plugin;
-	}
+    private final HotbarPets plugin;
 
-	@Override
-	public void onUseItem(Player p) {
-		TNTPrimed tnt = (TNTPrimed) p.getWorld().spawnEntity(p.getLocation(), EntityType.PRIMED_TNT);
-		tnt.setFuseTicks(0);
-		tnt.setMetadata("hotbarpets_player", new FixedMetadataValue(plugin, p));
-		
+    public CreeperPet(HotbarPets plugin, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(plugin.getCategory(), item, food, recipe);
+
+        this.plugin = plugin;
+    }
+
+    @Override
+    public void onUseItem(Player p) {
+        TNTPrimed tnt = (TNTPrimed) p.getWorld().spawnEntity(p.getLocation(), EntityType.PRIMED_TNT);
+        tnt.setMetadata("hotbarpets_player", new FixedMetadataValue(plugin, p.getUniqueId()));
+        tnt.setFuseTicks(0);
+
         p.getWorld().playSound(p.getLocation(), Sound.ENTITY_CREEPER_PRIMED, 1.0F, 2.0F);
-	}
-	
+    }
+
 }

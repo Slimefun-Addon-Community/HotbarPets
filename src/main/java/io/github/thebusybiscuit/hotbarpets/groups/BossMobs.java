@@ -12,17 +12,18 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public final class BossMobs implements PetGroup {
 
-	public BossMobs(HotbarPets plugin) {
-		load(plugin);
-	}
+    public BossMobs(HotbarPets plugin) {
+        load(plugin);
+    }
 
-	@Override
-	public String getName() {
-		return "&4Boss 怪物 (敵對)";
-	}
+    @Override
+    public String getName() {
+        return "&4Boss 怪物 (敵對)";
+    }
 
-	@Override
-	public void load(HotbarPets plugin) {
+    @Override
+    public void load(HotbarPets plugin) {
+        // @formatter:off
 		new EnderDragonPet(plugin.getCategory(), new SlimefunItemStack("HOTBAR_PET_DRAGON", Material.DRAGON_HEAD, "&5終界龍寵物", getName(), "&7喜愛的食物: 終界之眼", "", "&f右鍵點擊: &7發射終界龍的火球 & 給予抗性效果"), new ItemStack(Material.ENDER_EYE), new ItemStack[]{
 				new ItemStack(Material.PRISMARINE_CRYSTALS), new ItemStack(Material.DRAGON_BREATH), new ItemStack(Material.PRISMARINE_CRYSTALS),
 				SlimefunItems.ENDER_LUMP_3, new ItemStack(Material.DRAGON_HEAD), SlimefunItems.ENDER_LUMP_3,
@@ -34,8 +35,7 @@ public final class BossMobs implements PetGroup {
 				new ItemStack(Material.SOUL_SAND), new ItemStack(Material.NETHER_STAR), new ItemStack(Material.SOUL_SAND),
 				new ItemStack(Material.SOUL_SAND), SlimefunItems.GOLD_24K, new ItemStack(Material.SOUL_SAND)
 		}).register(plugin);
-	}
-
-
+        // @formatter:on
+    }
 
 }

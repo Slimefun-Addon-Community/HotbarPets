@@ -11,14 +11,14 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class BedPet extends SimpleBasePet {
 
-	public BedPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(category, item, food, recipe);
-	}
+    public BedPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(category, item, food, recipe);
+    }
 
-	@Override
-	public void onUseItem(Player p) {
-		p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 2));
+    @Override
+    public void onUseItem(Player p) {
+        p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 2));
         p.getWorld().setTime(0L);
-	}
-	
+    }
+
 }

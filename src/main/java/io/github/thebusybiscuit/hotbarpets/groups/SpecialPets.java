@@ -14,17 +14,18 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public final class SpecialPets implements PetGroup {
 
-	public SpecialPets(HotbarPets plugin) {
-		load(plugin);
-	}
+    public SpecialPets(HotbarPets plugin) {
+        load(plugin);
+    }
 
-	@Override
-	public String getName() {
-		return "&9特殊";
-	}
+    @Override
+    public String getName() {
+        return "&9特殊";
+    }
 
-	@Override
-	public void load(HotbarPets plugin) {
+    @Override
+    public void load(HotbarPets plugin) {
+        // @formatter:off
 		new PurpliciousCowPet(plugin.getCategory(), new SlimefunItemStack("HOTBAR_PET_PURPLICIOUS_COW", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UxZmM2M2QzMDNlYjVmMzY2YWVjYWU2ZDI1MGQ0ZTJkNzc5YTlmNWVmOGRlYWZmNWIzYmM5NTMwN2ZmOSJ9fX0=", "&5Purplicious 牛寵物", getName(), "&7喜愛的食物: 金蘋果", "", "&f右鍵點擊: &7給予你生命回復"), new ItemStack(Material.GOLDEN_APPLE), new ItemStack[]{
 				new ItemStack(Material.COOKED_BEEF), new ItemStack(Material.DIAMOND), new ItemStack(Material.COOKED_BEEF),
 				new ItemStack(Material.DIAMOND), new ItemStack(Material.EMERALD), new ItemStack(Material.DIAMOND),
@@ -54,8 +55,7 @@ public final class SpecialPets implements PetGroup {
 				new ItemStack(Material.DIAMOND), new ItemStack(Material.EMERALD), new ItemStack(Material.DIAMOND),
 				SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K, SlimefunItems.GOLD_20K
 		}).register(plugin);
-	}
-
-
+        // @formatter:on
+    }
 
 }

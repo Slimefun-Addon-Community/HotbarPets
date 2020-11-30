@@ -11,14 +11,14 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class EndermanPet extends SimpleBasePet {
 
-	public EndermanPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(category, item, food, recipe);
-	}
-	
-	@Override
-	public void onUseItem(Player p) {
-		p.launchProjectile(EnderPearl.class);
+    public EndermanPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(category, item, food, recipe);
+    }
+
+    @Override
+    public void onUseItem(Player p) {
+        p.launchProjectile(EnderPearl.class);
         p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_AMBIENT, 1.0F, 2.0F);
-	}
+    }
 
 }

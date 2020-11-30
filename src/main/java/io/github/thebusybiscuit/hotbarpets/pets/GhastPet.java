@@ -12,14 +12,14 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class GhastPet extends SimpleBasePet {
 
-	public GhastPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(category, item, food, recipe);
-	}
-	
-	@Override
-	public void onUseItem(Player p) {
-		p.launchProjectile(Fireball.class);
+    public GhastPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(category, item, food, recipe);
+    }
+
+    @Override
+    public void onUseItem(Player p) {
+        p.launchProjectile(Fireball.class);
         p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 500, 1));
-	}
+    }
 
 }

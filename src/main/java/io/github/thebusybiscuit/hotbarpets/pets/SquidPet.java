@@ -11,13 +11,13 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class SquidPet extends SimpleBasePet {
 
-	public SquidPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(category, item, food, recipe);
-	}
-	
-	@Override
-	public void onUseItem(Player p) {
+    public SquidPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(category, item, food, recipe);
+    }
+
+    @Override
+    public void onUseItem(Player p) {
         p.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 1200, 2));
-	}
+    }
 
 }

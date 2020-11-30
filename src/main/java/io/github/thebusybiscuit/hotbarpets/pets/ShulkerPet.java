@@ -14,21 +14,21 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class ShulkerPet extends SimpleBasePet {
 
-	private final HotbarPets plugin;
-	
-	public ShulkerPet(HotbarPets plugin, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-		super(plugin.getCategory(), item, food, recipe);
-		
-		this.plugin = plugin;
-	}
-	
-	@Override
-	public void onUseItem(Player p) {
-		Arrow arrow = p.launchProjectile(Arrow.class);
+    private final HotbarPets plugin;
+
+    public ShulkerPet(HotbarPets plugin, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(plugin.getCategory(), item, food, recipe);
+
+        this.plugin = plugin;
+    }
+
+    @Override
+    public void onUseItem(Player p) {
+        Arrow arrow = p.launchProjectile(Arrow.class);
         arrow.addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION, 10, 0), true);
         arrow.setMetadata("hotbarpets_projectile", new FixedMetadataValue(plugin, true));
-        
+
         p.getWorld().playSound(p.getLocation(), Sound.ENTITY_SHULKER_AMBIENT, 1.0F, 2.0F);
-	}
+    }
 
 }
