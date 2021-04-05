@@ -1,6 +1,6 @@
 package io.github.thebusybiscuit.hotbarpets.groups;
 
-import io.github.thebusybiscuit.hotbarpets.HeadTextures;
+import io.github.thebusybiscuit.hotbarpets.PetTexture;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
@@ -31,7 +31,7 @@ public final class BossMobs implements PetGroup {
                 new ItemStack(Material.PRISMARINE_CRYSTALS), new ItemStack(Material.DRAGON_BREATH), new ItemStack(Material.PRISMARINE_CRYSTALS)
         }).register(plugin);
 
-        new HotbarPet(plugin.getCategory(), new SlimefunItemStack("HOTBAR_PET_WITHER", HeadTextures.WITHER_PET.getHash(), "&8Wither Pet", getName(), "&7Favourite Food: Soul Sand", "", "&fImmune to Wither Effect"), new ItemStack(Material.SOUL_SAND), new ItemStack[]{
+        new HotbarPet(plugin.getCategory(), new SlimefunItemStack("HOTBAR_PET_WITHER", PetTexture.WITHER_PET.getHash(), "&8Wither Pet", getName(), "&7Favourite Food: Soul Sand", "", "&fImmune to Wither Effect"), new ItemStack(Material.SOUL_SAND), new ItemStack[]{
                 new ItemStack(Material.COAL), new ItemStack(Material.WITHER_SKELETON_SKULL), new ItemStack(Material.COAL),
                 new ItemStack(Material.SOUL_SAND), new ItemStack(Material.NETHER_STAR), new ItemStack(Material.SOUL_SAND),
                 new ItemStack(Material.SOUL_SAND), SlimefunItems.GOLD_24K, new ItemStack(Material.SOUL_SAND)

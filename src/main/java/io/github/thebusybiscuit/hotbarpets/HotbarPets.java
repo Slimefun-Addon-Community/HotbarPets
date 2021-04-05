@@ -48,7 +48,7 @@ public class HotbarPets extends JavaPlugin implements Listener, SlimefunAddon {
             }
         }
 
-        category = new Category(new NamespacedKey(this, "pets"), new CustomItem(SkullItem.fromHash(HeadTextures.CATEGORY.getHash()), "&dHotbar Pets", "", "&a> Click to open"));
+        category = new Category(new NamespacedKey(this, "pets"), new CustomItem(SkullItem.fromHash(PetTexture.CATEGORY.getHash()), "&dHotbar Pets", "", "&a> Click to open"));
 
         // Add all the Pets via their Group class
         new FarmAnimals(this);

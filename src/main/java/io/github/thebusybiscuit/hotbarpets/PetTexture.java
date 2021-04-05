@@ -1,11 +1,13 @@
 package io.github.thebusybiscuit.hotbarpets;
 
+import javax.annotation.Nonnull;
+
 /**
  * This class holds the head hashes for all head textures.
  *
  * @author WalshyDev
  */
-public enum HeadTextures {
+public enum PetTexture {
 
     // Category
     CATEGORY("621668ef7cb79dd9c22ce3d1f3f4cb6e2559893b6df4a469514e667c16aa4"),
@@ -53,14 +55,16 @@ public enum HeadTextures {
 
     private final String hash;
 
-    HeadTextures(String hash) {
+    PetTexture(@Nonnull String hash) {
         this.hash = hash;
     }
 
+    @Nonnull
     public String getHash() {
         return hash;
     }
 
+    @Nonnull
     @Override
     public String toString() {
         return this.hash;
