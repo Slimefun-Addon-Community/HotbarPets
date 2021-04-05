@@ -34,14 +34,14 @@ public class HotbarPetsRunnable implements Runnable {
                 }
 
                 if (isPet(item, chicken) && chicken.checkAndConsumeFood(p)) {
-                        p.getInventory().addItem(new ItemStack(Material.EGG));
-                        p.getWorld().playSound(p.getLocation(), Sound.ENTITY_CHICKEN_EGG, 1.0F, 2.0F);
+                    p.getInventory().addItem(new ItemStack(Material.EGG));
+                    p.getWorld().playSound(p.getLocation(), Sound.ENTITY_CHICKEN_EGG, 1.0F, 2.0F);
                 } else if (isPet(item, mooshroom) && mooshroom.checkAndConsumeFood(p)) {
-                        p.getInventory().addItem(new ItemStack(Material.MUSHROOM_STEW));
-                        p.getWorld().playSound(p.getLocation(), Sound.ENTITY_COW_AMBIENT, 1.0F, 2.0F);
+                    p.getInventory().addItem(new ItemStack(Material.MUSHROOM_STEW));
+                    p.getWorld().playSound(p.getLocation(), Sound.ENTITY_COW_AMBIENT, 1.0F, 2.0F);
                 } else if (isPet(item, fish) && fish.checkAndConsumeFood(p)) {
-                        p.getInventory().addItem(new ItemStack(Material.COOKED_COD));
-                        p.getWorld().playSound(p.getLocation(), Sound.BLOCK_WATER_AMBIENT, 1.0F, 2.0F);
+                    p.getInventory().addItem(new ItemStack(Material.COOKED_COD));
+                    p.getWorld().playSound(p.getLocation(), Sound.BLOCK_WATER_AMBIENT, 1.0F, 2.0F);
                 } else if (isPet(item, goldenCow) && goldenCow.checkAndConsumeFood(p)) {
                     p.getInventory().addItem(new ItemStack(Material.GOLD_INGOT));
                     p.getWorld().playSound(p.getLocation(), Sound.ENTITY_COW_AMBIENT, 0.8F, 2.0F);
@@ -53,5 +53,4 @@ public class HotbarPetsRunnable implements Runnable {
     private boolean isPet(ItemStack item, HotbarPet pet) {
         return pet != null && SlimefunUtils.isItemSimilar(item, pet.getItem(), true);
     }
-
 }
