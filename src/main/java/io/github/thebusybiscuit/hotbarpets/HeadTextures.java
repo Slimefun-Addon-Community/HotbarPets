@@ -49,8 +49,7 @@ public enum HeadTextures {
 
     // Utility
     ENDER_CHEST_PET("a6cc486c2be1cb9dfcb2e53dd9a3e9a883bfadb27cb956f1896d602b4067"),
-    WORKBENCH_PET("4ad881d68547161aa7b2925e383778756bc67a75b444a586e515953ef83a9")
-    ;
+    WORKBENCH_PET("4ad881d68547161aa7b2925e383778756bc67a75b444a586e515953ef83a9");
 
     private final String hash;
 
