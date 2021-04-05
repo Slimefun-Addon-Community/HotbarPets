@@ -75,6 +75,6 @@ public enum PetTexture {
 
     @Nonnull
     public ItemStack getAsItem() {
-        return SkullItem.fromHash(PetTexture.CATEGORY.getHash());
+        return SkullItem.fromHash(getHash());
     }
 }
