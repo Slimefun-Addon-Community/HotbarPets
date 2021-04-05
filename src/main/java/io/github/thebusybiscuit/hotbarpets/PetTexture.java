@@ -1,5 +1,8 @@
 package io.github.thebusybiscuit.hotbarpets;
 
+import me.mrCookieSlime.Slimefun.cscorelib2.skull.SkullItem;
+import org.bukkit.inventory.ItemStack;
+
 import javax.annotation.Nonnull;
 
 /**
@@ -68,5 +71,10 @@ public enum PetTexture {
     @Override
     public String toString() {
         return this.hash;
+    }
+
+    @Nonnull
+    public ItemStack getAsItem() {
+        return SkullItem.fromHash(PetTexture.CATEGORY.getHash());
     }
 }
