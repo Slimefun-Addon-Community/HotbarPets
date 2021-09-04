@@ -10,15 +10,15 @@ import org.bukkit.inventory.ItemStack;
 import io.github.thebusybiscuit.hotbarpets.HotbarPet;
 import io.github.thebusybiscuit.hotbarpets.HotbarPets;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 
 public class SoulPieListener implements Listener {
 
     private final HotbarPet eyamaz;
 
     public SoulPieListener(HotbarPets plugin) {
-        eyamaz = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_EYAMAZ");
+        eyamaz = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_EYAMAZ");
 
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
@@ -32,7 +32,7 @@ public class SoulPieListener implements Listener {
                 ItemStack item = p.getInventory().getItem(i);
 
                 if (eyamaz != null && SlimefunUtils.isItemSimilar(item, eyamaz.getItem(), true)) {
-                    e.getEntity().getLocation().getWorld().dropItemNaturally(e.getEntity().getLocation(), new CustomItem(new ItemStack(Material.PUMPKIN_PIE), "&bSoul Pie"));
+                    e.getEntity().getLocation().getWorld().dropItemNaturally(e.getEntity().getLocation(), new CustomItemStack(new ItemStack(Material.PUMPKIN_PIE), "&bSoul Pie"));
                 }
             }
         }
