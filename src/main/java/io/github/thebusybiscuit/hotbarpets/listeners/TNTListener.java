@@ -17,8 +17,8 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 
 import io.github.thebusybiscuit.hotbarpets.HotbarPets;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
-import me.mrCookieSlime.Slimefun.cscorelib2.protection.ProtectableAction;
+import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
 
 public class TNTListener implements Listener {
 
@@ -39,7 +39,7 @@ public class TNTListener implements Listener {
 
             if (attacker == null) {
                 e.setCancelled(true);
-            } else if (!SlimefunPlugin.getProtectionManager().hasPermission(attacker, e.getEntity().getLocation(), ProtectableAction.ATTACK_PLAYER)) {
+            } else if (!Slimefun.getProtectionManager().hasPermission(attacker, e.getEntity().getLocation(), Interaction.ATTACK_PLAYER)) {
                 e.setCancelled(true);
                 attacker.sendMessage(ChatColor.DARK_RED + "你無法傷害在這裡玩家!");
             }
@@ -58,7 +58,7 @@ public class TNTListener implements Listener {
             while (blocks.hasNext()) {
                 Block b = blocks.next();
 
-                if (!SlimefunPlugin.getProtectionManager().hasPermission(player, b, ProtectableAction.BREAK_BLOCK)) {
+                if (!Slimefun.getProtectionManager().hasPermission(player, b, Interaction.BREAK_BLOCK)) {
                     blocks.remove();
                 }
             }

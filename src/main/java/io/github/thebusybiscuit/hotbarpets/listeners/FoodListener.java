@@ -13,7 +13,7 @@ import org.bukkit.potion.PotionEffectType;
 import io.github.thebusybiscuit.hotbarpets.HotbarPet;
 import io.github.thebusybiscuit.hotbarpets.HotbarPets;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 
 public class FoodListener implements Listener {
 
@@ -24,8 +24,8 @@ public class FoodListener implements Listener {
     public FoodListener(HotbarPets plugin) {
         this.plugin = plugin;
 
-        pig = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_PIG");
-        zombie = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_ZOMBIE");
+        pig = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_PIG");
+        zombie = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_ZOMBIE");
     }
 
     @EventHandler

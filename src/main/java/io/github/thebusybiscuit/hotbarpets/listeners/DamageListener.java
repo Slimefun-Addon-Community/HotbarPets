@@ -14,7 +14,7 @@ import org.bukkit.potion.PotionEffectType;
 import io.github.thebusybiscuit.hotbarpets.HotbarPet;
 import io.github.thebusybiscuit.hotbarpets.HotbarPets;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 
 public class DamageListener implements Listener {
 
@@ -27,13 +27,13 @@ public class DamageListener implements Listener {
     private final HotbarPet blaze;
 
     public DamageListener(HotbarPets plugin) {
-        creeper = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_CREEPER");
-        magmacube = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_MAGMA_CUBE");
-        slime = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_SLIME");
-        mrCookieSlime = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_MRCOOKIESLIME");
-        wither = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_WITHER");
-        walshrus = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_WALSHRUS");
-        blaze = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_BLAZE");
+        creeper = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_CREEPER");
+        magmacube = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_MAGMA_CUBE");
+        slime = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_SLIME");
+        mrCookieSlime = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_MRCOOKIESLIME");
+        wither = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_WITHER");
+        walshrus = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_WALSHRUS");
+        blaze = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_BLAZE");
 
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }

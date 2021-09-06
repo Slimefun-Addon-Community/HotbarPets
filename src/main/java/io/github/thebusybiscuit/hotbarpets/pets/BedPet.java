@@ -6,13 +6,13 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import io.github.thebusybiscuit.hotbarpets.SimpleBasePet;
-import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 
 public class BedPet extends SimpleBasePet {
 
-    public BedPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-        super(category, item, food, recipe);
+    public BedPet(ItemGroup itemGroup, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(itemGroup, item, food, recipe);
     }
 
     @Override

@@ -9,14 +9,15 @@ import org.bukkit.metadata.FixedMetadataValue;
 
 import io.github.thebusybiscuit.hotbarpets.HotbarPets;
 import io.github.thebusybiscuit.hotbarpets.SimpleBasePet;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 
 public class CreeperPet extends SimpleBasePet {
 
     private final HotbarPets plugin;
 
     public CreeperPet(HotbarPets plugin, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-        super(plugin.getCategory(), item, food, recipe);
+        super(plugin.getItemGroup(), item, food, recipe);
 
         this.plugin = plugin;
     }
