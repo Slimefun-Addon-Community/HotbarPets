@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import io.github.thebusybiscuit.hotbarpets.HotbarPet;
 import io.github.thebusybiscuit.hotbarpets.HotbarPets;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 
 public class GeneralListener implements Listener {
 

@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 
 public class HotbarPet extends SlimefunItem {
 
@@ -20,8 +20,8 @@ public class HotbarPet extends SlimefunItem {
 
     private final ItemStack food;
 
-    public HotbarPet(Category category, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
-        super(category, item, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
+    public HotbarPet(ItemGroup itemGroup, SlimefunItemStack item, ItemStack food, ItemStack[] recipe) {
+        super(itemGroup, item, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
         this.food = food;
     }
 
@@ -42,7 +42,7 @@ public class HotbarPet extends SlimefunItem {
     public boolean checkAndConsumeFood(Player player) {
         if (!player.getInventory().containsAtLeast(getFavouriteFood(), 1)) {
             if (messageDelay.getOrDefault(player.getUniqueId(), 0L) <= System.currentTimeMillis()) {
-                SlimefunPlugin.getLocalization().sendMessage(player, "hotbarpets.neglected-pet", true, msg -> msg.replace("%pet%", getItemName()));
+                player.sendMessage(ChatColor.BLUE + "Your " + getItemName() + "would have helped you if you did not neglect it by not feeding it :(");
                 messageDelay.put(player.getUniqueId(), System.currentTimeMillis() + MESSAGE_DELAY);
             }
 
