@@ -21,7 +21,6 @@ import io.github.thebusybiscuit.hotbarpets.listeners.SoulPieListener;
 import io.github.thebusybiscuit.hotbarpets.listeners.TNTListener;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
@@ -51,9 +50,6 @@ public class HotbarPets extends JavaPlugin implements Listener, SlimefunAddon {
         new BossMobs(this);
         new UtilityPets(this);
         new SpecialPets(this);
-
-        Slimefun.getLocalization().setDefaultMessage("hotbarpets.neglected-pet", "&9Your %pet% &9would have helped you if you did not neglect it by not feeding it :(");
-        Slimefun.getLocalization().save();
 
         // Registering the Listeners
         new DamageListener(this);

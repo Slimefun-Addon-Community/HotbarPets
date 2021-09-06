@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -11,7 +12,6 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 public class HotbarPet extends SlimefunItem {
 
@@ -42,7 +42,7 @@ public class HotbarPet extends SlimefunItem {
     public boolean checkAndConsumeFood(Player player) {
         if (!player.getInventory().containsAtLeast(getFavouriteFood(), 1)) {
             if (messageDelay.getOrDefault(player.getUniqueId(), 0L) <= System.currentTimeMillis()) {
-                Slimefun.getLocalization().sendMessage(player, "hotbarpets.neglected-pet", true, msg -> msg.replace("%pet%", getItemName()));
+                player.sendMessage(ChatColor.BLUE + "Your " + getItemName() + "would have helped you if you did not neglect it by not feeding it :(");
                 messageDelay.put(player.getUniqueId(), System.currentTimeMillis() + MESSAGE_DELAY);
             }
 
