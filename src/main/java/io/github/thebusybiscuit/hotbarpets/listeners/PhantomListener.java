@@ -9,14 +9,14 @@ import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
 
 import io.github.thebusybiscuit.hotbarpets.HotbarPet;
 import io.github.thebusybiscuit.hotbarpets.HotbarPets;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 
 public class PhantomListener implements Listener {
 
     private final HotbarPet panda;
 
     public PhantomListener(HotbarPets plugin) {
-        panda = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_PANDA");
+        panda = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_PANDA");
 
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }

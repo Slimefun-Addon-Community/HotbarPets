@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 
 public class HotbarPetsRunnable implements Runnable {
 
@@ -17,10 +17,10 @@ public class HotbarPetsRunnable implements Runnable {
     private final HotbarPet goldenCow;
 
     protected HotbarPetsRunnable() {
-        chicken = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_CHICKEN");
-        mooshroom = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_MOOSHROOM");
-        fish = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_FISH");
-        goldenCow = (HotbarPet) SlimefunItem.getByID("HOTBAR_PET_GOLDEN_COW");
+        chicken = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_CHICKEN");
+        mooshroom = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_MOOSHROOM");
+        fish = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_FISH");
+        goldenCow = (HotbarPet) SlimefunItem.getById("HOTBAR_PET_GOLDEN_COW");
     }
 
     @Override
