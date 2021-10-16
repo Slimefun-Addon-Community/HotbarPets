@@ -46,9 +46,9 @@ public final class UtilityPets implements PetGroup {
         }).register(plugin);
 
         new CloudPet(plugin.getItemGroup(), new SlimefunItemStack("HOTBAR_PET_CLOUD", PetTexture.CLOUD_PET.getHash(), "&fCloud Pet", getName(), "&7Favourite Food: Sponge", "", "&fRight-Click: &7Stop Raining"), new ItemStack(Material.SPONGE), new ItemStack[] {
-                new ItemStack(Material.IRON_INGOT), new ItemStack(Material.RED_BED), new ItemStack(Material.IRON_INGOT),
-                new ItemStack(Material.WHITE_WOOL), new ItemStack(Material.DIAMOND), new ItemStack(Material.WHITE_WOOL),
-                new ItemStack(Material.OAK_PLANKS), SlimefunItems.GOLD_14K, new ItemStack(Material.OAK_PLANKS)
+                new ItemStack(Material.SPONGE), new ItemStack(Material.NETHER_STAR), new ItemStack(Material.SPONGE),
+                new ItemStack(Material.SPONGE), new ItemStack(Material.GLASS_BOTTLE), new ItemStack(Material.SPONGE),
+                new ItemStack(Material.SPONGE), new ItemStack(Material.SNOW), new ItemStack(Material.SPONGE)
         }).register(plugin);
         // @formatter:on
     }
