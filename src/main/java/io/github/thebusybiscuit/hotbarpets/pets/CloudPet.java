@@ -16,7 +16,7 @@ public class CloudPet extends SimpleBasePet {
     @Override
     public void onUseItem(Player p) {
         p.getWorld().spawnParticle(Particle.EXPLOSION_LARGE, p.getLocation(),1);
-        p.getWorld().setClearWeatherDuration(6000);
+        p.getWorld().isClearWeather();
     }
 
 }
