@@ -1,6 +1,7 @@
 package io.github.thebusybiscuit.hotbarpets.groups;
 
 import io.github.thebusybiscuit.hotbarpets.PetTexture;
+import io.github.thebusybiscuit.hotbarpets.pets.CloudPet;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
@@ -42,6 +43,12 @@ public final class UtilityPets implements PetGroup {
                 new ItemStack(Material.OAK_PLANKS), new ItemStack(Material.CRAFTING_TABLE), new ItemStack(Material.OAK_PLANKS),
                 new ItemStack(Material.OAK_PLANKS), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.OAK_PLANKS),
                 new ItemStack(Material.OAK_PLANKS), SlimefunItems.GOLD_16K, new ItemStack(Material.OAK_PLANKS)
+        }).register(plugin);
+
+        new CloudPet(plugin.getItemGroup(), new SlimefunItemStack("HOTBAR_PET_CLOUD", PetTexture.CLOUD_PET.getHash(), "&fCloud Pet", getName(), "&7Favourite Food: Sponge", "", "&fRight-Click: &7Stop Raining"), new ItemStack(Material.SPONGE), new ItemStack[] {
+                new ItemStack(Material.SPONGE), new ItemStack(Material.NETHER_STAR), new ItemStack(Material.SPONGE),
+                new ItemStack(Material.SPONGE), new ItemStack(Material.GLASS_BOTTLE), new ItemStack(Material.SPONGE),
+                new ItemStack(Material.SPONGE), new ItemStack(Material.SNOW), new ItemStack(Material.SPONGE)
         }).register(plugin);
         // @formatter:on
     }
