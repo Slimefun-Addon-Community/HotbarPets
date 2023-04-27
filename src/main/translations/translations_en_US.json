@@ -1,0 +1,151 @@
+{
+  "hotbarpets.itemgroup.main":"&dHotbar Pets",
+  "hotbarpets.itemgroup.lore":"&a> Click to open",
+  "hotbarpets.feedfood.message.01":"Your ",
+  "hotbarpets.feedfood.message.02":"would have helped you if you did not neglect it by not feeding it :(",
+  "hotbarpets.feedfood.message.03":"&9Your &5Pig Pet &9would have helped you if you did not neglect it by not feeding it :(",
+  "hotbarpets.feedfood.message.04":"&9Your &4Magma Cube Pet &9would have helped you if you did not neglect it by not feeding it :(",
+
+  "hotbarpets.common.open":"&fRight-Click: &7Open",
+  "hotbarpets.common.fall_damage":"&fImmune to Fall Damage",
+  "hotbarpets.common.seeds":"&7Favourite Food: Seeds",
+  "hotbarpets.common.raw_cod":"&7Favourite Food: Raw Cod",
+  "hotbarpets.common.carrots":"&7Favourite Food: Carrots",
+  "hotbarpets.common.nether_quartz":"&7Favourite Food: Nether Quartz",
+  "hotbarpets.common.health_regeneration":"&fRight-Click: &7Gives you Health Regeneration",
+
+  "hotbarpets.itemgroup.utility.peaceful":"&aUtility (Peaceful)",
+
+  "hotbarpets.hotbar_pet_bed.name":"&fBed Pet",
+  "hotbarpets.hotbar_pet_bed.lore.01":"&7Favourite Food: Wool",
+  "hotbarpets.hotbar_pet_bed.lore.02":"&fRight-Click: &7Sleep",
+
+  "hotbarpets.hotbar_pet_ender_chest.name":"&5Ender Chest Pet",
+  "hotbarpets.hotbar_pet_ender_chest.lore":"&7Favourite Food: Ender Pearls",
+
+  "hotbarpets.hotbar_pet_workbench.name":"&6Workbench Pet",
+  "hotbarpets.hotbar_pet_workbench.lore":"&7Favourite Food: Wooden Planks",
+
+  "hotbarpets.itemgroup.mob.passive":"&eMob (Passive)",
+
+  "hotbarpets.hotbar_pet_iron_golem.name":"&7Iron Golem Pet",
+  "hotbarpets.hotbar_pet_iron_golem.lore.01":"&7Favourite Food: Iron Ingots",
+  "hotbarpets.hotbar_pet_iron_golem.lore.02":"&fRight-Click: &7Gives you Resistance",
+
+  "hotbarpets.hotbar_pet_slime.name":"&aSlime Pet",
+  "hotbarpets.hotbar_pet_slime.lore.01":"&7Favourite Food: Glowstone Dust",
+
+  "hotbarpets.itemgroup.animal.peaceful":"&aAnimal (Peaceful)",
+
+  "hotbarpets.hotbar_pet_fish.name":"&3Fish Pet",
+  "hotbarpets.hotbar_pet_fish.lore":"&fGives you Fish over time...",
+
+  "hotbarpets.hotbar_pet_squid.name":"&bSquid Pet",
+  "hotbarpets.hotbar_pet_squid.lore":"&fRight-Click: &7Gives you Water Breathing",
+
+  "hotbarpets.hotbar_pet_rabbit.name":"&eRabbit Pet",
+  "hotbarpets.hotbar_pet_rabbit.lore":"&fRight-Click: &7Gives you 30 seconds of Luck",
+
+  "hotbarpets.hotbar_pet_dolphin.name":"&bDolphin Pet",
+  "hotbarpets.hotbar_pet_dolphin.lore.01":"&7Favourite Food: Ink Sacks",
+  "hotbarpets.hotbar_pet_dolphin.lore.02":"&fRight-Click: &7Dolphin's Grace",
+
+  "hotbarpets.hotbar_pet_panda.name":"&8Panda &fPet",
+  "hotbarpets.hotbar_pet_panda.lore.01":"&7Favorite Food: Bamboo",
+  "hotbarpets.hotbar_pet_panda.lore.02":"&fThis sleepy Panda protects you from Insomnia",
+  "hotbarpets.hotbar_pet_panda.lore.03":"&fPhantoms will no longer chase you at night",
+
+  "hotbarpets.itemgroup.mob.hostile":"&cMob (Hostile)",
+
+  "hotbarpets.hotbar_pet_spider.name":"&8Spider Pet",
+  "hotbarpets.hotbar_pet_spider.lore.01":"&7Favourite Food: Rotten Flesh",
+  "hotbarpets.hotbar_pet_spider.lore.02":"&fRight-Click: &7Gives you Jump Boost",
+
+  "hotbarpets.hotbar_pet_ghast.name":"&fGhast Pet",
+  "hotbarpets.hotbar_pet_ghast.lore.01":"&7Favourite Food: Fire Charge",
+  "hotbarpets.hotbar_pet_ghast.lore.02":"&fRight-Click: &7Launches Fireballs",
+
+  "hotbarpets.hotbar_pet_shulker.name":"&dShulker Pet",
+  "hotbarpets.hotbar_pet_shulker.lore.01":"&7Favourite Food: Chorus Fruit",
+  "hotbarpets.hotbar_pet_shulker.lore.02":"&fRight-Click: &7Shoots arrows tipped with levitation",
+
+  "hotbarpets.hotbar_pet_phantom.name":"&7Phantom Pet",
+  "hotbarpets.hotbar_pet_phantom.lore.01":"&7Favourite Food: Beetroot",
+  "hotbarpets.hotbar_pet_phantom.lore.02":"&fRight-Click: &7Gives Slow Falling",
+
+  "hotbarpets.hotbar_pet_ender_man.name":"&8Enderman Pet",
+  "hotbarpets.hotbar_pet_ender_man.lore.01":"&7Favourite Food: End Stone",
+  "hotbarpets.hotbar_pet_ender_man.lore.02":"&fRight-Click: &7Shoots an Ender Pearl",
+
+  "hotbarpets.hotbar_pet_creeper.name":"&2Creeper Pet",
+  "hotbarpets.hotbar_pet_creeper.lore.01":"&7Favourite Food: Gunpowder",
+  "hotbarpets.hotbar_pet_creeper.lore.02":"&fImmune to Explosions",
+  "hotbarpets.hotbar_pet_creeper.lore.03":"&fRight-Click: &7Explode",
+
+  "hotbarpets.hotbar_pet_magma_cube.name":"&4Magma Cube Pet",
+  "hotbarpets.hotbar_pet_magma_cube.lore.01":"&fImmune to Lava",
+  "hotbarpets.hotbar_pet_magma_cube.lore.02":"&fQuite hungry",
+
+  "hotbarpets.hotbar_pet_blaze.name":"&6Blaze Pet",
+  "hotbarpets.hotbar_pet_blaze.lore":"&fImmune to Fire",
+
+  "hotbarpets.hotbar_pet_zombie.name":"&2Zombie Pet",
+  "hotbarpets.hotbar_pet_zombie.lore.01":"&fAllows you to eat Rotten Flesh",
+  "hotbarpets.hotbar_pet_zombie.lore.02":"&fwithout getting Hunger",
+
+  "hotbarpets.itemgroup.special":"&9Special",
+
+  "hotbarpets.hotbar_pet_purplicious_cow.name":"&5Purplicious Cow Pet",
+  "hotbarpets.hotbar_pet_purplicious_cow.lore":"&7Favourite Food: Golden Apples",
+
+  "hotbarpets.hotbar_pet_mrcookieslime.name":"&amrCookieSlime Pet",
+  "hotbarpets.hotbar_pet_mrcookieslime.lore":"&7Favourite Food: Cookies",
+
+  "hotbarpets.hotbar_pet_patriot.name":"&5Patriot Pet",
+  "hotbarpets.hotbar_pet_patriot.lore.01":"&7Favourite Food: Nether Wart",
+  "hotbarpets.hotbar_pet_patriot.lore.02":"&fGives Resistance, Regeneration, Strength, ",
+  "hotbarpets.hotbar_pet_patriot.lore.03":"&fand Saturation",
+
+  "hotbarpets.hotbar_pet_walshrus.name":"&bWalshrus Pet",
+  "hotbarpets.hotbar_pet_walshrus.lore":"&fCannot drown",
+
+  "hotbarpets.hotbar_pet_eyamaz.name":"&4Eyamaz Pet",
+  "hotbarpets.hotbar_pet_eyamaz.lore.01":"&7Favourite Food: Souls",
+  "hotbarpets.hotbar_pet_eyamaz.lore.02":"&fBeware! Eyamaz makes a Soul Pie",
+  "hotbarpets.hotbar_pet_eyamaz.lore.03":"&fout of the Souls of everything you kill",
+  "hotbarpets.hotbar_pet_eyamaz.dropitem":"&bSoul Pie",
+
+  "hotbarpets.itemgroup.bossmob.hostile":"&4Boss Mob (Hostile)",
+
+  "hotbarpets.hotbar_pet_dragon.name":"&5Ender Dragon Pet",
+  "hotbarpets.hotbar_pet_dragon.lore.01":"&7Favourite Food: Eyes Of Ender",
+  "hotbarpets.hotbar_pet_dragon.lore.02":"&fRight-Click: &7Shoots Dragon Fireball & Gives Resistance",
+
+  "hotbarpets.hotbar_pet_wither.name":"&8Wither Pet",
+  "hotbarpets.hotbar_pet_wither.lore.01":"&7Favourite Food: Soul Sand",
+  "hotbarpets.hotbar_pet_wither.lore.02":"&fImmune to Wither Effect",
+
+  "hotbarpets.itemgroup.farmanimal.peaceful":"&2Farm Animal (Peaceful)",
+
+  "hotbarpets.hotbar_pet_cow.name":"&6Cow Pet",
+  "hotbarpets.hotbar_pet_cow.lore.01":"&7Favourite Food: Wheat",
+  "hotbarpets.hotbar_pet_cow.lore.02":"&fRight-Click: &7Removes negative Potion Effects",
+
+  "hotbarpets.hotbar_pet_pig.name":"&dPig Pet",
+  "hotbarpets.hotbar_pet_pig.lore.01":"&fBonus Saturation when eating",
+  "hotbarpets.hotbar_pet_pig.lore.02":"&fAllows you to eat poisonous Food",
+
+  "hotbarpets.hotbar_pet_chicken.name":"&fChicken Pet",
+  "hotbarpets.hotbar_pet_chicken.lore":"&fGives you Eggs over time...",
+
+  "hotbarpets.hotbar_pet_mooshroom.name":"&dMooshroom Pet",
+  "hotbarpets.hotbar_pet_mooshroom.lore.01":"&7Favourite Food: Red Mushrooms",
+  "hotbarpets.hotbar_pet_mooshroom.lore.02":"&fGives you Mushroom Stew over time...",
+
+  "hotbarpets.hotbar_pet_golden_cow.name":"&6Golden Cow Pet",
+  "hotbarpets.hotbar_pet_golden_cow.lore.01":"&7Favourite Food: Golden Carrots",
+  "hotbarpets.hotbar_pet_golden_cow.lore.02":"&fGives you Golden Ingots over time...",
+  "hotbarpets.hotbar_pet_golden_cow.lore.03":"&f(That means you have a net gain of 1 golden nugget)",
+
+  "hotbarpets.hotbarpets_player.message":"You cannot harm Players in here!"
+}

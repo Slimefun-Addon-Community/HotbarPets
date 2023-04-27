@@ -1,6 +1,6 @@
 package io.github.thebusybiscuit.hotbarpets;
 
-//import org.bstats.bukkit.Metrics;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.NamespacedKey;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,9 +21,9 @@ import io.github.thebusybiscuit.hotbarpets.listeners.SoulPieListener;
 import io.github.thebusybiscuit.hotbarpets.listeners.TNTListener;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-//import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-//import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
 
 public class HotbarPets extends JavaPlugin implements Listener, SlimefunAddon {
 
@@ -31,16 +31,16 @@ public class HotbarPets extends JavaPlugin implements Listener, SlimefunAddon {
 
     @Override
     public void onEnable() {
-        //Config cfg = new Config(this);
+        Config cfg = new Config(this);
 
         // Setting up bStats
-        //new Metrics(this, 4859);
+        new Metrics(this, 4859);
 
-        /*if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
+        if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
             new GitHubBuildsUpdater(this, getFile(), "TheBusyBiscuit/HotbarPets/master").start();
-        }*/
+        }
 
-        itemGroup = new ItemGroup(new NamespacedKey(this, "pets"), new CustomItemStack(PetTexture.CATEGORY.getAsItem(), "&d背包寵物", "", "&a> 點擊開啟"));
+        itemGroup = new ItemGroup(new NamespacedKey(this, "pets"), new CustomItemStack(PetTexture.CATEGORY.getAsItem(), "${hotbarpets.itemgroup.main}", "", "${hotbarpets.itemgroup.lore}"));
 
         // Add all the Pets via their Group class
         new FarmAnimals(this);

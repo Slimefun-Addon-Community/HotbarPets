@@ -1,7 +1,7 @@
 name: HotbarPets
 version: ${project.version}
 author: TheBusyBiscuit
-description: 黏液科技附加 背包寵物 繁體翻譯版.
+description: 黏液科技附加「背包寵物」繁體中文版。
 depend: [Slimefun]
 
 api-version: 1.14

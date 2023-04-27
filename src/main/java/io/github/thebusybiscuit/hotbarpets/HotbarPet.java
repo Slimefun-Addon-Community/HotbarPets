@@ -42,7 +42,7 @@ public class HotbarPet extends SlimefunItem {
     public boolean checkAndConsumeFood(Player player) {
         if (!player.getInventory().containsAtLeast(getFavouriteFood(), 1)) {
             if (messageDelay.getOrDefault(player.getUniqueId(), 0L) <= System.currentTimeMillis()) {
-                player.sendMessage(ChatColor.BLUE + "你的 " + getItemName() + "會幫助你如果你不忽視它和不餵食 :(");
+                player.sendMessage(ChatColor.BLUE + "${hotbarpets.feedfood.message.01}" + getItemName() + ChatColor.BLUE + "${hotbarpets.feedfood.message.02}");
                 messageDelay.put(player.getUniqueId(), System.currentTimeMillis() + MESSAGE_DELAY);
             }
 

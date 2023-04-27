@@ -19,19 +19,19 @@ public final class BossMobs implements PetGroup {
 
     @Override
     public String getName() {
-        return "&4Boss 怪物 (敵對)";
+        return "${hotbarpets.itemgroup.bossmob.hostile}";
     }
 
     @Override
     public void load(HotbarPets plugin) {
         // @formatter:off
-        new EnderDragonPet(plugin.getItemGroup(), new SlimefunItemStack("HOTBAR_PET_DRAGON", Material.DRAGON_HEAD, "&5終界龍寵物", getName(), "&7喜愛的食物: 終界之眼", "", "&f右鍵點擊: &7發射終界龍的火球 & 給予抗性效果"), new ItemStack(Material.ENDER_EYE), new ItemStack[]{
+        new EnderDragonPet(plugin.getItemGroup(), new SlimefunItemStack("HOTBAR_PET_DRAGON", Material.DRAGON_HEAD, "${hotbarpets.hotbar_pet_dragon.name}", getName(), "${hotbarpets.hotbar_pet_dragon.lore.01}", "", "${hotbarpets.hotbar_pet_dragon.lore.02}"), new ItemStack(Material.ENDER_EYE), new ItemStack[]{
                 new ItemStack(Material.PRISMARINE_CRYSTALS), new ItemStack(Material.DRAGON_BREATH), new ItemStack(Material.PRISMARINE_CRYSTALS),
                 SlimefunItems.ENDER_LUMP_3, new ItemStack(Material.DRAGON_HEAD), SlimefunItems.ENDER_LUMP_3,
                 new ItemStack(Material.PRISMARINE_CRYSTALS), new ItemStack(Material.DRAGON_BREATH), new ItemStack(Material.PRISMARINE_CRYSTALS)
         }).register(plugin);
 
-        new HotbarPet(plugin.getItemGroup(), new SlimefunItemStack("HOTBAR_PET_WITHER", PetTexture.WITHER_PET.getHash(), "&8凋零寵物", getName(), "&7喜愛的食物: 靈魂沙", "", "&f免疫凋零"), new ItemStack(Material.SOUL_SAND), new ItemStack[]{
+        new HotbarPet(plugin.getItemGroup(), new SlimefunItemStack("HOTBAR_PET_WITHER", PetTexture.WITHER_PET.getHash(), "${hotbarpets.hotbar_pet_wither.name}", getName(), "${hotbarpets.hotbar_pet_wither.lore.01}", "", "${hotbarpets.hotbar_pet_wither.lore.02}"), new ItemStack(Material.SOUL_SAND), new ItemStack[]{
                 new ItemStack(Material.COAL), new ItemStack(Material.WITHER_SKELETON_SKULL), new ItemStack(Material.COAL),
                 new ItemStack(Material.SOUL_SAND), new ItemStack(Material.NETHER_STAR), new ItemStack(Material.SOUL_SAND),
                 new ItemStack(Material.SOUL_SAND), SlimefunItems.GOLD_24K, new ItemStack(Material.SOUL_SAND)

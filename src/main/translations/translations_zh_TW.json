@@ -1,0 +1,151 @@
+{
+  "hotbarpets.itemgroup.main":"&d背包寵物",
+  "hotbarpets.itemgroup.lore":"&a> 點擊打開",
+  "hotbarpets.feedfood.message.01":"如果你沒有忽視餵食",
+  "hotbarpets.feedfood.message.02":"，那麼它將會幫你 :(",
+  "hotbarpets.feedfood.message.03":"&9如果你沒有忽視餵食&5豬寵物&9，那麼它將會幫你 :(",
+  "hotbarpets.feedfood.message.04":"&9如果你沒有忽視餵食&4岩漿立方怪寵物&9，那麼它將會幫你 :(",
+
+  "hotbarpets.common.open":"&f右鍵點擊：&7開啟",
+  "hotbarpets.common.fall_damage":"&f免疫摔落傷害",
+  "hotbarpets.common.seeds":"&7喜愛食物：種子",
+  "hotbarpets.common.raw_cod":"&7喜愛食物：生鱈魚",
+  "hotbarpets.common.carrots":"&7喜愛食物：胡蘿蔔",
+  "hotbarpets.common.nether_quartz":"&7喜愛食物：地獄石英",
+  "hotbarpets.common.health_regeneration":"&f右鍵點擊：&7提供血量回復效果",
+
+  "hotbarpets.itemgroup.utility.peaceful":"&a工具寵物（友善）",
+
+  "hotbarpets.hotbar_pet_bed.name":"&f床寵物",
+  "hotbarpets.hotbar_pet_bed.lore.01":"&7喜愛食物：羊毛",
+  "hotbarpets.hotbar_pet_bed.lore.02":"&f右鍵點擊：&7來睡覺",
+
+  "hotbarpets.hotbar_pet_ender_chest.name":"&5終界箱寵物",
+  "hotbarpets.hotbar_pet_ender_chest.lore":"&7喜愛食物：終界珍珠",
+
+  "hotbarpets.hotbar_pet_workbench.name":"&6工作台寵物",
+  "hotbarpets.hotbar_pet_workbench.lore":"&7喜愛食物：木材",
+
+  "hotbarpets.itemgroup.mob.passive":"&e生物寵物（中立）",
+
+  "hotbarpets.hotbar_pet_iron_golem.name":"&7鐵魔像寵物",
+  "hotbarpets.hotbar_pet_iron_golem.lore.01":"&7喜愛食物：鐵錠",
+  "hotbarpets.hotbar_pet_iron_golem.lore.02":"&f右鍵點擊：&7提供抗性效果",
+
+  "hotbarpets.hotbar_pet_slime.name":"&a史萊姆寵物",
+  "hotbarpets.hotbar_pet_slime.lore.01":"&7喜愛食物：螢石粉",
+
+  "hotbarpets.itemgroup.animal.peaceful":"&a動物寵物（友善）",
+
+  "hotbarpets.hotbar_pet_fish.name":"&3魚寵物",
+  "hotbarpets.hotbar_pet_fish.lore":"&f隨著時間給你魚...",
+
+  "hotbarpets.hotbar_pet_squid.name":"&b魷魚寵物",
+  "hotbarpets.hotbar_pet_squid.lore":"&f右鍵點擊：&7提供水下呼吸效果",
+
+  "hotbarpets.hotbar_pet_rabbit.name":"&e兔子寵物",
+  "hotbarpets.hotbar_pet_rabbit.lore":"&f右鍵點擊：&7提供 30 秒的幸運效果",
+
+  "hotbarpets.hotbar_pet_dolphin.name":"&b海豚寵物",
+  "hotbarpets.hotbar_pet_dolphin.lore.01":"&7喜愛食物：墨囊",
+  "hotbarpets.hotbar_pet_dolphin.lore.02":"&f右鍵點擊：&7提供海豚悠游效果",
+
+  "hotbarpets.hotbar_pet_panda.name":"&8貓熊&f寵物",
+  "hotbarpets.hotbar_pet_panda.lore.01":"&7喜愛食物：竹子",
+  "hotbarpets.hotbar_pet_panda.lore.02":"&f這隻可愛的困困熊貓將保護你免受於失眠困擾",
+  "hotbarpets.hotbar_pet_panda.lore.03":"&f夜魅將不會在晚上追你",
+
+  "hotbarpets.itemgroup.mob.hostile":"&c生物寵物（敵對）",
+
+  "hotbarpets.hotbar_pet_spider.name":"&8蜘蛛寵物",
+  "hotbarpets.hotbar_pet_spider.lore.01":"&7喜愛食物：腐肉",
+  "hotbarpets.hotbar_pet_spider.lore.02":"&f右鍵點擊：&7提供跳躍提升效果",
+
+  "hotbarpets.hotbar_pet_ghast.name":"&f地獄幽靈寵物",
+  "hotbarpets.hotbar_pet_ghast.lore.01":"&7喜愛食物：火焰彈",
+  "hotbarpets.hotbar_pet_ghast.lore.02":"&f右鍵點擊：&7發射火球",
+
+  "hotbarpets.hotbar_pet_shulker.name":"&d界伏蚌寵物",
+  "hotbarpets.hotbar_pet_shulker.lore.01":"&7喜愛食物：歌萊果",
+  "hotbarpets.hotbar_pet_shulker.lore.02":"&f右鍵點擊：&7發射帶有懸浮的藥水箭",
+
+  "hotbarpets.hotbar_pet_phantom.name":"&7夜魅寵物",
+  "hotbarpets.hotbar_pet_phantom.lore.01":"&7喜愛食物：甜菜根",
+  "hotbarpets.hotbar_pet_phantom.lore.02":"&f右鍵點擊：&7提供緩降效果",
+
+  "hotbarpets.hotbar_pet_ender_man.name":"&8終界使者寵物",
+  "hotbarpets.hotbar_pet_ender_man.lore.01":"&7喜愛食物：終界石",
+  "hotbarpets.hotbar_pet_ender_man.lore.02":"&f右鍵點擊：&7發射終界珍珠",
+
+  "hotbarpets.hotbar_pet_creeper.name":"&2苦力怕寵物",
+  "hotbarpets.hotbar_pet_creeper.lore.01":"&7喜愛食物：火藥",
+  "hotbarpets.hotbar_pet_creeper.lore.02":"&f免疫爆炸傷害",
+  "hotbarpets.hotbar_pet_creeper.lore.03":"&f右鍵點擊：&7爆炸",
+
+  "hotbarpets.hotbar_pet_magma_cube.name":"&4岩漿立方怪寵物",
+  "hotbarpets.hotbar_pet_magma_cube.lore.01":"&f免疫熔岩",
+  "hotbarpets.hotbar_pet_magma_cube.lore.02":"&f但會更快飢餓",
+
+  "hotbarpets.hotbar_pet_blaze.name":"&6烈焰使者寵物",
+  "hotbarpets.hotbar_pet_blaze.lore":"&f免疫火焰傷害",
+
+  "hotbarpets.hotbar_pet_zombie.name":"&2殭屍寵物",
+  "hotbarpets.hotbar_pet_zombie.lore.01":"&f讓你可以在不獲得飢餓",
+  "hotbarpets.hotbar_pet_zombie.lore.02":"&f情況下直接吃腐肉",
+
+  "hotbarpets.itemgroup.special":"&9特殊寵物",
+
+  "hotbarpets.hotbar_pet_purplicious_cow.name":"&5Purplicious 牛寵物",
+  "hotbarpets.hotbar_pet_purplicious_cow.lore":"&7喜愛食物：金蘋果",
+
+  "hotbarpets.hotbar_pet_mrcookieslime.name":"&amrCookieSlime 寵物",
+  "hotbarpets.hotbar_pet_mrcookieslime.lore":"&7喜愛食物：餅乾",
+
+  "hotbarpets.hotbar_pet_patriot.name":"&5Patriot 寵物",
+  "hotbarpets.hotbar_pet_patriot.lore.01":"&7喜愛食物：地獄疙瘩",
+  "hotbarpets.hotbar_pet_patriot.lore.02":"&f提供抗性、回復",
+  "hotbarpets.hotbar_pet_patriot.lore.03":"&f力量和飽食效果",
+
+  "hotbarpets.hotbar_pet_walshrus.name":"&bWalshrus 寵物",
+  "hotbarpets.hotbar_pet_walshrus.lore":"&f不再溺水",
+
+  "hotbarpets.hotbar_pet_eyamaz.name":"&4Eyamaz 寵物",
+  "hotbarpets.hotbar_pet_eyamaz.lore.01":"&7喜愛食物：靈魂",
+  "hotbarpets.hotbar_pet_eyamaz.lore.02":"&f注意！Eyamaz 將會用你所殺死的",
+  "hotbarpets.hotbar_pet_eyamaz.lore.03":"&f任何生物靈魂來製作靈魂派！",
+  "hotbarpets.hotbar_pet_eyamaz.dropitem":"&b靈魂派",
+
+  "hotbarpets.itemgroup.bossmob.hostile":"&4Boss 生物寵物（敵對）",
+
+  "hotbarpets.hotbar_pet_dragon.name":"&5終界龍寵物",
+  "hotbarpets.hotbar_pet_dragon.lore.01":"&7喜愛食物：終界之眼",
+  "hotbarpets.hotbar_pet_dragon.lore.02":"&f右鍵點擊：&7發射龍炎彈和提供給自己抗性",
+
+  "hotbarpets.hotbar_pet_wither.name":"&8凋零怪寵物",
+  "hotbarpets.hotbar_pet_wither.lore.01":"&7喜愛食物：靈魂砂",
+  "hotbarpets.hotbar_pet_wither.lore.02":"&f免疫凋零效果",
+
+  "hotbarpets.itemgroup.farmanimal.peaceful":"&2農場動物寵物（友善）",
+
+  "hotbarpets.hotbar_pet_cow.name":"&6牛寵物",
+  "hotbarpets.hotbar_pet_cow.lore.01":"&7喜愛食物：小麥",
+  "hotbarpets.hotbar_pet_cow.lore.02":"&f右鍵點擊：&7移除負面藥水效果",
+
+  "hotbarpets.hotbar_pet_pig.name":"&d豬寵物",
+  "hotbarpets.hotbar_pet_pig.lore.01":"&f在你吃食物時獲得額外的飽食度",
+  "hotbarpets.hotbar_pet_pig.lore.02":"&f與讓你可以吃有毒的食物",
+
+  "hotbarpets.hotbar_pet_chicken.name":"&f雞寵物",
+  "hotbarpets.hotbar_pet_chicken.lore":"&f隨著時間給你蛋...",
+
+  "hotbarpets.hotbar_pet_mooshroom.name":"&d哞菇寵物",
+  "hotbarpets.hotbar_pet_mooshroom.lore.01":"&7喜愛食物：紅色蘑菇",
+  "hotbarpets.hotbar_pet_mooshroom.lore.02":"&f隨著時間給你蘑菇湯...",
+
+  "hotbarpets.hotbar_pet_golden_cow.name":"&6黃金牛寵物",
+  "hotbarpets.hotbar_pet_golden_cow.lore.01":"&7喜愛食物：金胡蘿蔔",
+  "hotbarpets.hotbar_pet_golden_cow.lore.02":"&f隨著時間給你金錠...",
+  "hotbarpets.hotbar_pet_golden_cow.lore.03":"&f（這代表你會有一金粒的淨獲利）",
+
+  "hotbarpets.hotbarpets_player.message":"你不能在這裡傷害玩家！"
+}
