@@ -25,7 +25,7 @@ public class ShulkerPet extends SimpleBasePet {
     @Override
     public void onUseItem(Player p) {
         Arrow arrow = p.launchProjectile(Arrow.class);
-        arrow.addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION, 10, 0), true);
+        arrow.addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION, 10, 5), true);
         arrow.setMetadata("hotbarpets_projectile", new FixedMetadataValue(plugin, true));
 
         p.getWorld().playSound(p.getLocation(), Sound.ENTITY_SHULKER_AMBIENT, 1.0F, 2.0F);
